@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
             if (jumpBufferTimer > 0 && (cayoteTimeLength > 0 || (IsGrounded && Jump)))
             {
                 jumpBuffer = false;
-                rb.linearVelocity = new Vector2(rb.linearVelocityX, JumpForce);
+                rb.AddForce(transform.up * JumpForce, ForceMode2D.Impulse);
 
                 // Reset the jump buffer and cayote time states
                 Jump = false;
