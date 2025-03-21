@@ -10,7 +10,7 @@ public class JunkRandom : OOPMono
 
     [SerializeField] private JunkCtrl junkCtrl;
     private float basePosition = 0f;
-    [SerializeField] private float baseSpeed = 10f;
+    [SerializeField, Range(10f, 50f)] private float baseSpeed = 10f;
     private float baseTimeSpawn => Mathf.Max(0.01f, 20f / baseSpeed);
 
     protected override void Awake()
