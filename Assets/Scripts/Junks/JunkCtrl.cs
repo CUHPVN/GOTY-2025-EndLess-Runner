@@ -28,7 +28,7 @@ public class JunkCtrl : OOPMono
     protected virtual void LoadJunkSpawnPoints()
     {
         if (spawnPoints != null) return;
-        this.spawnPoints = Transform.FindObjectOfType<JunkSpawnPoints>();
+        this.spawnPoints = Transform.FindFirstObjectByType<JunkSpawnPoints>();
         Debug.Log(transform.name + ": LoadJunkSpawnPoints", gameObject);
     }
 }

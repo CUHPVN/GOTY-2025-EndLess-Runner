@@ -31,7 +31,7 @@ public class GameCtrl : OOPMono
     protected virtual void LoadCamera()
     {
         if (this.mainCamera != null) return;
-        this.mainCamera = GameCtrl.FindObjectOfType<Camera>(); 
+        this.mainCamera = GameCtrl.FindFirstObjectByType<Camera>(); 
         Debug.Log(transform.name + ": LoadCamera", gameObject);
 
     }
