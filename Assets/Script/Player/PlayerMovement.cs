@@ -11,11 +11,6 @@ public class PlayerMovement : MonoBehaviour
     //------------------Actions-----------------------
     //------------------Jump Assist--------------------------
     [SerializeField] float JumpForce;
-    bool Jump;
-    bool jumpBuffer;
-    [SerializeField] private float jumpBufferLength = 0.2f;
-    private float jumpBufferTimer;
-    [SerializeField] private float cayoteTimeLength = 0.1f;
     //------------------End-----------------------------------
 
 
@@ -28,49 +23,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
-        if (IsGrounded == true)
-        {
-            cayoteTimeLength = 0.1f;
-        }
-        else
-        {
-            cayoteTimeLength -= Time.deltaTime;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            jumpBuffer = true;
-            jumpBufferTimer = jumpBufferLength;
-            Jump = true;
-        }
+        Move();
     }
-
-
-    private void FixedUpdate()
+    private void Move()
     {
-        if (jumpBuffer == true)
+        IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
+        if (Input.GetKey(KeyCode.Space) && IsGrounded)
         {
-            jumpBufferTimer -= Time.deltaTime;
-            if (jumpBufferTimer > 0 && (cayoteTimeLength > 0 || (IsGrounded && Jump)))
-            {
-                jumpBuffer = false;
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
-
-                // Reset the jump buffer and cayote time states
-                Jump = false;
-
-            }
-            else if (jumpBufferTimer <= 0)
-            {
-                jumpBuffer = false;
-            }
-
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
         }
-        if (jumpBuffer == false)
-        {
-            jumpBufferTimer = 0;
-        }
-
     }
+
 }
