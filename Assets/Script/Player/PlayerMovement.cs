@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             cayoteTimeLength -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpBuffer = true;
             jumpBufferTimer = jumpBufferLength;
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
             if (jumpBufferTimer > 0 && (cayoteTimeLength > 0 || (IsGrounded && Jump)))
             {
                 jumpBuffer = false;
-                rb.AddForce(transform.up * JumpForce, ForceMode2D.Impulse);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
 
                 // Reset the jump buffer and cayote time states
                 Jump = false;
