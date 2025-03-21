@@ -2,17 +2,11 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
-    public enum States {JumpState,FlyState};
+    public enum States { JumpState, FlyState };
+    public States CurrentStates;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        States CurrentState;
-        CurrentState = States.JumpState;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        CurrentStates = States.JumpState;
     }
 }

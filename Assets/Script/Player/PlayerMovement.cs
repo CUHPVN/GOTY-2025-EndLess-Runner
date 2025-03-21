@@ -6,24 +6,33 @@ public class PlayerMovement : MonoBehaviour
     bool IsGrounded;
     [SerializeField] Transform GroundCheck;
     [SerializeField] LayerMask GroundLayer;
+    StateManager StM;
 
-
-    //------------------Actions-----------------------
-    //------------------Jump Assist--------------------------
     [SerializeField] float JumpForce;
-    //------------------End-----------------------------------
+    [SerializeField] float FlyForce;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        StM = GameObject.FindGameObjectWithTag("StateManager").GetComponent<StateManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        switch (StM.CurrentStates)
+        {
+            case StateManager.States.JumpState:
+                Move();
+                break;
+            case StateManager.States.FlyState:
+                Fly();
+                break;
+            default:
+                break;
+        }
     }
     private void Move()
     {
@@ -31,6 +40,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && IsGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
+        }
+    }
+    private void Fly()
+    {
+        if (rb.linearVelocityY > 15f)
+        {
+            rb.linearVelocityY = 15f;
+        }
+        else if (rb.linearVelocityY < -15f)
+        {
+            rb.linearVelocityY = -15f;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rb.AddForce(transform.up * FlyForce, ForceMode2D.Force);
         }
     }
 
