@@ -21,9 +21,9 @@ public class MapSpawner : MonoBehaviour
         SpawningWithPos(Vector2.zero);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+        CaculateSpeed();
     }
     public void SpawningWithPos(Vector3 pos)
     {
@@ -34,6 +34,9 @@ public class MapSpawner : MonoBehaviour
                 break;
             case StateManager.States.FlyState:
                 padName = flyStatePrefabs[UnityEngine.Random.Range(0, flyStatePrefabs.Count)].name;
+                break;
+            case StateManager.States.ZiczacState:
+                padName = ziczacStatePrefabs[UnityEngine.Random.Range(0, ziczacStatePrefabs.Count)].name;
                 break;
             default:
                 padName = jumpStatePrefabs[UnityEngine.Random.Range(0, jumpStatePrefabs.Count)].name;
@@ -46,5 +49,10 @@ public class MapSpawner : MonoBehaviour
     public float GetBaseSpeed()
     {
         return speed;
+    }
+    void CaculateSpeed()
+    {
+        float Score = UIManager.Instance.GetScore();
+        speed = 5 + Score * 0.01f; 
     }
 }

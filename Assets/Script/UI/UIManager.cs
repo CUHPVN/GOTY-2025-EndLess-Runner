@@ -3,9 +3,15 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
     TextMeshProUGUI ScoreText;
-    int Score = 0;
+    float Score = 0;
     public int Multiplyer;
+
+    void Awake()
+    {
+        Instance = this;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,10 +22,15 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         
-        ScoreText.text = $"Score: {Score}";
+        ScoreText.text = $"Score: {(int)Score}";
     }
     private void FixedUpdate()
     {
-        Score += 1 * Multiplyer;
+        Score += 1f * Multiplyer * 0.1f;
+    }
+
+    public float GetScore()
+    {
+        return Score;
     }
 }

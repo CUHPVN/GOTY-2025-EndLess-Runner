@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2042808663663748542}
-  - component: {fileID: -7040529620068088605}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Spikes 2
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,33 +34,6 @@ Transform:
   - {fileID: 1502453514384413155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &-7040529620068088605
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4783439134721566591}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6264810385630554724
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +45,7 @@ GameObject:
   - component: {fileID: 2646818719161048038}
   - component: {fileID: 6504173615438908055}
   - component: {fileID: 3381170364361148248}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +179,7 @@ GameObject:
   - component: {fileID: 1502453514384413155}
   - component: {fileID: 7916243401705521254}
   - component: {fileID: 5800457631631358494}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Triangle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +313,7 @@ GameObject:
   - component: {fileID: 4827110960410947863}
   - component: {fileID: 5462121886507258925}
   - component: {fileID: 2723949559642365142}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Triangle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

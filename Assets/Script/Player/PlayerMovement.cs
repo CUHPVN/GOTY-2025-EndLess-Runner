@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float JumpForce;
     [SerializeField] float FlyForce;
+    [SerializeField] float ZiczacForce;
 
 
     void Start()
@@ -32,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
             case StateManager.States.FlyState:
                 Fly();
                 break;
+            case StateManager.States.ZiczacState:
+                Ziczac();
+                break;
             default:
                 break;
         }
@@ -42,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Move()
     {
+        rb.gravityScale = 1f;
         IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
         if (Input.GetKey(KeyCode.Space) && IsGrounded)
         {
@@ -50,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Fly()
     {
+        rb.gravityScale = 1f;
         if (rb.linearVelocityY > 15f)
         {
             rb.linearVelocityY = 15f;
@@ -68,4 +74,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Ziczac()
+    {
+        ZiczacForce = MapSpawner.Instance.GetBaseSpeed();
+        rb.gravityScale = 0f;
+        float temp = -1f;
+        if (Input.GetKey(KeyCode.Space))
+        {
+            temp = 1f;
+            transform.rotation = Quaternion.Euler(0, 0, 45f);
+        }
+        else
+        {
+            temp = -1f;
+            transform.rotation = Quaternion.Euler(0, 0, -45f);
+        }
+        rb.linearVelocity = new Vector2(ZiczacForce, ZiczacForce * temp);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            Debug.Log("Dead");
+        }
+    }
 }

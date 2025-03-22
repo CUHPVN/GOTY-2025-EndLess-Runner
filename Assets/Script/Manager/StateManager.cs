@@ -3,7 +3,7 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     public static StateManager Instance { get; private set; }
-    public enum States { JumpState, FlyState };
+    public enum States { JumpState, FlyState, ZiczacState };
     public States CurrentStates;
     private void Awake()
     {
