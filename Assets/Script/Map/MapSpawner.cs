@@ -7,8 +7,11 @@ public class MapSpawner : MonoBehaviour
 {
     public static MapSpawner Instance {  get; private set; }
     [SerializeField] private float speed=2f;
-    [SerializeField] private List<Transform> prefabs = new List<Transform>();
-    [SerializeField] private string padName="PadJump_1";
+    [SerializeField] private List<Transform> jumpStatePrefabs = new List<Transform>();
+    [SerializeField] private List<Transform> flyStatePrefabs = new List<Transform>();
+    [SerializeField] private List<Transform> ziczacStatePrefabs = new List<Transform>();
+    private string padName;
+
     void Awake()
     {
         Instance = this;
@@ -24,7 +27,18 @@ public class MapSpawner : MonoBehaviour
     }
     public void SpawningWithPos(Vector3 pos)
     {
-        padName = prefabs[UnityEngine.Random.Range(0,prefabs.Count)].name;
+        StateManager.States state = StateManager.Instance.GetState();
+        switch (state){
+            case StateManager.States.JumpState:
+                padName = jumpStatePrefabs[UnityEngine.Random.Range(0, jumpStatePrefabs.Count)].name;
+                break;
+            case StateManager.States.FlyState:
+                padName = flyStatePrefabs[UnityEngine.Random.Range(0, flyStatePrefabs.Count)].name;
+                break;
+            default:
+                padName = jumpStatePrefabs[UnityEngine.Random.Range(0, jumpStatePrefabs.Count)].name;
+                break;
+        }
         Transform pad = SpawnManager.Instance.Spawn(this.padName, pos.x, pos.y, Quaternion.identity);
         if (pad != null)
             pad.gameObject.SetActive(true);
