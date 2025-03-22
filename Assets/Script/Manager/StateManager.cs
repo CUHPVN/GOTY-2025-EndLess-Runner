@@ -9,4 +9,14 @@ public class StateManager : MonoBehaviour
     {
         CurrentStates = States.JumpState;
     }
+
+    public States GetState()
+    {
+        return CurrentStates;
+    }
+
+    public void ChangeState(States NewState)
+    {
+        CurrentStates = NewState;
+    }
 }

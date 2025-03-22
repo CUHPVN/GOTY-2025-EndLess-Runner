@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (StM.CurrentStates)
+        switch (StM.GetState())
         {
             case StateManager.States.JumpState:
                 Move();
@@ -54,7 +54,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddForce(transform.up * FlyForce, ForceMode2D.Force);
+            rb.gravityScale = -1;
+        }
+        else
+        {
+            rb.gravityScale = 1;
         }
     }
 
