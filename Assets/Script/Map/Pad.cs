@@ -3,6 +3,7 @@ using UnityEngine;
 public class Pad : MonoBehaviour
 {
     private Transform cam;
+    [SerializeField] float spawnDistance = 40f;
     private bool spawn=false;
     private void OnEnable()
     {
@@ -22,8 +23,9 @@ public class Pad : MonoBehaviour
     {
         if (cam != null)
         {
-            if (!spawn && Vector2.Distance(transform.position, cam.position)<=1f)
+            if (!spawn && Vector2.Distance(transform.position, cam.position)<10f)
             {
+                MapSpawner.Instance.SpawningWithPos(transform.position + new Vector3(spawnDistance,0,0));
                 spawn=true;
             }
         }

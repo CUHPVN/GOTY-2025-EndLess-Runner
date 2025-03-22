@@ -9,7 +9,6 @@ public class ObjectFly : MonoBehaviour
 
     protected void Awake()
     {
-        movespeed = MapSpawner.Instance.GetBaseSpeed();
     }
     private void FixedUpdate()
     {

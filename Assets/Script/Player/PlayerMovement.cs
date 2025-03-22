@@ -15,14 +15,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float FlyForce;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         StM = GameObject.FindGameObjectWithTag("StateManager").GetComponent<StateManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.42f), CapsuleDirection2D.Vertical, 0, GroundLayer);

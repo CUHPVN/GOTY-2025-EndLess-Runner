@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     {
         instance = this;
         holder = GameObject.Find("Holder");
-        //this.LoadPrefabs();
+        this.LoadPrefabs();
     }
     void Start()
     {
