@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask GroundLayer;
     StateManager StM;
 
+    [SerializeField] Transform GroundCollider;
+    bool GroundCollided = false;
+
     [SerializeField] float JumpForce;
     [SerializeField] float FlyForce;
 
@@ -22,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.42f), CapsuleDirection2D.Vertical, 0, GroundLayer);
         switch (StM.GetState())
         {
             case StateManager.States.JumpState:
@@ -32,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
                 break;
             default:
                 break;
+        }
+        if (GroundCollided)
+        {
+            Debug.Log("Dead");
         }
     }
     private void Move()
