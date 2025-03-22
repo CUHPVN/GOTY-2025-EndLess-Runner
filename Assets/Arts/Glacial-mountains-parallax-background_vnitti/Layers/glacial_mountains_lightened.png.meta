@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      glacial_mountains_lightened_0: -5157253929585866776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

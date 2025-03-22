@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Glacial_Mountains-Cover_0: -4399200303770078160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
