@@ -46,6 +46,15 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Move()
     {
+        if (rb.linearVelocity.y < 0f)
+        {
+            rb.gravityScale = 2.5f;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -15f));
+        }
+        else
+        {
+            rb.gravityScale = 1f;
+        }
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.gravityScale = 1f;
         IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
