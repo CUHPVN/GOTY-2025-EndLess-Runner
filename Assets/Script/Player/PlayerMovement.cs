@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Move()
     {
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.gravityScale = 1f;
         IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
         if (Input.GetKey(KeyCode.Space) && IsGrounded)
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Fly()
     {
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.gravityScale = 1f;
         if (rb.linearVelocityY > 15f)
         {
