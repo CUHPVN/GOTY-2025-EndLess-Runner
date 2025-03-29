@@ -17,10 +17,6 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] float ZiczacForce;
 
 
-
-
-	bool isCrouch = false;
-
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -66,12 +62,6 @@ public class PlayerMovement : MonoBehaviour
 		if ((Input.GetAxis("Jump") == 1f || Input.GetMouseButton(0)) && IsGrounded)
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
-		}
-		//Nguyên bắt làm dmm
-		if (Input.GetKey(KeyCode.DownArrow) && IsGrounded && !isCrouch)
-		{
-			isCrouch = true;
-			StartCoroutine(Crouch());
 		}
 	}
 	private void Fly()
@@ -119,13 +109,5 @@ public class PlayerMovement : MonoBehaviour
 		{
 			Debug.Log("Dead");
 		}
-	}
-	IEnumerator Crouch()
-	{
-		rb.linearVelocityY = -30;
-		transform.localScale = new Vector3(1f, 0.5f, 1f);
-		yield return new WaitForSeconds(1f);
-		transform.localScale = new Vector3(1f, 1f, 1f);
-		isCrouch = false;
 	}
 }

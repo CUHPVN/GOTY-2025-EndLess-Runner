@@ -5,7 +5,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
     TextMeshProUGUI ScoreText;
-    float Score = 0;
+    public float Score = 0;
     public int Multiplyer;
 
     void Awake()
@@ -21,12 +21,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         ScoreText.text = $"Score: {(int)Score}";
     }
     private void FixedUpdate()
     {
-        Score += 1f * Multiplyer * 0.1f;
+        Score += 1f * Multiplyer * 0.3f;
     }
 
     public float GetScore()
