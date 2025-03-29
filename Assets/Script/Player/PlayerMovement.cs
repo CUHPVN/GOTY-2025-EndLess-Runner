@@ -29,7 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update()
 	{
-		GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.42f), CapsuleDirection2D.Vertical, 0, GroundLayer);
+		
+		GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, 0, GroundLayer);
 		switch (StM.GetState())
 		{
 			case StateManager.States.JumpState:
@@ -62,10 +63,11 @@ public class PlayerMovement : MonoBehaviour
 		}
 		transform.rotation = Quaternion.Euler(0, 0, 0);
 		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
-		if (Input.GetKey(KeyCode.Space) && IsGrounded)
+		if (Input.GetAxis("Jump") == 1f && IsGrounded)
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
 		}
+		//Nguyên bắt làm dmm
 		if (Input.GetKey(KeyCode.DownArrow) && IsGrounded && !isCrouch)
 		{
 			isCrouch = true;
@@ -84,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			rb.linearVelocityY = -15f;
 		}
-		if (Input.GetKey(KeyCode.Space))
+		if (Input.GetAxis("Jump") == 1f)
 		{
 			rb.gravityScale = -1;
 		}
@@ -99,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 		ZiczacForce = MapSpawner.Instance.GetBaseSpeed();
 		rb.gravityScale = 0f;
 		float temp = -1f;
-		if (Input.GetKey(KeyCode.Space))
+		if (Input.GetAxis("Jump") == 1f)
 		{
 			temp = 1f;
 			transform.rotation = Quaternion.Euler(0, 0, 45f);
