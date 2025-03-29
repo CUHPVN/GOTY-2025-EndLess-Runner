@@ -19,10 +19,6 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
-
-
-
 	bool isCrouch = false;
 
 	void Start()
