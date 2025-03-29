@@ -4379,7 +4379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4fc4f043f647648acf26ff67b5262b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 9
   jumpStatePrefabs:
   - {fileID: 649052910}
   - {fileID: 1779543278}
@@ -4970,6 +4970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d58fbc04c33c9b43afa9add5b25a688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
   Multiplyer: 1
 --- !u!1 &1837393997
 GameObject:
