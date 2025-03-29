@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 		transform.rotation = Quaternion.Euler(0, 0, 0);
 		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
-		if (Input.GetAxis("Jump") == 1f && IsGrounded)
+		if ((Input.GetAxis("Jump") == 1f || Input.GetMouseButton(0)) && IsGrounded)
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
 		}
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			rb.linearVelocityY = -15f;
 		}
-		if (Input.GetAxis("Jump") == 1f)
+		if (Input.GetAxis("Jump") == 1f ||  Input.GetMouseButton(0))
 		{
 			rb.gravityScale = -1;
 		}
@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 		ZiczacForce = MapSpawner.Instance.GetBaseSpeed();
 		rb.gravityScale = 0f;
 		float temp = -1f;
-		if (Input.GetAxis("Jump") == 1f)
+		if (Input.GetAxis("Jump") == 1f || Input.GetMouseButton(0))
 		{
 			temp = 1f;
 			transform.rotation = Quaternion.Euler(0, 0, 45f);
