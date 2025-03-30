@@ -15,7 +15,7 @@ public class JumpNode : MonoBehaviour
 
     private void Update()
 	{
-		if(stay && Input.GetAxis("Jump") == 1f)
+		if(stay && Input.GetButtonDown("Jump"))
 		{
 			playerrb.linearVelocity = new Vector2(playerrb.linearVelocity.x, Force);
 			stay = false;

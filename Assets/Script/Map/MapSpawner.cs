@@ -8,6 +8,7 @@ public class MapSpawner : MonoBehaviour
 	[SerializeField] private List<Transform> jumpStatePrefabs = new List<Transform>();
 	[SerializeField] private List<Transform> flyStatePrefabs = new List<Transform>();
 	[SerializeField] private List<Transform> ziczacStatePrefabs = new List<Transform>();
+	[SerializeField] private List<Transform> spiderStatePrefabs = new List<Transform>();
 	private string padName;
 
 	void Awake()
@@ -36,6 +37,9 @@ public class MapSpawner : MonoBehaviour
 				break;
 			case StateManager.States.ZiczacState:
 				padName = ziczacStatePrefabs[UnityEngine.Random.Range(0, ziczacStatePrefabs.Count)].name;
+				break;
+			case StateManager.States.Spider:
+				padName = spiderStatePrefabs[UnityEngine.Random.Range(0, spiderStatePrefabs.Count)].name;
 				break;
 			default:
 				padName = jumpStatePrefabs[UnityEngine.Random.Range(0, jumpStatePrefabs.Count)].name;
