@@ -1,11 +1,18 @@
 using System.Collections;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using Physics2D = Nomnom.RaycastVisualization.VisualPhysics2D;
+#else
+using Physics2D = UnityEngine.Physics2D;
+#endif
+
 public class PlayerMovement : MonoBehaviour
 {
 	Rigidbody2D rb;
 	bool IsGrounded;
 	[SerializeField] Transform GroundCheck;
+	[SerializeField] Transform SpiderTpCheck;
 	[SerializeField] LayerMask GroundLayer;
 	StateManager StM;
 
@@ -16,10 +23,9 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] float FlyForce;
 	[SerializeField] float ZiczacForce;
 
+	Vector2 TpLocation;
+	[SerializeField] bool flipped = false;
 
-
-
-	bool isCrouch = false;
 
 	void Start()
 	{
@@ -29,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update()
 	{
-		
-		GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, 0, GroundLayer);
+		transform.position = new Vector3(-9f, transform.position.y, transform.position.z);
+		GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, transform.rotation.eulerAngles.z, GroundLayer);
 		switch (StM.GetState())
 		{
 			case StateManager.States.JumpState:
@@ -41,6 +47,9 @@ public class PlayerMovement : MonoBehaviour
 				break;
 			case StateManager.States.ZiczacState:
 				Ziczac();
+				break;
+			case StateManager.States.Spider:
+				Spider();
 				break;
 			default:
 				break;
@@ -61,22 +70,14 @@ public class PlayerMovement : MonoBehaviour
 		{
 			rb.gravityScale = 1f;
 		}
-		transform.rotation = Quaternion.Euler(0, 0, 0);
 		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
-		if ((Input.GetAxis("Jump") == 1f || Input.GetMouseButton(0)) && IsGrounded)
+		if ((Input.GetButton("Jump")|| Input.GetMouseButton(0)) && IsGrounded)
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
-		}
-		//Nguyên bắt làm dmm
-		if (Input.GetKey(KeyCode.DownArrow) && IsGrounded && !isCrouch)
-		{
-			isCrouch = true;
-			StartCoroutine(Crouch());
 		}
 	}
 	private void Fly()
 	{
-		transform.rotation = Quaternion.Euler(0, 0, 0);
 		rb.gravityScale = 1f;
 		if (rb.linearVelocityY > 15f)
 		{
@@ -86,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			rb.linearVelocityY = -15f;
 		}
-		if (Input.GetAxis("Jump") == 1f ||  Input.GetMouseButton(0))
+		if (Input.GetButton("Jump") || Input.GetMouseButton(0))
 		{
 			rb.gravityScale = -1;
 		}
@@ -101,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
 		ZiczacForce = MapSpawner.Instance.GetBaseSpeed();
 		rb.gravityScale = 0f;
 		float temp = -1f;
-		if (Input.GetAxis("Jump") == 1f || Input.GetMouseButton(0))
+		if (Input.GetButton("Jump") || Input.GetMouseButton(0))
 		{
 			temp = 1f;
 			transform.rotation = Quaternion.Euler(0, 0, 45f);
@@ -113,19 +114,71 @@ public class PlayerMovement : MonoBehaviour
 		}
 		rb.linearVelocity = new Vector2(ZiczacForce, ZiczacForce * temp);
 	}
+
+	private void Spider()
+	{
+
+		Vector3 currentRotation = transform.rotation.eulerAngles;
+		RaycastHit2D hit = Physics2D.BoxCast(SpiderTpCheck.transform.position, new Vector2(1f, 0.9f), 0f, SpiderTpCheck.transform.up, Mathf.Infinity, GroundLayer);
+		if (hit)
+		{
+			TpLocation = hit.point;
+		}
+		else
+		{
+			TpLocation = transform.position;
+		}
+		if (rb.linearVelocity.y < 0f)
+		{
+			if (!flipped)
+			{
+				rb.gravityScale = 2f;
+			}
+			else
+			{
+				rb.gravityScale = -2f;
+			}
+			rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -15f));
+		}
+		else
+		{
+			if (!flipped)
+			{
+				rb.gravityScale = 1f;
+			}
+			else
+			{
+				rb.gravityScale = -1f;
+			}
+		}
+		if (flipped)
+		{
+			transform.rotation = Quaternion.Euler(180f, 0f, 0f);
+		}
+		else if (!flipped)
+		{
+			transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+		}
+		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
+		if ((Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0)) && IsGrounded && hit)
+		{
+			if(TpLocation.y >= 0)
+			{
+				transform.position = new Vector3(transform.position.x, TpLocation.y - 0.5f, transform.position.z);
+			}
+			else if(TpLocation.y <= 0)
+			{
+				transform.position = new Vector3(transform.position.x, TpLocation.y + 0.5f, transform.position.z);
+			}
+			flipped = !flipped;
+			transform.rotation = Quaternion.Euler(currentRotation.x + 180f, currentRotation.y, currentRotation.z);
+		}
+	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.CompareTag("Trap"))
 		{
 			Debug.Log("Dead");
 		}
-	}
-	IEnumerator Crouch()
-	{
-		rb.linearVelocityY = -30;
-		transform.localScale = new Vector3(1f, 0.5f, 1f);
-		yield return new WaitForSeconds(1f);
-		transform.localScale = new Vector3(1f, 1f, 1f);
-		isCrouch = false;
 	}
 }

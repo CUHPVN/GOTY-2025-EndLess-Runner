@@ -19,7 +19,7 @@ public class SParallax2D : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	void FixedUpdate()
 	{
 		movement = StartPos - transform.position.x;
 
