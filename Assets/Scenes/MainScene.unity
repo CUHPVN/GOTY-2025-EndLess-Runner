@@ -3071,7 +3071,7 @@ CompositeCollider2D:
     m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
   m_CompositeGameObject: {fileID: 140346926}
 --- !u!50 &140346931
 Rigidbody2D:
@@ -3407,8 +3407,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   GroundCollider: {fileID: 143815253}
-  JumpForce: 15
-  FlyForce: 30
+  JumpForce: 16
+  FlyGravityScale: 1.5
   ZiczacForce: 5
   flipped: 0
 --- !u!50 &250850313
@@ -3423,9 +3423,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: c46fb17307947664baab7a88ae3027c4, type: 2}
   m_IncludeLayers:
@@ -3814,7 +3814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &455709377
 Transform:
   m_ObjectHideFlags: 0
@@ -6489,8 +6489,8 @@ CompositeCollider2D:
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
+  m_OffsetDistance: 0
+  m_UseDelaunayMesh: 1
   m_CompositeGameObject: {fileID: 469290344}
 --- !u!50 &469290349
 Rigidbody2D:
@@ -14967,20 +14967,38 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1025815065}
+    m_ColliderPaths:
+    - - X: 200000000
+        Y: 110000000
+      - X: -200000000
+        Y: 110000000
+      - X: -200000000
+        Y: 80000000
+      - X: 200000000
+        Y: 80000000
+    - - X: 200000000
+        Y: -80000000
+      - X: -200000000
+        Y: -80000000
+      - X: -200000000
+        Y: -110000000
+      - X: 200000000
+        Y: -110000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 19.999971, y: 8}
-      - {x: 19.999971, y: 11}
-      - {x: -20, y: 10.99997}
-      - {x: -19.999971, y: 8}
-    - - {x: 19.999971, y: -11}
-      - {x: 19.999971, y: -8}
-      - {x: -20, y: -8.00003}
-      - {x: -19.999971, y: -11}
+    - - {x: 20, y: 11}
+      - {x: -20, y: 11}
+      - {x: -20, y: 8}
+      - {x: 20, y: 8}
+    - - {x: 20, y: -8}
+      - {x: -20, y: -8}
+      - {x: -20, y: -11}
+      - {x: 20, y: -11}
   m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
+  m_OffsetDistance: 0
+  m_UseDelaunayMesh: 1
   m_CompositeGameObject: {fileID: 1025815059}
 --- !u!50 &1025815064
 Rigidbody2D:
@@ -19084,8 +19102,8 @@ CompositeCollider2D:
       - {x: -20, y: -8.00003}
       - {x: -19.999971, y: -11}
   m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
+  m_OffsetDistance: 0
+  m_UseDelaunayMesh: 1
   m_CompositeGameObject: {fileID: 1496862751}
 --- !u!50 &1496862756
 Rigidbody2D:
@@ -21767,17 +21785,17 @@ CompositeCollider2D:
   m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
-    - - {x: 19.999971, y: 8}
-      - {x: 19.999971, y: 11}
-      - {x: -20, y: 10.99997}
-      - {x: -19.999971, y: 8}
-    - - {x: 19.999971, y: -11}
-      - {x: 19.999971, y: -8}
-      - {x: -20, y: -8.00003}
-      - {x: -19.999971, y: -11}
+    - - {x: 20, y: 11}
+      - {x: -20, y: 11}
+      - {x: -20, y: 8}
+      - {x: 20, y: 8}
+    - - {x: 20, y: -8}
+      - {x: -20, y: -8}
+      - {x: -20, y: -11}
+      - {x: 20, y: -11}
   m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
+  m_OffsetDistance: 0
+  m_UseDelaunayMesh: 1
   m_CompositeGameObject: {fileID: 1589706256}
 --- !u!50 &1589706261
 Rigidbody2D:
@@ -21843,7 +21861,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
 --- !u!1 &1601709876
 GameObject:
   m_ObjectHideFlags: 0
@@ -25024,10 +25042,18 @@ CompositeCollider2D:
   m_EdgeRadius: 0
   m_ColliderPaths: []
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 20, y: 11}
+      - {x: -20, y: 11}
+      - {x: -20, y: 8}
+      - {x: 20, y: 8}
+    - - {x: 20, y: -8}
+      - {x: -20, y: -8}
+      - {x: -20, y: -11}
+      - {x: 20, y: -11}
   m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
+  m_OffsetDistance: 0
+  m_UseDelaunayMesh: 1
   m_CompositeGameObject: {fileID: 1689220472}
 --- !u!50 &1689220477
 Rigidbody2D:

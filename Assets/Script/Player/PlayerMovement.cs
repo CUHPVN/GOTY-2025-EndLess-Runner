@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 	bool GroundCollided = false;
 
 	[SerializeField] float JumpForce;
-	[SerializeField] float FlyForce;
+	[SerializeField] float FlyGravityScale;
 	[SerializeField] float ZiczacForce;
 
 	Vector2 TpLocation;
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (rb.linearVelocity.y < 0f)
 		{
-			rb.gravityScale = 2f;
+			rb.gravityScale = 1.5f;
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -15f));
 		}
 		else
@@ -75,10 +75,18 @@ public class PlayerMovement : MonoBehaviour
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
 		}
+		else if(Input.GetButtonUp("Jump") || Input.GetMouseButtonUp(0))
+		{
+			if(rb.linearVelocityY > 0)
+			{
+				
+				rb.linearVelocity = new Vector2(rb.linearVelocityX, rb.linearVelocityY * 0.2f);
+			}
+		}
 	}
 	private void Fly()
 	{
-		rb.gravityScale = 1f;
+		rb.gravityScale = FlyGravityScale;
 		if (rb.linearVelocityY > 15f)
 		{
 			rb.linearVelocityY = 15f;
@@ -89,11 +97,11 @@ public class PlayerMovement : MonoBehaviour
 		}
 		if (Input.GetButton("Jump") || Input.GetMouseButton(0))
 		{
-			rb.gravityScale = -1;
+			rb.gravityScale = -FlyGravityScale;
 		}
 		else
 		{
-			rb.gravityScale = 1;
+			rb.gravityScale = FlyGravityScale;
 		}
 	}
 
