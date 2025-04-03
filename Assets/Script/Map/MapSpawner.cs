@@ -62,7 +62,7 @@ public class MapSpawner : MonoBehaviour
 		}
 		else if (Score >= 1000 && Score <= 10000f)
 		{
-			speed = Mathf.Sqrt((Score - 100) / 11) + 5;
+			speed = Mathf.Sqrt((Score - 100) / 11);
 		}
 		else
 		{
