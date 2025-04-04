@@ -3212,25 +3212,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 140346932}
-    m_ColliderPaths:
-    - - X: 200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 79666664
-      - X: 200333328
-        Y: 79666664
-    - - X: 200333328
-        Y: -79666664
-      - X: -200333328
-        Y: -79666664
-      - X: -200333328
-        Y: -110333336
-      - X: 200333328
-        Y: -110333336
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 20.033304, y: 7.9666667}
@@ -3359,7 +3341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &144125296
 Transform:
   m_ObjectHideFlags: 0
@@ -3849,7 +3831,7 @@ GameObject:
   - component: {fileID: 383415333}
   - component: {fileID: 383415332}
   - component: {fileID: 383415331}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Trap
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -4692,7 +4674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &455709377
 Transform:
   m_ObjectHideFlags: 0
@@ -7373,25 +7355,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 469290350}
-    m_ColliderPaths:
-    - - X: 200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 79666664
-      - X: 200333328
-        Y: 79666664
-    - - X: 200333328
-        Y: -79666664
-      - X: -200333328
-        Y: -79666664
-      - X: -200333328
-        Y: -110333336
-      - X: 200333328
-        Y: -110333336
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 20.033333, y: 11.033334}
@@ -13858,7 +13822,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.03333336, y: 0.03333336, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -16399,17 +16363,35 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1025815065}
+    m_ColliderPaths:
+    - - X: 200333328
+        Y: 110333336
+      - X: -200333328
+        Y: 110333336
+      - X: -200333328
+        Y: 79666664
+      - X: 200333328
+        Y: 79666664
+    - - X: 200333328
+        Y: -79666664
+      - X: -200333328
+        Y: -79666664
+      - X: -200333328
+        Y: -110333336
+      - X: 200333328
+        Y: -110333336
   m_CompositePaths:
     m_Paths:
-    - - {x: 20, y: 11}
-      - {x: -20, y: 11}
-      - {x: -20, y: 8}
-      - {x: 20, y: 8}
-    - - {x: 20, y: -8}
-      - {x: -20, y: -8}
-      - {x: -20, y: -11}
-      - {x: 20, y: -11}
+    - - {x: 20.033333, y: 11.033334}
+      - {x: -20.033333, y: 11.033334}
+      - {x: -20.033333, y: 7.9666667}
+      - {x: 20.033333, y: 7.9666667}
+    - - {x: 20.033333, y: -7.9666667}
+      - {x: -20.033333, y: -7.9666667}
+      - {x: -20.033333, y: -11.033334}
+      - {x: 20.033333, y: -11.033334}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0
   m_UseDelaunayMesh: 1
@@ -16712,7 +16694,7 @@ GameObject:
   - component: {fileID: 1086019817}
   - component: {fileID: 1086019816}
   - component: {fileID: 1086019815}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Trap
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -17442,25 +17424,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1114980916}
-    m_ColliderPaths:
-    - - X: 200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 79666664
-      - X: 200333328
-        Y: 79666664
-    - - X: 200333328
-        Y: -79666664
-      - X: -200333328
-        Y: -79666664
-      - X: -200333328
-        Y: -110333336
-      - X: 200333328
-        Y: -110333336
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 20.033333, y: 11.033334}
@@ -28970,11 +28934,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1962256289876451479, guid: f2628b5790b55d74ca437fa6033fe100, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.49
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 1962256289876451479, guid: f2628b5790b55d74ca437fa6033fe100, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.62
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1962256289876451479, guid: f2628b5790b55d74ca437fa6033fe100, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29036,7 +29000,7 @@ GameObject:
   - component: {fileID: 1648936641}
   - component: {fileID: 1648936640}
   - component: {fileID: 1648936639}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Trap
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -29401,23 +29365,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
+  count: 0
+  pivot: 3
+  spawnDistance: 40
+  currentState: 0
   jumpStatePrefabs:
-  - {fileID: 649052910}
-  - {fileID: 649052910}
   - {fileID: 1779543278}
   - {fileID: 1969926206}
   - {fileID: 1715779943}
+  - {fileID: 649052910}
+  - {fileID: 649052910}
+  - {fileID: 649052910}
   flyStatePrefabs:
   - {fileID: 144125296}
   - {fileID: 1969926206}
   - {fileID: 1715779943}
   - {fileID: 1906736291}
   - {fileID: 1906736291}
+  - {fileID: 1906736291}
   ziczacStatePrefabs:
-  - {fileID: 43033026}
+  - {fileID: 1715779943}
   - {fileID: 144125296}
   - {fileID: 1779543278}
-  - {fileID: 43033026}
   - {fileID: 43033026}
   - {fileID: 43033026}
   - {fileID: 43033026}
@@ -29425,6 +29394,7 @@ MonoBehaviour:
   - {fileID: 144125296}
   - {fileID: 1779543278}
   - {fileID: 1969926206}
+  - {fileID: 532671993}
   - {fileID: 532671993}
   - {fileID: 532671993}
 --- !u!1 &1660991288
@@ -29457,14 +29427,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 455709377}
-  - {fileID: 532671993}
   - {fileID: 144125296}
   - {fileID: 1779543278}
   - {fileID: 1715779943}
   - {fileID: 1969926206}
-  - {fileID: 43033026}
   - {fileID: 649052910}
   - {fileID: 1906736291}
+  - {fileID: 43033026}
+  - {fileID: 532671993}
   m_Father: {fileID: 105875257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1678088566
@@ -32176,25 +32146,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1689220478}
-    m_ColliderPaths:
-    - - X: 200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 79666664
-      - X: 200333328
-        Y: 79666664
-    - - X: 200333328
-        Y: -79666664
-      - X: -200333328
-        Y: -79666664
-      - X: -200333328
-        Y: -110333336
-      - X: 200333328
-        Y: -110333336
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 20.033333, y: 11.033334}
@@ -32430,7 +32382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1715779943
 Transform:
   m_ObjectHideFlags: 0
@@ -32748,7 +32700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1779543278
 Transform:
   m_ObjectHideFlags: 0
@@ -33221,7 +33173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1969926206
 Transform:
   m_ObjectHideFlags: 0
@@ -36694,21 +36646,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1969926206}
     m_Modifications:
-    - target: {fileID: 2152277926427480018, guid: e88183461e6aec445aa64b389c12b823, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 6086756418418586404, guid: e88183461e6aec445aa64b389c12b823, type: 3}
       propertyPath: m_Name
       value: ZiczacPortal
       objectReference: {fileID: 0}
     - target: {fileID: 8160453569325244782, guid: e88183461e6aec445aa64b389c12b823, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.49
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 8160453569325244782, guid: e88183461e6aec445aa64b389c12b823, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.62
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8160453569325244782, guid: e88183461e6aec445aa64b389c12b823, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36761,11 +36709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365932029147206184, guid: ecda6319c5767884480c8cc60f249b54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.49
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 5365932029147206184, guid: ecda6319c5767884480c8cc60f249b54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.62
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5365932029147206184, guid: ecda6319c5767884480c8cc60f249b54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36823,11 +36771,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5137601194967784132, guid: 193ba8593c093844badd9ae8b913b87c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.49
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 5137601194967784132, guid: 193ba8593c093844badd9ae8b913b87c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.62
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5137601194967784132, guid: 193ba8593c093844badd9ae8b913b87c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36860,10 +36808,6 @@ PrefabInstance:
     - target: {fileID: 5137601194967784132, guid: 193ba8593c093844badd9ae8b913b87c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409743454333888811, guid: 193ba8593c093844badd9ae8b913b87c, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

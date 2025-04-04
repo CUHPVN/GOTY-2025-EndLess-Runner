@@ -48,10 +48,10 @@ public class PlayerMovement : MonoBehaviour
 			case StateManager.States.ZiczacState:
 				Ziczac();
 				break;
-			case StateManager.States.Spider:
+			case StateManager.States.SpiderState:
 				Spider();
 				break;
-			case StateManager.States.Dead:
+			case StateManager.States.DeadState:
 				Dead();
 				break;
 			default:
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 		if (GroundCollided)
 		{
-			StM.ChangeState(StateManager.States.Dead);
+			StM.ChangeState(StateManager.States.DeadState);
 			Debug.Log("Dead");
 		}
 	}
@@ -195,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Trap"))
 		{
-			StM.ChangeState(StateManager.States.Dead);
+			StM.ChangeState(StateManager.States.DeadState);
 			Debug.Log("Dead");
 		}
 	}

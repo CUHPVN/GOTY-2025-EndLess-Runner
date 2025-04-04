@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
 	{
 		isPause = PauseScene.activeSelf;
 		ScoreText.text = $"Score: {(int)Score}";
-		if(StateManager.Instance.GetState() == StateManager.States.Dead)
+		if(StateManager.Instance.GetState() == StateManager.States.DeadState)
 		{
 			Time.timeScale = 0f;
 			DeadScene.SetActive(true);

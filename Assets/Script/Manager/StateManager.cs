@@ -3,7 +3,7 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
 	public static StateManager Instance { get; private set; }
-	public enum States { JumpState, FlyState, ZiczacState, Spider, Dead};
+	public enum States { JumpState, FlyState, ZiczacState, SpiderState, DeadState};
 	public States CurrentStates;
 	
 	GameObject Player;
@@ -26,7 +26,7 @@ public class StateManager : MonoBehaviour
 
 	public void ChangeState(States NewState)
 	{
-		if(NewState != States.Dead)
+		if(NewState != States.DeadState)
 		{
 			Player.transform.rotation = Quaternion.Euler(0, 0, 0);
 		}
