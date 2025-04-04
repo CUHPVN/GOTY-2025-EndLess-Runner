@@ -3,7 +3,7 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
 	public static StateManager Instance { get; private set; }
-	public enum States { JumpState, FlyState, ZiczacState, Spider};
+	public enum States { JumpState, FlyState, ZiczacState, Spider, Dead};
 	public States CurrentStates;
 	
 	GameObject Player;
@@ -13,6 +13,7 @@ public class StateManager : MonoBehaviour
 	}
 	private void Start()
 	{
+		Time.timeScale = 1f;
 		CurrentStates = States.JumpState;
 		Player = GameObject.FindGameObjectWithTag("Player");
 		
@@ -25,7 +26,10 @@ public class StateManager : MonoBehaviour
 
 	public void ChangeState(States NewState)
 	{
-		Player.transform.rotation = Quaternion.Euler(0, 0, 0);
+		if(NewState != States.Dead)
+		{
+			Player.transform.rotation = Quaternion.Euler(0, 0, 0);
+		}
 		Player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
 		CurrentStates = NewState;
 	}

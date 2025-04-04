@@ -51,11 +51,15 @@ public class PlayerMovement : MonoBehaviour
 			case StateManager.States.Spider:
 				Spider();
 				break;
+			case StateManager.States.Dead:
+				Dead();
+				break;
 			default:
 				break;
 		}
 		if (GroundCollided)
 		{
+			StM.ChangeState(StateManager.States.Dead);
 			Debug.Log("Dead");
 		}
 	}
@@ -182,10 +186,16 @@ public class PlayerMovement : MonoBehaviour
 			transform.rotation = Quaternion.Euler(currentRotation.x + 180f, currentRotation.y, currentRotation.z);
 		}
 	}
+	private void Dead()
+	{
+		 // prototype thôi nên đổi
+		// DeadState Logic, Làm ơn đừng cho người chơi revive vì tôi ko thích :)
+	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.CompareTag("Trap"))
 		{
+			StM.ChangeState(StateManager.States.Dead);
 			Debug.Log("Dead");
 		}
 	}
