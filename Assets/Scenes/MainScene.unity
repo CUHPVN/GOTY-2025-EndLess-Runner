@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 140346932}
   - component: {fileID: 140346931}
   - component: {fileID: 140346930}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3558,7 +3558,7 @@ MonoBehaviour:
   SpiderTpCheck: {fileID: 118263582}
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   GroundCollider: {fileID: 143815253}
   JumpForce: 16
   FlyGravityScale: 1.5
@@ -4746,7 +4746,7 @@ GameObject:
   - component: {fileID: 469290350}
   - component: {fileID: 469290349}
   - component: {fileID: 469290348}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8260,7 +8260,7 @@ GameObject:
   - component: {fileID: 731956506}
   - component: {fileID: 731956505}
   - component: {fileID: 731956504}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: NotTrapFFS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12968,7 +12968,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 530390475}
         m_TargetAssemblyTypeName: PauseScene, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13754,7 +13754,7 @@ GameObject:
   - component: {fileID: 1025815065}
   - component: {fileID: 1025815064}
   - component: {fileID: 1025815063}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17376,7 +17376,7 @@ GameObject:
   - component: {fileID: 1114980916}
   - component: {fileID: 1114980915}
   - component: {fileID: 1114980914}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20078,7 +20078,7 @@ GameObject:
   - component: {fileID: 1155634530}
   - component: {fileID: 1155634529}
   - component: {fileID: 1155634528}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23382,7 +23382,7 @@ GameObject:
   - component: {fileID: 1496862757}
   - component: {fileID: 1496862756}
   - component: {fileID: 1496862755}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26192,7 +26192,7 @@ GameObject:
   - component: {fileID: 1589706262}
   - component: {fileID: 1589706261}
   - component: {fileID: 1589706260}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29379,7 +29379,6 @@ MonoBehaviour:
   speed: 9
   count: 0
   pivot: 3
-  spawnDistance: 40
   currentState: 0
   jumpStatePrefabs:
   - {fileID: 1779543278}
@@ -29388,6 +29387,7 @@ MonoBehaviour:
   - {fileID: 649052910}
   - {fileID: 649052910}
   - {fileID: 649052910}
+  - {fileID: 0}
   flyStatePrefabs:
   - {fileID: 144125296}
   - {fileID: 1969926206}
@@ -29550,7 +29550,7 @@ GameObject:
   - component: {fileID: 1689220478}
   - component: {fileID: 1689220477}
   - component: {fileID: 1689220476}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33259,7 +33259,7 @@ GameObject:
   - component: {fileID: 1975160456}
   - component: {fileID: 1975160455}
   - component: {fileID: 1975160454}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
