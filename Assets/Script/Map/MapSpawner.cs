@@ -9,7 +9,6 @@ public class MapSpawner : MonoBehaviour
 	[SerializeField] private float speed = 2f;
 	[SerializeField] private int count = 0;
 	[SerializeField] private int pivot = Enum.GetNames(typeof(StateManager.States)).Length-2;
-    [SerializeField] private float spawnDistance = 40f;
     [SerializeField] StateManager.States currentState = StateManager.States.JumpState;
     [SerializeField] private List<Transform> jumpStatePrefabs = new List<Transform>();
 	[SerializeField] private List<Transform> flyStatePrefabs = new List<Transform>();

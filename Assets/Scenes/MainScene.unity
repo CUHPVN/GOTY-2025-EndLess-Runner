@@ -554,7 +554,6 @@ Transform:
   m_Children:
   - {fileID: 250850310}
   - {fileID: 2061742388}
-  - {fileID: 1098048236}
   - {fileID: 1660991289}
   - {fileID: 1656566724}
   m_Father: {fileID: 0}
@@ -17327,6 +17326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1098048236}
+  - component: {fileID: 1098048237}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -17348,8 +17348,20 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2006889246}
-  m_Father: {fileID: 105875257}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1098048237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098048234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc63e45851d9d848b57b1ef7f4b93f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1114980912
 GameObject:
   m_ObjectHideFlags: 0
@@ -36823,3 +36835,4 @@ SceneRoots:
   - {fileID: 105875257}
   - {fileID: 1218599799}
   - {fileID: 2033616546}
+  - {fileID: 1098048236}
