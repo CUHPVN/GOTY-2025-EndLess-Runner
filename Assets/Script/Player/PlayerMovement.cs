@@ -59,8 +59,16 @@ public class PlayerMovement : MonoBehaviour
 		}
 		if (GroundCollided)
 		{
-			StM.ChangeState(StateManager.States.DeadState);
-			Debug.Log("Dead");
+			if(PowerUp.Instance.ShieldActive)
+			{
+				//TODO: biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)
+				Debug.Log("biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)");
+			}
+			else
+			{	
+				StM.ChangeState(StateManager.States.DeadState);
+				Debug.Log("Dead");
+			}
 		}
 	}
 	private void Move()
@@ -195,8 +203,16 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Trap"))
 		{
-			StM.ChangeState(StateManager.States.DeadState);
-			Debug.Log("Dead");
+			if(PowerUp.Instance.ShieldActive)
+			{
+				//TODO: biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)
+				Debug.Log("biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)");
+			}
+			else
+			{	
+				StM.ChangeState(StateManager.States.DeadState);
+				Debug.Log("Dead");
+			}
 		}
 	}
 }
