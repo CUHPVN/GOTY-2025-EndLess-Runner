@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			rb.gravityScale = 1f;
 		}
-		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
+		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(1f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
 		if ((Input.GetButton("Jump")|| Input.GetMouseButton(0)) && IsGrounded)
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
