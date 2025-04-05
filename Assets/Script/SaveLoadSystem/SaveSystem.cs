@@ -19,8 +19,8 @@ public class SaveSystem
 	public static void Save()
 	{
 		HandleSaveData();
-		
-		File.WriteAllText(SaveFileName(),JsonUtility.ToJson(saveData, true));
+		Debug.Log("Save file: " + SaveFileName());
+        File.WriteAllText(SaveFileName(),JsonUtility.ToJson(saveData, true));
 	}
 	private static void HandleSaveData()
 	{
@@ -30,7 +30,13 @@ public class SaveSystem
 	
 	public static void Load()
 	{
-		string saveContent = File.ReadAllText(SaveFileName());
+		if(!File.Exists(SaveFileName()))
+        {
+            Debug.Log("Save file not found");
+			Save();
+            return;
+        }
+        string saveContent = File.ReadAllText(SaveFileName());
 		
 		saveData = JsonUtility.FromJson<SaveData>(saveContent);
 		HandleLoadData();
