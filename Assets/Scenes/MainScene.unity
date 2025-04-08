@@ -32174,8 +32174,8 @@ MonoBehaviour:
   pivot: 3
   currentState: 0
   jumpStatePrefabs:
-  - {fileID: 1779543278}
   - {fileID: 1969926206}
+  - {fileID: 1779543278}
   - {fileID: 1715779943}
   - {fileID: 649052910}
   - {fileID: 649052910}
