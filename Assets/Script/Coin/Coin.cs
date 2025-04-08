@@ -2,8 +2,19 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+	Animator anim;
+
 	public int amount = 1;
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void Start()
+	{
+		anim = GetComponent<Animator>();
+	}
+
+    private void Update()
+    {
+        anim.SetBool("X2",PowerUp.Instance.X2CoinActive);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.gameObject.CompareTag("Player"))
 		{
