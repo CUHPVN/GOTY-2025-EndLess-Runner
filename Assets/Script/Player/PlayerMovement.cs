@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] Transform GroundCheck;
 	[SerializeField] Transform SpiderTpCheck;
 	[SerializeField] LayerMask GroundLayer;
+	[SerializeField] LayerMask Collectable;
 	StateManager StM;
 
 	[SerializeField] Transform GroundCollider;
@@ -140,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
 
 		Vector3 currentRotation = transform.rotation.eulerAngles;
 		RaycastHit2D hit = Physics2D.BoxCast(SpiderTpCheck.transform.position, new Vector2(1f, 0.9f), 0f, SpiderTpCheck.transform.up, Mathf.Infinity, GroundLayer);
+		RaycastHit2D[] hitCollect = Physics2D.BoxCastAll(SpiderTpCheck.transform.position, new Vector2(1f, 0.9f), 0f, SpiderTpCheck.transform.up, 56.25f, Collectable);
 		if (hit)
 		{
 			TpLocation = hit.point;
@@ -182,6 +184,13 @@ public class PlayerMovement : MonoBehaviour
 		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
 		if ((Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0)) && IsGrounded && hit)
 		{
+			if(hitCollect != null)
+			{
+				foreach(RaycastHit2D Collect in hitCollect)
+				{
+					Collect.collider.gameObject.SendMessage("OnTriggerEnter2D",GetComponent<Collider2D>());  
+				}
+			}
 			if(TpLocation.y >= 0)
 			{
 				transform.position = new Vector3(transform.position.x, TpLocation.y - 0.5f, transform.position.z);
