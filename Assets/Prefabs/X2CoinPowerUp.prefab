@@ -101,7 +101,7 @@ Animator:
   m_GameObject: {fileID: 142410732373168296}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf9945f6d15f57441b6b12d20d582a9d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 70168600ff35fbc418a7ee36b64810ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377b3f28e1fa6584b9e947a4c5217a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPercentage: 0
+  SpawnPercentage: 0.2
 --- !u!58 &5104871686484211798
 CircleCollider2D:
   m_ObjectHideFlags: 0
