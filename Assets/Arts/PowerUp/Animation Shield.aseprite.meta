@@ -2,7 +2,17 @@ fileFormatVersion: 2
 guid: 80dc59e3855656d4894fbe6d2feb3d2d
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Shield Broken
+    second: {fileID: 7400000, guid: a2ae9699038fd0e4d92b63bc98b6e86a, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Shield Work
+    second: {fileID: 7400000, guid: 48bdbcd6077c8db4690d27e0fa6d3be4, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -98,7 +108,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638798765247984194
+  platformSettingsDirtyTick: 638799235505048620
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -580,6 +590,18 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 16384

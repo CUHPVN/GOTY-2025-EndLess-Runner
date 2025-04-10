@@ -19,6 +19,14 @@ public class Pad : MonoBehaviour
     {
         SpawnByDistance();
     }
+    public void SetSpawn(bool spawn)
+    {
+        this.spawn = spawn;
+    }
+    public bool GetSpawn()
+    {
+        return spawn;
+    }
     void SpawnByDistance()
     {
         if (cam != null)

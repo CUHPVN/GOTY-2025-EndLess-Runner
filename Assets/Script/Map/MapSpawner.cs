@@ -36,6 +36,14 @@ public class MapSpawner : MonoBehaviour
             if (pad != null)
                 pad.gameObject.SetActive(true);
     }
+    public Transform TransSpawnOnceWithPos(Vector2 pos)
+    {
+        padName = "PadBase";
+        Transform pad = SpawnManager.Instance.Spawn(this.padName, pos.x, pos.y, Quaternion.identity);
+        if (pad != null)
+		pad.gameObject.SetActive(true);
+		return pad;
+    }
     public void SpawningWithPos(Vector3 pos)
 	{
 		StateManager.States state = StateManager.Instance.GetState();
