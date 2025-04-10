@@ -10,10 +10,19 @@ public class PowerUp : MonoBehaviour
 	public bool ShieldActive = false;
 	public bool X2CoinActive = false;
 	
-	private void Awake()
-	{
-		Instance = this;
-	}
+	void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(this);
+    }
 
 	private void Update()
 	{
