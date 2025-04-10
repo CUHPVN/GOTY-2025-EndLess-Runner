@@ -5,10 +5,19 @@ public class CoinManager : MonoBehaviour
 	public static CoinManager Instance { get; private set; }
 	public int TotalCoin;
 	
-	private void Awake()
-	{
-		Instance = this;
-	}
+	void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(this);
+    }
 	
 	public void AddCoin(int amount)
 	{
