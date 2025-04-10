@@ -7,8 +7,8 @@ public class PowerUp : MonoBehaviour
 	public float ShieldDuration;
 	public float X2CoinDuration;
 	
-	float CurrentShieldDuration;
-	float CurrentX2CoinDuration;
+	public float CurrentShieldDuration;
+	public float CurrentX2CoinDuration;
 	
 	public bool ShieldActive = false;
 	public bool X2CoinActive = false;
