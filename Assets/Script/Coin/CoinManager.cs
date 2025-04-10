@@ -28,7 +28,10 @@ public class CoinManager : MonoBehaviour
 	{
 		TotalCoin -= amount;
 	}
-	
+	public int GetCoin()
+	{
+		return TotalCoin;
+	}
 	// SaveLoadSystem, cần lưu cái j thì tạo 2 hàm như thế này
 	public void Save(ref SaveCoinData data)
 	{

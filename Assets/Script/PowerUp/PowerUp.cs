@@ -7,22 +7,25 @@ public class PowerUp : MonoBehaviour
 	public float ShieldDuration;
 	public float X2CoinDuration;
 	
+	float CurrentShieldDuration;
+	float CurrentX2CoinDuration;
+	
 	public bool ShieldActive = false;
 	public bool X2CoinActive = false;
 	
 	void Awake()
-    {
-        if(Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(this);
-    }
+	{
+		if(Instance == null)
+		{
+			Instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+			return;
+		}
+		DontDestroyOnLoad(this);
+	}
 
 	private void Update()
 	{
@@ -35,31 +38,44 @@ public class PowerUp : MonoBehaviour
 		{
 			StartX2CoinPowerUp();
 		}
+		
+		
+		CurrentShieldDuration -= Time.deltaTime; 
+		if(CurrentShieldDuration >= 0)
+		{
+			ShieldActive = true;
+		}
+		else
+		{
+			ShieldActive = false;
+		}
+		CurrentX2CoinDuration -= Time.deltaTime;
+		if(CurrentX2CoinDuration >= 0)
+		{
+			X2CoinActive = true;
+		}
+		else
+		{
+			X2CoinActive = false;
+		}
+		
+		
 	}
 
 	public void StartShieldPowerUp()
 	{
-		StartCoroutine(ShieldPowerUp());
+		CurrentShieldDuration = ShieldDuration;
 	}
 	
-	IEnumerator ShieldPowerUp()
+	public void BreakShieldPowerUp()
 	{
-		ShieldActive = true;
-		yield return new WaitForSeconds(ShieldDuration);
-		ShieldActive = false;
+		CurrentShieldDuration = 0;
 	}
 	
 	
 	public void StartX2CoinPowerUp()
 	{
-		StartCoroutine(X2CoinPowerUp());
-	}
-	
-	IEnumerator X2CoinPowerUp()
-	{
-		X2CoinActive = true;
-		yield return new WaitForSeconds(X2CoinDuration);
-		X2CoinActive = false;
+		CurrentX2CoinDuration = X2CoinDuration;
 	}
 	
 	public void Save(ref PowerUpSaveData data)

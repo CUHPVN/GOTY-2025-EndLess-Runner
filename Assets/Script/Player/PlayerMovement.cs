@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		transform.position = new Vector3(-9f, transform.position.y, transform.position.z);
 		var collider = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, transform.rotation.eulerAngles.z, GroundLayer);
-        GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, transform.rotation.eulerAngles.z, GroundLayer);
+		GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, transform.rotation.eulerAngles.z, GroundLayer);
 		switch (StM.GetState())
 		{
 			case StateManager.States.JumpState:
@@ -63,12 +63,16 @@ public class PlayerMovement : MonoBehaviour
 		{
 			if(PowerUp.Instance.ShieldActive)
 			{
-                Transform CurrantMap = collider.transform.parent.parent.transform;
-                SpawnManager.Instance.Despawn(CurrantMap.transform);
-                Transform pad = MapSpawner.Instance.TransSpawnOnceWithPos(CurrantMap.transform.position);
-                pad.GetComponent<Pad>().SetSpawn(CurrantMap.GetComponent<Pad>().GetSpawn());
-                //TODO: biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)
-                //Debug.Log("biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)");
+				Transform CurrantMap = collider.transform.parent.parent.transform;
+				SpawnManager.Instance.Despawn(CurrantMap.transform);
+				Transform pad = MapSpawner.Instance.TransSpawnOnceWithPos(CurrantMap.transform.position);
+				pad.GetComponent<Pad>().SetSpawn(CurrantMap.GetComponent<Pad>().GetSpawn());
+				
+				
+				
+				PowerUp.Instance.BreakShieldPowerUp();
+				//TODO: biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)
+				//Debug.Log("biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)");
 			}
 			else
 			{	
@@ -222,7 +226,11 @@ public class PlayerMovement : MonoBehaviour
 				Transform CurrantMap = collision.transform.parent.parent.transform;
 				SpawnManager.Instance.Despawn(CurrantMap.transform);
 				Transform pad= MapSpawner.Instance.TransSpawnOnceWithPos(CurrantMap.transform.position);
-                pad.GetComponent<Pad>().SetSpawn(true);
+				pad.GetComponent<Pad>().SetSpawn(true);
+				
+				
+				
+				PowerUp.Instance.BreakShieldPowerUp();
 				//TODO: biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)
 				//Debug.Log("biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)");
 			}
