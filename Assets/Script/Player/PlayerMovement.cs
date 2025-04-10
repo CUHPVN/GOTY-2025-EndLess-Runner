@@ -63,13 +63,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			if(PowerUp.Instance.ShieldActive)
 			{
-				Transform CurrantMap = collider.transform.parent.parent.transform;
-				SpawnManager.Instance.Despawn(CurrantMap.transform);
-				Transform pad = MapSpawner.Instance.TransSpawnOnceWithPos(CurrantMap.transform.position);
-				pad.GetComponent<Pad>().SetSpawn(CurrantMap.GetComponent<Pad>().GetSpawn());
-				
-				
-				
+				MapSpawner.Instance.SetBase();
 				PowerUp.Instance.BreakShieldPowerUp();
 				//TODO: biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)
 				//Debug.Log("biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)");
@@ -223,14 +217,8 @@ public class PlayerMovement : MonoBehaviour
 		{
 			if(PowerUp.Instance.ShieldActive)
 			{
-				Transform CurrantMap = collision.transform.parent.parent.transform;
-				SpawnManager.Instance.Despawn(CurrantMap.transform);
-				Transform pad= MapSpawner.Instance.TransSpawnOnceWithPos(CurrantMap.transform.position);
-				pad.GetComponent<Pad>().SetSpawn(true);
-				
-				
-				
-				PowerUp.Instance.BreakShieldPowerUp();
+                MapSpawner.Instance.SetBase();
+                PowerUp.Instance.BreakShieldPowerUp();
 				//TODO: biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)
 				//Debug.Log("biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)");
 			}

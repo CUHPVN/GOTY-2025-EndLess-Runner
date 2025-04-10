@@ -14,4 +14,8 @@ public class DeadScene : MonoBehaviour
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
+    public void ReturnMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

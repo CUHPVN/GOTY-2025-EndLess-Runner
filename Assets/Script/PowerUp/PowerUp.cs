@@ -77,7 +77,26 @@ public class PowerUp : MonoBehaviour
 	{
 		CurrentX2CoinDuration = X2CoinDuration;
 	}
+	public void SetDuration(int index,float value)
+	{
+		switch(index)
+        {
+            case 0:
+                ShieldDuration = value;
+				Debug.Log("Shield Duration: " + ShieldDuration);
+                break;
+            case 1:
+                X2CoinDuration = value;
+                break;
+            default:
+                Debug.Log("Invalid index");
+                break;
+        }
+    }
 	
+
+	}
+	/*
 	public void Save(ref PowerUpSaveData data)
 	{
 		data.ShieldDurationData = ShieldDuration;
@@ -87,8 +106,8 @@ public class PowerUp : MonoBehaviour
 	{
 		ShieldDuration = data.ShieldDurationData;
 		X2CoinDuration = data.X2CoinDurationData;
-	}
-}
+	}*/
+
 [System.Serializable]
 public struct PowerUpSaveData
 {

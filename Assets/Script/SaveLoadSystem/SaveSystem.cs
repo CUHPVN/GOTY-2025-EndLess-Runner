@@ -1,5 +1,6 @@
 using System.IO;
 using UnityEngine;
+using static UpgradeManager;
 
 public class SaveSystem
 {
@@ -10,8 +11,9 @@ public class SaveSystem
 	{
 		// thêm loại data mới vào đây, VD ở đây thì cái tên của struct cần save trong file CoinManager là SaveCoinData
 		public SaveCoinData CoinData;
-		public PowerUpSaveData PowerUpData;
-	}
+		//public PowerUpSaveData PowerUpData;
+		public UpgradeSaveData UpgradeData;
+    }
 	public static string SaveFileName()
 	{
 		string saveFile = Application.persistentDataPath + "/save" + ".dat";//đổi tên file + tên đuôi nếu muốn
@@ -27,8 +29,9 @@ public class SaveSystem
 	{
 		// Thêm cái method mới cho save ở đây tạo tương tự cái này
 		CoinManager.Instance.Save(ref saveData.CoinData);
-		PowerUp.Instance.Save(ref saveData.PowerUpData);
-	}
+		//PowerUp.Instance.Save(ref saveData.PowerUpData);
+        UpgradeManager.Instance.Save(ref saveData.UpgradeData);
+    }
 	
 	public static void Load()
 	{
@@ -48,8 +51,9 @@ public class SaveSystem
 	{
 		// Thêm cái method mới cho load ở đây tạo tương tự cái này
 		CoinManager.Instance.Load(saveData.CoinData);
-		PowerUp.Instance.Load(saveData.PowerUpData);
-	}
+		//PowerUp.Instance.Load(saveData.PowerUpData);
+        UpgradeManager.Instance.Load(saveData.UpgradeData);
+    }
 	// cần Save ở đâu thì gọi SaveSystem.Save();
 	// cần Load Ở đâu thì gọi SaveSystem.Load();
 }

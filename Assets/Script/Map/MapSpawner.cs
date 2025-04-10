@@ -10,6 +10,7 @@ public class MapSpawner : MonoBehaviour
 	[SerializeField] private int count = 0;
 	[SerializeField] private int pivot = Enum.GetNames(typeof(StateManager.States)).Length-2;
     [SerializeField] StateManager.States currentState = StateManager.States.JumpState;
+	[SerializeField] private List<Transform> padApear = new List<Transform>();
     [SerializeField] private List<Transform> jumpStatePrefabs = new List<Transform>();
 	[SerializeField] private List<Transform> flyStatePrefabs = new List<Transform>();
 	[SerializeField] private List<Transform> ziczacStatePrefabs = new List<Transform>();
@@ -33,16 +34,44 @@ public class MapSpawner : MonoBehaviour
     {
         padName = "PadBase";
         Transform pad = SpawnManager.Instance.Spawn(this.padName, pos.x, pos.y, Quaternion.identity);
-            if (pad != null)
-                pad.gameObject.SetActive(true);
+        if (pad != null)
+		{
+            padApear.Add(pad);
+            pad.gameObject.SetActive(true);
+        }
+    }
+	public void RemovePad(Transform transform)
+	{
+        if (padApear.Contains(transform))
+        {
+            padApear.Remove(transform);
+        }
+        else
+        {
+            Debug.Log("Pad not found in the list");
+        }
+    }
+	public void SetBase()
+	{
+		List<Transform> padTemp = new List<Transform>();
+        foreach (Transform curpad in padApear)
+		{
+            SpawnManager.Instance.Despawn(curpad);
+            Transform pad = MapSpawner.Instance.TransSpawnOnceWithPos(curpad.transform.position);
+            pad.GetComponent<Pad>().SetSpawn(curpad.GetComponent<Pad>().GetSpawn());
+            padTemp.Add(pad);
+        }
+        padApear = new List<Transform>(padTemp);
     }
     public Transform TransSpawnOnceWithPos(Vector2 pos)
     {
         padName = "PadBase";
         Transform pad = SpawnManager.Instance.Spawn(this.padName, pos.x, pos.y, Quaternion.identity);
         if (pad != null)
-		pad.gameObject.SetActive(true);
-		return pad;
+		{
+            pad.gameObject.SetActive(true);
+        }
+        return pad;
     }
     public void SpawningWithPos(Vector3 pos)
 	{
@@ -69,7 +98,10 @@ public class MapSpawner : MonoBehaviour
 		}
 		Transform pad = SpawnManager.Instance.Spawn(this.padName, pos.x, pos.y, Quaternion.identity);
 		if (pad != null)
-			pad.gameObject.SetActive(true);
+		{
+            padApear.Add(pad);
+            pad.gameObject.SetActive(true);
+        }
 	}
 	public void CheckCurrentState()
 	{

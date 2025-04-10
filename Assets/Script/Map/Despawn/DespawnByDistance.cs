@@ -17,6 +17,10 @@ public class DespawnByDistance : Despawn
     protected override void Despawning()
     {
         if (!this.CanDespawn()) return;
+        if(transform.GetComponent<Pad>() != null)
+        {
+            MapSpawner.Instance.RemovePad(transform);
+        }
         SpawnManager.Instance.Despawn(transform);
     }
 
