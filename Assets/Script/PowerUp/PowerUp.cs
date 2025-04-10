@@ -83,7 +83,6 @@ public class PowerUp : MonoBehaviour
         {
             case 0:
                 ShieldDuration = value;
-				Debug.Log("Shield Duration: " + ShieldDuration);
                 break;
             case 1:
                 X2CoinDuration = value;

@@ -41,7 +41,8 @@ public class SaveSystem
 			Save();
 			return;
 		}
-		string saveContent = File.ReadAllText(SaveFileName());
+		Debug.Log("Load file: " + SaveFileName());
+        string saveContent = File.ReadAllText(SaveFileName());
 		
 		saveData = JsonUtility.FromJson<SaveData>(saveContent);
 		HandleLoadData();
