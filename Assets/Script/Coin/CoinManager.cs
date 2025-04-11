@@ -41,7 +41,10 @@ public class CoinManager : MonoBehaviour
 	{
 		TotalCoin = data.CoinTotal;
 	}
-	
+	public void ResetCoin()
+	{
+		TotalCoin = 0;
+	}
 }
 
 // data cần lưu trong file này, dùng struct, muốn tạo trong file khác thì tạo tương tự

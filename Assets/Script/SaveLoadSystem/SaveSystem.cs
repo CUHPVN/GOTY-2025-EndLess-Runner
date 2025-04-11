@@ -13,7 +13,7 @@ public class SaveSystem
 		public SaveCoinData CoinData;
 		//public PowerUpSaveData PowerUpData;
 		public UpgradeSaveData UpgradeData;
-    }
+	}
 	public static string SaveFileName()
 	{
 		string saveFile = Application.persistentDataPath + "/save" + ".dat";//đổi tên file + tên đuôi nếu muốn
@@ -30,8 +30,8 @@ public class SaveSystem
 		// Thêm cái method mới cho save ở đây tạo tương tự cái này
 		CoinManager.Instance.Save(ref saveData.CoinData);
 		//PowerUp.Instance.Save(ref saveData.PowerUpData);
-        UpgradeManager.Instance.Save(ref saveData.UpgradeData);
-    }
+		UpgradeManager.Instance.Save(ref saveData.UpgradeData);
+	}
 	
 	public static void Load()
 	{
@@ -39,10 +39,9 @@ public class SaveSystem
 		{
 			Debug.Log("Save file not found");
 			Save();
-			return;
 		}
 		Debug.Log("Load file: " + SaveFileName());
-        string saveContent = File.ReadAllText(SaveFileName());
+		string saveContent = File.ReadAllText(SaveFileName());
 		
 		saveData = JsonUtility.FromJson<SaveData>(saveContent);
 		HandleLoadData();
@@ -53,8 +52,16 @@ public class SaveSystem
 		// Thêm cái method mới cho load ở đây tạo tương tự cái này
 		CoinManager.Instance.Load(saveData.CoinData);
 		//PowerUp.Instance.Load(saveData.PowerUpData);
-        UpgradeManager.Instance.Load(saveData.UpgradeData);
-    }
+		UpgradeManager.Instance.Load(saveData.UpgradeData);
+	}
 	// cần Save ở đâu thì gọi SaveSystem.Save();
 	// cần Load Ở đâu thì gọi SaveSystem.Load();
+	
+	
+	
+	public static void DeleteSave()
+	{
+		File.Delete(SaveFileName());
+		//Load();
+	}
 }
