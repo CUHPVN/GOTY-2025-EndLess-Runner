@@ -7,6 +7,7 @@ public class DeadScene : MonoBehaviour
 	TextMeshProUGUI ScoreText;
 	private void OnEnable()
 	{
+		SaveSystem.Save();
 		ScoreText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 		ScoreText.text = $"Score: {(int)UIManager.Instance.GetScore()}";
 	}
@@ -14,8 +15,8 @@ public class DeadScene : MonoBehaviour
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
-    public void ReturnMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
+	public void ReturnMainMenu()
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
 }
