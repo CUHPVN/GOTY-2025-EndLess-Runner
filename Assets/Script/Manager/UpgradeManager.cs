@@ -128,8 +128,8 @@ public class UpgradeManager : MonoBehaviour
             Debug.Log("No upgrade data found");
             LoadUpgradeData();
             return;
-        }
-        upgradedataList = new List<UpgradeBaseData>(data.upgradeDatas); 
+        }else
+            upgradedataList = new List<UpgradeBaseData>(data.upgradeDatas); 
         LoadInPowerUp();
     }
     [System.Serializable]
