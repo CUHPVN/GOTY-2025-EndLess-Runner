@@ -9,6 +9,7 @@ public class MainMenuUIManager : MonoBehaviour
 {
     public static MainMenuUIManager Instance { get; private set; }
     [SerializeField] private Transform shopParent;
+    [SerializeField] private TMP_Text coinCount;
     [SerializeField] private List<Transform> upgradeList = new();
     [SerializeField] private List<TMP_Text> titleUpgradeList = new();
     [SerializeField] private List<Button> buttonUpgradeList = new();
@@ -80,6 +81,10 @@ public class MainMenuUIManager : MonoBehaviour
             priceUpgradeList[i].text = "" + UpgradeManager.Instance.GetPrice(i);
         }
     }
+    public void CoinUpdate()
+    {
+        coinCount.text = ""+CoinManager.Instance.GetCoin();
+    }
     public void Update()
     {
         if(priceUpgradeList.Count >0)
@@ -90,7 +95,7 @@ public class MainMenuUIManager : MonoBehaviour
         {
             TitleUpdate();
         }
-
+        CoinUpdate();
     }
     public void StartGame()
     {

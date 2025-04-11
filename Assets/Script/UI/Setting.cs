@@ -18,7 +18,6 @@ public class Setting : MonoBehaviour
 	public void DeleteSave()
 	{
 		SaveSystem.DeleteSave();
-		CoinManager.Instance.ResetCoin();
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }

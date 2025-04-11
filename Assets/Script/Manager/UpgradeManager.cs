@@ -1,12 +1,13 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance { get; private set; }
-    [SerializeField] public List<UpgradeBaseData> upgradedataList = new();
+    [SerializeField] private List<UpgradeBaseData> upgradedataList = new();
     void Awake()
     {
         if (Instance == null)
@@ -116,6 +117,12 @@ public class UpgradeManager : MonoBehaviour
             LoadUpgradeData();
             data.upgradeDatas = upgradedataList.ToArray();
         }
+    }
+    public void Create(ref UpgradeSaveData data)
+    {
+        upgradedataList.Clear();
+        LoadUpgradeData();
+        data.upgradeDatas = upgradedataList.ToArray();
     }
     public void Load(UpgradeSaveData data)
     {

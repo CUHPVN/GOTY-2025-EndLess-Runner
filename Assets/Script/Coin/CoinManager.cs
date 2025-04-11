@@ -37,7 +37,12 @@ public class CoinManager : MonoBehaviour
 	{
 		data.CoinTotal = TotalCoin;
 	}
-	public void Load(SaveCoinData data)
+    public void Create(ref SaveCoinData data)
+    {
+		TotalCoin = 0;
+        data.CoinTotal = TotalCoin;
+    }
+    public void Load(SaveCoinData data)
 	{
 		TotalCoin = data.CoinTotal;
 	}

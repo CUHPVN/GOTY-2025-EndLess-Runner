@@ -32,13 +32,25 @@ public class SaveSystem
 		//PowerUp.Instance.Save(ref saveData.PowerUpData);
 		UpgradeManager.Instance.Save(ref saveData.UpgradeData);
 	}
+	public static void CreateSave()
+	{
+		HandleCreateSaveData();
+        Debug.Log("Create Save file: " + SaveFileName());
+        File.WriteAllText(SaveFileName(), JsonUtility.ToJson(saveData, true));
+    }
+	private static void HandleCreateSaveData()
+	{
+        CoinManager.Instance.Create(ref saveData.CoinData);
+        UpgradeManager.Instance.Create(ref saveData.UpgradeData);
+    }
 	
 	public static void Load()
 	{
 		if(!File.Exists(SaveFileName()))
 		{
 			Debug.Log("Save file not found");
-			Save();
+			//Save();
+			CreateSave();
 		}
 		Debug.Log("Load file: " + SaveFileName());
 		string saveContent = File.ReadAllText(SaveFileName());
@@ -62,6 +74,6 @@ public class SaveSystem
 	public static void DeleteSave()
 	{
 		File.Delete(SaveFileName());
-		//Load();
+		Load();
 	}
 }
