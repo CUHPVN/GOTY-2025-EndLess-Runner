@@ -13,7 +13,6 @@ public class StateManager : MonoBehaviour
 	}
 	private void Start()
 	{
-		Time.timeScale = 1f;
 		CurrentStates = States.JumpState;
 		Player = GameObject.FindGameObjectWithTag("Player");
 		

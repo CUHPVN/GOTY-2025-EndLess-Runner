@@ -41,7 +41,7 @@ public class PowerUp : MonoBehaviour
 		
 		
 		CurrentShieldDuration -= Time.deltaTime; 
-		if(CurrentShieldDuration >= 0)
+		if(CurrentShieldDuration > 0)
 		{
 			ShieldActive = true;
 		}
@@ -50,7 +50,7 @@ public class PowerUp : MonoBehaviour
 			ShieldActive = false;
 		}
 		CurrentX2CoinDuration -= Time.deltaTime;
-		if(CurrentX2CoinDuration >= 0)
+		if(CurrentX2CoinDuration > 0)
 		{
 			X2CoinActive = true;
 		}

@@ -208,8 +208,8 @@ public class PlayerMovement : MonoBehaviour
 	}
 	private void Dead()
 	{
-		 // prototype thôi nên đổi
-		// DeadState Logic, Làm ơn đừng cho người chơi revive vì tôi ko thích :)
+		PowerUp.Instance.CurrentX2CoinDuration = 0f;
+		PowerUp.Instance.CurrentShieldDuration = 0f;
 	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
@@ -217,8 +217,8 @@ public class PlayerMovement : MonoBehaviour
 		{
 			if(PowerUp.Instance.ShieldActive)
 			{
-                MapSpawner.Instance.SetBase();
-                PowerUp.Instance.BreakShieldPowerUp();
+				MapSpawner.Instance.SetBase();
+				PowerUp.Instance.BreakShieldPowerUp();
 				//TODO: biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)
 				//Debug.Log("biến tất cả map hiện tại thành base hoặc cho bất tử trong 1 khoảng thời gian, Phúc xử lí phần này đi :)");
 			}
