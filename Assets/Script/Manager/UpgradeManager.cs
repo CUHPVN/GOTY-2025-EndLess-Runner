@@ -105,21 +105,17 @@ public class UpgradeManager : MonoBehaviour
             PowerUp.Instance.SetDuration((int)upgradedataList[i].upgradeType, upgradedataList[i].duration);
         }
     }
-    [System.Serializable]
-    public class UpgradeBaseData
-    {
-        public UpgradeType upgradeType;
-        public float duration;
-        public int price;
-    }
-    public enum UpgradeType
-    {
-        Shield,
-        X2Coin
-    }
+    
     public void Save(ref UpgradeSaveData data)
     {
-        data.upgradeDatas = upgradedataList.ToArray();
+        if(upgradedataList.Count > 0)
+        {
+            data.upgradeDatas = upgradedataList.ToArray();
+        }else
+        {
+            LoadUpgradeData();
+            data.upgradeDatas = upgradedataList.ToArray();
+        }
     }
     public void Load(UpgradeSaveData data)
     {
@@ -129,7 +125,7 @@ public class UpgradeManager : MonoBehaviour
             LoadUpgradeData();
             return;
         }else
-            upgradedataList = new List<UpgradeBaseData>(data.upgradeDatas); 
+        upgradedataList = new List<UpgradeBaseData>(data.upgradeDatas); 
         LoadInPowerUp();
     }
     [System.Serializable]
@@ -137,4 +133,16 @@ public class UpgradeManager : MonoBehaviour
     {
         public UpgradeBaseData[] upgradeDatas;
     }
+}
+[System.Serializable]
+public class UpgradeBaseData
+{
+    public UpgradeType upgradeType;
+    public float duration;
+    public int price;
+}
+public enum UpgradeType
+{
+    Shield,
+    X2Coin
 }
