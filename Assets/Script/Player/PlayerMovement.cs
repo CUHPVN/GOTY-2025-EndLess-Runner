@@ -10,7 +10,7 @@ using Physics2D = UnityEngine.Physics2D;
 public class PlayerMovement : MonoBehaviour
 {
 	Rigidbody2D rb;
-	bool IsGrounded;
+	public bool IsGrounded;
 	[SerializeField] Transform GroundCheck;
 	[SerializeField] Transform SpiderTpCheck;
 	[SerializeField] LayerMask GroundLayer;
