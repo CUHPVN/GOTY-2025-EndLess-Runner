@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour
 
 	private void Update()
 	{
-		anim.SetBool("X2",PowerUp.Instance.X2CoinActive);
+		//anim.SetBool("X2",PowerUp.Instance.X2CoinActive);
 		
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
