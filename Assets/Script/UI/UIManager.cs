@@ -5,8 +5,8 @@ public class UIManager : MonoBehaviour
 {
 	bool isPause = false;
 	public static UIManager Instance { get; private set; }
-	TextMeshProUGUI ScoreText;
-	TextMeshProUGUI CoinCounter;
+	[SerializeField] private TextMeshProUGUI ScoreText;
+	[SerializeField] private TextMeshProUGUI CoinCounter;
 	
 	public GameObject DeadScene;
 	public GameObject PauseScene;
@@ -20,8 +20,8 @@ public class UIManager : MonoBehaviour
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
-		ScoreText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-		CoinCounter = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+
+		TransitionManager.Instance.PlayIn();
 	}
 
 	// Update is called once per frame
@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
 	{
 		isPause = PauseScene.activeSelf;
 		ScoreText.text = $"Score: {(int)Score}";
-		CoinCounter.text = $"Coin: {CoinManager.Instance.GetCoin()}";
+		CoinCounter.text = $"{CoinManager.Instance.GetCoin()}";
 		if(StateManager.Instance.GetState() == StateManager.States.DeadState)
 		{
 			Time.timeScale = 0f;

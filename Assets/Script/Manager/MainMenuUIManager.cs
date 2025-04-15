@@ -97,8 +97,29 @@ public class MainMenuUIManager : MonoBehaviour
         }
         CoinUpdate();
     }
+    public void Start()
+    {
+        Invoke(nameof(PlayIn), 0f);
+    }
+    public void PlayIn()
+    {
+        TransitionManager.Instance.PlayIn();
+    }
     public void StartGame()
     {
+        TransitionManager.Instance.PlayOut();
+        Invoke(nameof(StartReal), 1f);
+    }
+    public void StartReal()
+    {
         SceneManager.LoadScene("MainScene");
+    }
+    public void SaveGame()
+    {
+        SaveSystem.Save();
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

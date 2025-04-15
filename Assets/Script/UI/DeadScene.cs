@@ -11,12 +11,14 @@ public class DeadScene : MonoBehaviour
 		ScoreText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 		ScoreText.text = $"Score: {(int)UIManager.Instance.GetScore()}";
 	}
-	public void Restart()
-	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-	}
-	public void ReturnMainMenu()
-	{
-		SceneManager.LoadScene("MainMenu");
-	}
+    public void Restart()
+    {
+        TransitionManager.Instance.PlayAgainInGame();
+    }
+    public void ReturnMainMenu()
+    {
+        TransitionManager.Instance.PlayOutInGame();
+       
+    }
+   
 }

@@ -11,10 +11,10 @@ public class PauseScene : MonoBehaviour
 	{
 		transform.gameObject.SetActive(false);
 	}
-    public void MainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
+	public void MainMenu()
+	{
+		TransitionManager.Instance.PlayOutInGame();
+	}
     public void Quit()
 	{
 		Application.Quit();

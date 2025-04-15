@@ -30,6 +30,7 @@ public class SaveSystem
 		// Thêm cái method mới cho save ở đây tạo tương tự cái này
 		CoinManager.Instance.Save(ref saveData.CoinData);
 		//PowerUp.Instance.Save(ref saveData.PowerUpData);
+		if(UpgradeManager.Instance!=null)
 		UpgradeManager.Instance.Save(ref saveData.UpgradeData);
 	}
 	public static void CreateSave()
