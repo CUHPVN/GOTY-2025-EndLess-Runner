@@ -506,7 +506,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 100}
   - name: Frame_16
     originalName: 
-    pivot: {x: 0.4666667, y: 0.54545456}
+    pivot: {x: 0.4666667, y: 0.72727275}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -527,7 +527,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 177}
   - name: Frame_17
     originalName: 
-    pivot: {x: 0.5, y: 0.6}
+    pivot: {x: 0.5, y: 0.8}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -548,7 +548,7 @@ ScriptedImporter:
     uvTransform: {x: 95, y: 4}
   - name: Frame_18
     originalName: 
-    pivot: {x: 0.5, y: 0.6363636}
+    pivot: {x: 0.5, y: 0.8181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -569,7 +569,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 239}
   - name: Frame_19
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -590,7 +590,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 137}
   - name: Frame_20
     originalName: 
-    pivot: {x: 0.53333336, y: 0.45454547}
+    pivot: {x: 0.53333336, y: 0.6363636}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -611,7 +611,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 196}
   - name: Frame_21
     originalName: 
-    pivot: {x: 0.5, y: 0.54545456}
+    pivot: {x: 0.5, y: 0.72727275}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -632,7 +632,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 4}
   - name: Frame_22
     originalName: 
-    pivot: {x: 0.5, y: 0.6363636}
+    pivot: {x: 0.5, y: 0.8181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -653,7 +653,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 23}
   - name: Frame_23
     originalName: 
-    pivot: {x: 0.4666667, y: 0.54545456}
+    pivot: {x: 0.4666667, y: 0.72727275}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -674,7 +674,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 215}
   - name: Frame_24
     originalName: 
-    pivot: {x: 0.5, y: 0.6}
+    pivot: {x: 0.5, y: 0.8}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -695,7 +695,7 @@ ScriptedImporter:
     uvTransform: {x: 95, y: 22}
   - name: Frame_25
     originalName: 
-    pivot: {x: 0.5, y: 0.6363636}
+    pivot: {x: 0.5, y: 0.8181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -716,7 +716,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 42}
   - name: Frame_26
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -737,7 +737,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 157}
   - name: Frame_27
     originalName: 
-    pivot: {x: 0.53333336, y: 0.45454547}
+    pivot: {x: 0.53333336, y: 0.6363636}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -758,7 +758,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 234}
   - name: Frame_28
     originalName: 
-    pivot: {x: 0.5, y: 0.54545456}
+    pivot: {x: 0.5, y: 0.72727275}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -779,7 +779,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 61}
   - name: Frame_29
     originalName: 
-    pivot: {x: 0.5, y: 0.6363636}
+    pivot: {x: 0.5, y: 0.8181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -905,7 +905,7 @@ ScriptedImporter:
     uvTransform: {x: 117, y: 108}
   - name: Frame_35
     originalName: 
-    pivot: {x: 0.5, y: 0.6363636}
+    pivot: {x: 0.5, y: 0.8181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -926,7 +926,7 @@ ScriptedImporter:
     uvTransform: {x: 71, y: 99}
   - name: Frame_36
     originalName: 
-    pivot: {x: 0.5, y: 0.6363636}
+    pivot: {x: 0.5, y: 0.8181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 

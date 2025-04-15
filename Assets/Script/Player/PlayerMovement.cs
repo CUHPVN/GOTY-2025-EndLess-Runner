@@ -191,7 +191,14 @@ public class PlayerMovement : MonoBehaviour
 			{
 				foreach(RaycastHit2D Collect in hitCollect)
 				{
-					Collect.collider.gameObject.SendMessage("OnTriggerEnter2D",GetComponent<Collider2D>());  
+					if(Collect.collider.gameObject.CompareTag("Coin"))
+					{
+						Collect.collider.gameObject.GetComponent<Coin>().EatCoin();
+					}
+					else
+					{
+						Collect.collider.gameObject.SendMessage("OnTriggerEnter2D",GetComponent<Collider2D>());
+					}
 				}
 			}
 			if(TpLocation.y >= 0)
@@ -227,6 +234,13 @@ public class PlayerMovement : MonoBehaviour
 				StM.ChangeState(StateManager.States.DeadState);
 				Debug.Log("Dead");
 			}
+		}
+	}
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.gameObject.CompareTag("Coin"))
+		{
+			collision.gameObject.GetComponent<Coin>().EatCoin();
 		}
 	}
 }

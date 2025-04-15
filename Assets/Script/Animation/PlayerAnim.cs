@@ -7,6 +7,8 @@ public class PlayerAnim : MonoBehaviour
 	Rigidbody2D rb;
 	PlayerMovement PM;
 	
+	StateManager.States LateState;
+
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
@@ -19,13 +21,13 @@ public class PlayerAnim : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
+
 		anim.SetInteger("States", (int)StM.GetState());
 		switch (StM.GetState())
 		{
 			case StateManager.States.JumpState:
 				anim.SetFloat("VelocityY", rb.linearVelocityY);
-				anim.SetBool("IsJump",!PM.IsGrounded);
+				anim.SetBool("IsJump", !PM.IsGrounded);
 				break;
 			case StateManager.States.FlyState:
 				//Fly();
@@ -34,9 +36,13 @@ public class PlayerAnim : MonoBehaviour
 				//Ziczac();
 				break;
 			case StateManager.States.SpiderState:
-				if(Input.GetButtonDown("Jump"))
+				if(LateState != StateManager.States.SpiderState)
 				{
-					anim.SetBool("TP",true);
+					TPFalse();
+				}
+				if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0))
+				{
+					anim.SetBool("TP", true);
 				}
 				break;
 			case StateManager.States.DeadState:
@@ -45,10 +51,11 @@ public class PlayerAnim : MonoBehaviour
 			default:
 				break;
 		}
+		LateState = StM.GetState();
 	}
-	
+
 	public void TPFalse()
 	{
-		anim.SetBool("TP",false);
+		anim.SetBool("TP", false);
 	}
 }

@@ -397,7 +397,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1001 &45018599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3869,7 +3869,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &165475269
 GameObject:
   m_ObjectHideFlags: 0
@@ -4442,7 +4442,7 @@ Transform:
   m_GameObject: {fileID: 250850309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -5, z: 0}
+  m_LocalPosition: {x: -9, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4475,7 +4475,7 @@ MonoBehaviour:
     m_Bits: 256
   GroundCollider: {fileID: 143815253}
   JumpForce: 16
-  FlyGravityScale: 1
+  FlyGravityScale: 1.5
   ZiczacForce: 5
   flipped: 0
 --- !u!50 &250850313
@@ -5369,41 +5369,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 383415333}
-    m_ColliderPaths:
-    - - X: 120333336
-        Y: 75666664
-      - X: 109666664
-        Y: 75666664
-      - X: 109666664
-        Y: 59666668
-      - X: 120333336
-        Y: 59666668
-    - - X: -29666666
-        Y: 75666664
-      - X: -40333332
-        Y: 75666664
-      - X: -40333332
-        Y: 59666668
-      - X: -29666666
-        Y: 59666668
-    - - X: -99666664
-        Y: -64333332
-      - X: -110333336
-        Y: -64333332
-      - X: -110333336
-        Y: -80333336
-      - X: -99666664
-        Y: -80333336
-    - - X: 40333332
-        Y: -64333332
-      - X: 29666666
-        Y: -64333332
-      - X: 29666666
-        Y: -80333336
-      - X: 40333332
-        Y: -80333336
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 12.033304, y: 5.9666667}
@@ -6601,7 +6567,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &469290344
 GameObject:
   m_ObjectHideFlags: 0
@@ -9657,7 +9623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &532671993
 Transform:
   m_ObjectHideFlags: 0
@@ -9742,7 +9708,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1001 &542923412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10563,7 +10529,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1001 &667718166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24132,33 +24098,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1155634530}
-    m_ColliderPaths:
-    - - X: 200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 110333336
-      - X: -200333328
-        Y: 79666664
-      - X: 200333328
-        Y: 79666664
-    - - X: 200333328
-        Y: -79666664
-      - X: 10333333
-        Y: -79666664
-      - X: 10333333
-        Y: -59666668
-      - X: -80333336
-        Y: -59666668
-      - X: -80333336
-        Y: -79666664
-      - X: -200333328
-        Y: -79666664
-      - X: -200333328
-        Y: -110333336
-      - X: 200333328
-        Y: -110333336
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 20.033333, y: 11.033334}
@@ -38142,7 +38082,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1746428628
 GameObject:
   m_ObjectHideFlags: 0
@@ -38594,7 +38534,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1001 &1811755238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39460,7 +39400,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1919871699
 GameObject:
   m_ObjectHideFlags: 0
@@ -40024,7 +39964,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1975160450
 GameObject:
   m_ObjectHideFlags: 0

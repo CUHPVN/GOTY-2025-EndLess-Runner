@@ -8,6 +8,7 @@ TagManager:
   - SpawnManager
   - MapManager
   - Trap
+  - Coin
   layers:
   - Default
   - TransparentFX

@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ObjectFly : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
-    [SerializeField] private Vector3 direction = -Vector3.forward;
+    [SerializeField] private Vector3 direction = Vector3.left;
 
     private Rigidbody rb;
 

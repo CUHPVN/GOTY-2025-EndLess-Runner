@@ -12,14 +12,12 @@ public class Coin : MonoBehaviour
 
 	private void Update()
 	{
-		//anim.SetBool("X2",PowerUp.Instance.X2CoinActive);
+		anim.SetBool("X2",PowerUp.Instance.X2CoinActive);
 		
 	}
-	private void OnTriggerEnter2D(Collider2D collision)
+	public void EatCoin()
 	{
-		if(collision.gameObject.CompareTag("Player"))
-		{
-			if(PowerUp.Instance.X2CoinActive)
+		if(PowerUp.Instance.X2CoinActive)
 			{
 				CoinManager.Instance.AddCoin(2);
 			}
@@ -28,6 +26,5 @@ public class Coin : MonoBehaviour
 				CoinManager.Instance.AddCoin(1);
 			}
 			transform.gameObject.SetActive(false);
-		}
 	}
 }
