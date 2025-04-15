@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Rigidbody))]
 public class ObjectFly : MonoBehaviour
 {
-    [SerializeField] public float movespeed = 1f;
-    [SerializeField] protected Vector3 direction = -Vector3.forward;
+    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private Vector3 direction = -Vector3.forward;
+
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void FixedUpdate()
     {
-        movespeed = MapSpawner.Instance.GetBaseSpeed();
-        transform.Translate(movespeed * Time.deltaTime * direction);
+        moveSpeed = MapSpawner.Instance.GetBaseSpeed();
+        rb.linearVelocity = direction.normalized * moveSpeed;
     }
 }

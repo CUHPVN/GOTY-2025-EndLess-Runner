@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 43033029}
   - component: {fileID: 43033028}
   - component: {fileID: 43033027}
+  - component: {fileID: 43033030}
   m_Layer: 0
   m_Name: PadZiczac_1
   m_TagString: Untagged
@@ -340,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084d237210a5614ea62642618fdc232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 100
+  disLimit: 50
   distance: 0
   maincamera: {fileID: 519420031}
 --- !u!114 &43033028
@@ -355,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a9feb69390ce4c8f5b4d33ce57f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
+  moveSpeed: 1
   direction: {x: -1, y: -0, z: 0}
 --- !u!114 &43033029
 MonoBehaviour:
@@ -369,7 +370,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7d55a4e6f95340948e3dac5c84508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 40
+  spawnDistance: 39
+--- !u!54 &43033030
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43033025}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &45018599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3748,6 +3776,7 @@ GameObject:
   - component: {fileID: 144125299}
   - component: {fileID: 144125298}
   - component: {fileID: 144125297}
+  - component: {fileID: 144125300}
   m_Layer: 0
   m_Name: PadChangeToJumpState
   m_TagString: Untagged
@@ -3784,7 +3813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084d237210a5614ea62642618fdc232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 100
+  disLimit: 50
   distance: 0
   maincamera: {fileID: 519420031}
 --- !u!114 &144125298
@@ -3799,7 +3828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a9feb69390ce4c8f5b4d33ce57f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
+  moveSpeed: 1
   direction: {x: -1, y: -0, z: 0}
 --- !u!114 &144125299
 MonoBehaviour:
@@ -3813,7 +3842,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7d55a4e6f95340948e3dac5c84508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 40
+  spawnDistance: 39
+--- !u!54 &144125300
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144125295}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &165475269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6405,6 +6461,7 @@ GameObject:
   - component: {fileID: 455709380}
   - component: {fileID: 455709379}
   - component: {fileID: 455709378}
+  - component: {fileID: 455709381}
   m_Layer: 0
   m_Name: PadBase
   m_TagString: Untagged
@@ -6440,7 +6497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084d237210a5614ea62642618fdc232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 100
+  disLimit: 50
   distance: 0
   maincamera: {fileID: 519420031}
 --- !u!114 &455709379
@@ -6455,7 +6512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a9feb69390ce4c8f5b4d33ce57f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
+  moveSpeed: 1
   direction: {x: -1, y: -0, z: 0}
 --- !u!114 &455709380
 MonoBehaviour:
@@ -6469,7 +6526,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7d55a4e6f95340948e3dac5c84508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 40
+  spawnDistance: 39
+--- !u!54 &455709381
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455709376}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &469290344
 GameObject:
   m_ObjectHideFlags: 0
@@ -9518,6 +9602,7 @@ GameObject:
   - component: {fileID: 532671996}
   - component: {fileID: 532671995}
   - component: {fileID: 532671994}
+  - component: {fileID: 532671997}
   m_Layer: 0
   m_Name: PadSpider_1
   m_TagString: Untagged
@@ -9553,7 +9638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084d237210a5614ea62642618fdc232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 100
+  disLimit: 50
   distance: 0
   maincamera: {fileID: 519420031}
 --- !u!114 &532671995
@@ -9568,7 +9653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a9feb69390ce4c8f5b4d33ce57f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
+  moveSpeed: 1
   direction: {x: -1, y: -0, z: 0}
 --- !u!114 &532671996
 MonoBehaviour:
@@ -9582,7 +9667,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7d55a4e6f95340948e3dac5c84508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 40
+  spawnDistance: 39
+--- !u!54 &532671997
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532671992}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &542923412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10311,6 +10423,7 @@ GameObject:
   - component: {fileID: 649052913}
   - component: {fileID: 649052912}
   - component: {fileID: 649052911}
+  - component: {fileID: 649052914}
   m_Layer: 0
   m_Name: PadJump_1
   m_TagString: Untagged
@@ -10346,7 +10459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084d237210a5614ea62642618fdc232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 100
+  disLimit: 50
   distance: 0
   maincamera: {fileID: 519420031}
 --- !u!114 &649052912
@@ -10361,7 +10474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a9feb69390ce4c8f5b4d33ce57f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
+  moveSpeed: 1
   direction: {x: -1, y: -0, z: 0}
 --- !u!114 &649052913
 MonoBehaviour:
@@ -10375,7 +10488,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7d55a4e6f95340948e3dac5c84508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 40
+  spawnDistance: 39
+--- !u!54 &649052914
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649052909}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &667718166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37685,6 +37825,7 @@ GameObject:
   - component: {fileID: 1715779946}
   - component: {fileID: 1715779945}
   - component: {fileID: 1715779944}
+  - component: {fileID: 1715779947}
   m_Layer: 0
   m_Name: PadChangeToSpiderState
   m_TagString: Untagged
@@ -37721,7 +37862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084d237210a5614ea62642618fdc232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 100
+  disLimit: 50
   distance: 0
   maincamera: {fileID: 519420031}
 --- !u!114 &1715779945
@@ -37736,7 +37877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a9feb69390ce4c8f5b4d33ce57f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
+  moveSpeed: 1
   direction: {x: -1, y: -0, z: 0}
 --- !u!114 &1715779946
 MonoBehaviour:
@@ -37750,7 +37891,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7d55a4e6f95340948e3dac5c84508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 40
+  spawnDistance: 39
+--- !u!54 &1715779947
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715779942}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1746428628
 GameObject:
   m_ObjectHideFlags: 0
@@ -38073,6 +38241,7 @@ GameObject:
   - component: {fileID: 1779543281}
   - component: {fileID: 1779543280}
   - component: {fileID: 1779543279}
+  - component: {fileID: 1779543282}
   m_Layer: 0
   m_Name: PadChangeToFlyState
   m_TagString: Untagged
@@ -38109,7 +38278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084d237210a5614ea62642618fdc232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 100
+  disLimit: 50
   distance: 0
   maincamera: {fileID: 519420031}
 --- !u!114 &1779543280
@@ -38124,7 +38293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a9feb69390ce4c8f5b4d33ce57f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
+  moveSpeed: 1
   direction: {x: -1, y: -0, z: 0}
 --- !u!114 &1779543281
 MonoBehaviour:
@@ -38138,7 +38307,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7d55a4e6f95340948e3dac5c84508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 40
+  spawnDistance: 39
+--- !u!54 &1779543282
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779543277}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1811755238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38911,6 +39107,7 @@ GameObject:
   - component: {fileID: 1906736294}
   - component: {fileID: 1906736293}
   - component: {fileID: 1906736292}
+  - component: {fileID: 1906736295}
   m_Layer: 0
   m_Name: PadFly_1
   m_TagString: Untagged
@@ -38946,7 +39143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084d237210a5614ea62642618fdc232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 100
+  disLimit: 50
   distance: 0
   maincamera: {fileID: 519420031}
 --- !u!114 &1906736293
@@ -38961,7 +39158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a9feb69390ce4c8f5b4d33ce57f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
+  moveSpeed: 1
   direction: {x: -1, y: -0, z: 0}
 --- !u!114 &1906736294
 MonoBehaviour:
@@ -38975,7 +39172,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7d55a4e6f95340948e3dac5c84508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 40
+  spawnDistance: 39
+--- !u!54 &1906736295
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906736290}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1919871699
 GameObject:
   m_ObjectHideFlags: 0
@@ -39446,6 +39670,7 @@ GameObject:
   - component: {fileID: 1969926209}
   - component: {fileID: 1969926208}
   - component: {fileID: 1969926207}
+  - component: {fileID: 1969926210}
   m_Layer: 0
   m_Name: PadChangeToZiczacState
   m_TagString: Untagged
@@ -39482,7 +39707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084d237210a5614ea62642618fdc232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disLimit: 100
+  disLimit: 50
   distance: 0
   maincamera: {fileID: 519420031}
 --- !u!114 &1969926208
@@ -39497,7 +39722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a9feb69390ce4c8f5b4d33ce57f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
+  moveSpeed: 1
   direction: {x: -1, y: -0, z: 0}
 --- !u!114 &1969926209
 MonoBehaviour:
@@ -39511,7 +39736,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7d55a4e6f95340948e3dac5c84508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 40
+  spawnDistance: 39
+--- !u!54 &1969926210
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969926205}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1975160450
 GameObject:
   m_ObjectHideFlags: 0
