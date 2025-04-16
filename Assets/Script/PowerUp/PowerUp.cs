@@ -70,6 +70,7 @@ public class PowerUp : MonoBehaviour
 	public void BreakShieldPowerUp()
 	{
 		CurrentShieldDuration = 0;
+		ShieldEffect.Instance.StartEffect();
 	}
 	
 	
@@ -80,18 +81,18 @@ public class PowerUp : MonoBehaviour
 	public void SetDuration(int index,float value)
 	{
 		switch(index)
-        {
-            case 0:
-                ShieldDuration = value;
-                break;
-            case 1:
-                X2CoinDuration = value;
-                break;
-            default:
-                Debug.Log("Invalid index");
-                break;
-        }
-    }
+		{
+			case 0:
+				ShieldDuration = value;
+				break;
+			case 1:
+				X2CoinDuration = value;
+				break;
+			default:
+				Debug.Log("Invalid index");
+				break;
+		}
+	}
 	
 
 	}
