@@ -13,7 +13,8 @@ public class SaveSystem
 		public SaveCoinData CoinData;
 		//public PowerUpSaveData PowerUpData;
 		public UpgradeSaveData UpgradeData;
-	}
+        public SoundBaseData SoundData;
+    }
 	public static string SaveFileName()
 	{
 		string saveFile = Application.persistentDataPath + "/save" + ".dat";//đổi tên file + tên đuôi nếu muốn
@@ -28,7 +29,8 @@ public class SaveSystem
 	private static void HandleSaveData()
 	{
 		// Thêm cái method mới cho save ở đây tạo tương tự cái này
-		CoinManager.Instance.Save(ref saveData.CoinData);
+		SoundManager.Instance.Save(ref saveData.SoundData);
+        CoinManager.Instance.Save(ref saveData.CoinData);
 		//PowerUp.Instance.Save(ref saveData.PowerUpData);
 		if(UpgradeManager.Instance!=null)
 		UpgradeManager.Instance.Save(ref saveData.UpgradeData);
@@ -42,6 +44,7 @@ public class SaveSystem
 	private static void HandleCreateSaveData()
 	{
         CoinManager.Instance.Create(ref saveData.CoinData);
+        SoundManager.Instance.Create(ref saveData.SoundData);
         UpgradeManager.Instance.Create(ref saveData.UpgradeData);
     }
 	
@@ -64,8 +67,9 @@ public class SaveSystem
 	{
 		// Thêm cái method mới cho load ở đây tạo tương tự cái này
 		CoinManager.Instance.Load(saveData.CoinData);
-		//PowerUp.Instance.Load(saveData.PowerUpData);
-		UpgradeManager.Instance.Load(saveData.UpgradeData);
+        SoundManager.Instance.Load(saveData.SoundData);
+        //PowerUp.Instance.Load(saveData.PowerUpData);
+        UpgradeManager.Instance.Load(saveData.UpgradeData);
 	}
 	// cần Save ở đâu thì gọi SaveSystem.Save();
 	// cần Load Ở đâu thì gọi SaveSystem.Load();
