@@ -9,8 +9,11 @@ public class MainMenuUIManager : MonoBehaviour
 {
     public static MainMenuUIManager Instance { get; private set; }
     [SerializeField] private Transform shopParent;
+    [SerializeField] private Transform setting;
     [SerializeField] private TMP_Text coinCount;
     [SerializeField] private TMP_Text coinCount2;
+    [SerializeField] private Slider bgmVolumeSlider;
+    [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private List<Transform> upgradeList = new();
     [SerializeField] private List<TMP_Text> titleUpgradeList = new();
     [SerializeField] private List<Button> buttonUpgradeList = new();
@@ -123,5 +126,18 @@ public class MainMenuUIManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public bool GetSetting()
+    {
+        return setting.gameObject.activeSelf;
+    }
+    public void SetVomume(float bgmVolume, float sfxVolume)
+    {
+        bgmVolumeSlider.value = bgmVolume;
+        sfxVolumeSlider.value = sfxVolume;
+    }
+    public (float v1 ,float v2) GetVolume()
+    {
+        return (bgmVolumeSlider.value, sfxVolumeSlider.value);
     }
 }
