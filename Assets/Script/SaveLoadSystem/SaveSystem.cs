@@ -13,7 +13,7 @@ public class SaveSystem
 		public SaveCoinData CoinData;
 		//public PowerUpSaveData PowerUpData;
 		public UpgradeSaveData UpgradeData;
-        public SoundBaseData SoundData;
+        public SoundSaveData SoundData;
     }
 	public static string SaveFileName()
 	{
@@ -40,6 +40,7 @@ public class SaveSystem
 		HandleCreateSaveData();
         Debug.Log("Create Save file: " + SaveFileName());
         File.WriteAllText(SaveFileName(), JsonUtility.ToJson(saveData, true));
+		Load();
     }
 	private static void HandleCreateSaveData()
 	{

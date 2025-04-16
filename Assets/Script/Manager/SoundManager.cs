@@ -94,28 +94,30 @@ public class SoundManager : MonoBehaviour
         CoinPickup,
         ShielBreak,
     }
-    public void Save(ref SoundBaseData data)
+    public void Save(ref SoundSaveData data)
     {
         data.bgmVolume = bgmVolume;
         data.sfxVolume = sfxVolume;
     }
-    public void Create(ref SoundBaseData data)
+    public void Create(ref SoundSaveData data)
     {
         bgmVolume = 0.5f;
         sfxVolume = 0.5f;
-        data.bgmVolume = bgmVolume;
-        data.sfxVolume = sfxVolume;
+        data.bgmVolume = 0.5f;
+        data.sfxVolume = 0.5f;
     }
-    public void Load(SoundBaseData data)
+    public void Load(SoundSaveData data)
     {
         bgmVolume = data.bgmVolume;
         sfxVolume = data.sfxVolume;
 
     }
 }
+
 [System.Serializable]
-public class SoundBaseData
+public struct SoundSaveData
 {
-    public float bgmVolume=0.5f;
-    public float sfxVolume=0.5f;
+    public float bgmVolume;
+    public float sfxVolume;
 }
+
