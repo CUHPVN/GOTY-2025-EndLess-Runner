@@ -4,6 +4,7 @@ public class Pad : MonoBehaviour
 {
     private Transform cam;
     [SerializeField] float spawnDistance = 40f;
+    [SerializeField] bool isPortal = false;
     private bool spawn=false;
     private void OnEnable()
     {
@@ -33,7 +34,15 @@ public class Pad : MonoBehaviour
         {
             if (!spawn && Vector2.Distance(transform.position, cam.position)<10f)
             {
-                MapSpawner.Instance.SpawningWithPos(transform.position + new Vector3(spawnDistance,0,0));
+                if(isPortal)
+                {
+                    MapSpawner.Instance.SpawnOnceWithPos(transform.position + new Vector3(spawnDistance, 0, 0));
+                }
+                else
+                {
+                    MapSpawner.Instance.SpawningWithPos(transform.position + new Vector3(spawnDistance, 0, 0));
+                }
+                
                 spawn=true;
             }
         }
