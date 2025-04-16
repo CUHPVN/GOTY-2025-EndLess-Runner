@@ -6763,6 +6763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!54 &43033030
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6962,6 +6963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!1001 &70860166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8009,6 +8011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 1
 --- !u!54 &144125300
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9350,6 +9353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!1 &341815083
 GameObject:
   m_ObjectHideFlags: 0
@@ -11483,6 +11487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!1 &451749446
 GameObject:
   m_ObjectHideFlags: 0
@@ -11651,6 +11656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!54 &455709381
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12103,6 +12109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!54 &532671997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12718,6 +12725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!1001 &600406697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13091,6 +13099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!54 &649052914
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34529,6 +34538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!1001 &779876364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69722,6 +69732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 1
 --- !u!54 &1715779947
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -70292,6 +70303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!1 &1779543277
 GameObject:
   m_ObjectHideFlags: 0
@@ -70371,6 +70383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 1
 --- !u!54 &1779543282
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -79523,6 +79536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!54 &1906736295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80131,6 +80145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 1
 --- !u!54 &1969926210
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -83055,6 +83070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 39
+  isPortal: 0
 --- !u!1001 &2001969733
 PrefabInstance:
   m_ObjectHideFlags: 0
