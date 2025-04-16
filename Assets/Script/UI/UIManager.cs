@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
 	void Update()
 	{
 		isPause = PauseScene.activeSelf;
-		ScoreText.text = $"Score: {(int)Score}";
+		ScoreText.text = $"{(int)Score}";
 		CoinCounter.text = $"{CoinManager.Instance.GetCoin()}";
 		if(StateManager.Instance.GetState() == StateManager.States.DeadState)
 		{

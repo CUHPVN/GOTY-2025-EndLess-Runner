@@ -4,6 +4,10 @@ using UnityEngine;
 public class PopOnEnable : MonoBehaviour
 {
     bool isPop = false;
+    private void Awake()
+    {
+        DOTween.defaultTimeScaleIndependent = true;
+    }
     private void OnEnable()
     {
         if (!isPop)
