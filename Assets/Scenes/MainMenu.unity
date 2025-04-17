@@ -217,6 +217,13 @@ MonoBehaviour:
   titleUpgradeList: []
   buttonUpgradeList: []
   priceUpgradeList: []
+  buttons:
+  - {fileID: 220603065}
+  - {fileID: 627594624}
+  - {fileID: 202727302}
+  - {fileID: 1185118579}
+  - {fileID: 1024251397}
+  - {fileID: 853978092}
 --- !u!1 &97244055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6589,7 +6596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -300.9, y: 258.6}
+  m_AnchoredPosition: {x: -300.90002, y: 258.6}
   m_SizeDelta: {x: 258.13818, y: 91.10489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853978092
