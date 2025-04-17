@@ -89,6 +89,7 @@ public class UpgradeManager : MonoBehaviour
         else
         {
             Debug.Log("Upgrade not found");
+            SaveSystem.Save();
             return 0;
         }
     }
