@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public class UIManager : MonoBehaviour
 	public static UIManager Instance { get; private set; }
 	[SerializeField] private TextMeshProUGUI ScoreText;
 	[SerializeField] private TextMeshProUGUI CoinCounter;
+	[SerializeField] private List<Button> buttons;
 	
 	public GameObject DeadScene;
 	public GameObject PauseScene;
@@ -22,6 +25,7 @@ public class UIManager : MonoBehaviour
 	{
 
 		TransitionManager.Instance.PlayIn();
+		AddEvent();
 	}
 
 	// Update is called once per frame
@@ -54,5 +58,12 @@ public class UIManager : MonoBehaviour
 	public float GetScore()
 	{
 		return Score;
+	}
+	private void AddEvent()
+	{
+		foreach(Button but in buttons)
+		{
+			but.onClick.AddListener(() => SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.ButtonClick));
+		}
 	}
 }

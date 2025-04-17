@@ -18,6 +18,8 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private List<TMP_Text> titleUpgradeList = new();
     [SerializeField] private List<Button> buttonUpgradeList = new();
     [SerializeField] private List<TMP_Text> priceUpgradeList = new();
+    [SerializeField] private List<Button> buttons;
+
     private void Awake()
     {
         if (Instance == null)
@@ -33,6 +35,7 @@ public class MainMenuUIManager : MonoBehaviour
         LoadTitleUpgrade();
         LoadButtonUpgrade();
         AddButtonEvent();
+        AddEvent();
         LoadPriceUpgrade();
     }
     public void LoadUpgrade()
@@ -69,6 +72,14 @@ public class MainMenuUIManager : MonoBehaviour
         {
             int index = i;
             buttonUpgradeList[i].onClick.AddListener(() => UpgradeManager.Instance.Buy(index));
+            buttonUpgradeList[i].onClick.AddListener(() => SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.ButtonClick));
+        }
+    }
+    private void AddEvent()
+    {
+        foreach (Button but in buttons)
+        {
+            but.onClick.AddListener(() => SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.ButtonClick));
         }
     }
     public void TitleUpdate()
