@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 			else
 			{	
 				StM.ChangeState(StateManager.States.DeadState);
-				Debug.Log("Dead");
+				//Debug.Log("Dead");
 			}
 		}
 	}
