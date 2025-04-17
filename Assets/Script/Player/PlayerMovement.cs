@@ -37,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
 	void Update()
 	{
 		transform.position = new Vector3(-9f, transform.position.y, transform.position.z);
-		var collider = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, transform.rotation.eulerAngles.z, GroundLayer);
 		GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, transform.rotation.eulerAngles.z, GroundLayer);
 		switch (StM.GetState())
 		{
