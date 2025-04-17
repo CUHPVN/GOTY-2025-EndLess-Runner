@@ -70,7 +70,8 @@ public class SaveSystem
 		CoinManager.Instance.Load(saveData.CoinData);
         SoundManager.Instance.Load(saveData.SoundData);
         //PowerUp.Instance.Load(saveData.PowerUpData);
-        UpgradeManager.Instance.Load(saveData.UpgradeData);
+        if (UpgradeManager.Instance != null)
+            UpgradeManager.Instance.Load(saveData.UpgradeData);
 	}
 	// cần Save ở đâu thì gọi SaveSystem.Save();
 	// cần Load Ở đâu thì gọi SaveSystem.Load();

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        SaveSystem.Load();
+        //SaveSystem.Load();
 
     }
 
