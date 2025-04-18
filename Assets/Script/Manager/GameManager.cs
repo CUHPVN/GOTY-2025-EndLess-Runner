@@ -21,7 +21,11 @@ public class GameManager : MonoBehaviour
         //SaveSystem.Load();
 
     }
-
+    void FPS()
+    {
+        Application.targetFrameRate = -1; 
+        QualitySettings.vSyncCount = 0;
+    }
     void Update()
     {
         

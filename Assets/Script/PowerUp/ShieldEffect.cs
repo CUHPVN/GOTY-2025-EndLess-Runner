@@ -14,7 +14,8 @@ public class ShieldEffect : MonoBehaviour
 	}
 	public void StartEffect()
 	{
-		anim.SetBool("Explode",true);
+		SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.ShieldBreak);
+        anim.SetBool("Explode",true);
 	}
 	public void StopEffect()
 	{

@@ -123,7 +123,7 @@ public class SoundManager : MonoBehaviour
     {
         ButtonClick,
         CoinPickup,
-        ShielBreak,
+        ShieldBreak,
     }
     public void Save(ref SoundSaveData data)
     {

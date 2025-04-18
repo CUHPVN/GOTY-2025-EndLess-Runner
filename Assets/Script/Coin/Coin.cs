@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
 	}
 	public void EatCoin()
 	{
-		if(PowerUp.Instance.X2CoinActive)
+        if (PowerUp.Instance.X2CoinActive)
 			{
 				CoinManager.Instance.AddCoin(2);
 			}
