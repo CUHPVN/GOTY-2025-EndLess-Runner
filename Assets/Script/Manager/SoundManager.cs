@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
     [SerializeField] private MainMenuUIManager mainMenuUIManager;
+    [SerializeField] private UIManager uiManager;
     [SerializeField] private AudioSource BGM;
     [SerializeField] private AudioSource SFX;
     [SerializeField] private AudioClip[] bgmClips;
@@ -32,17 +33,17 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
-        
-    }
-    private void FixedUpdate()
-    {
-        if(!BGM.isPlaying)
+        if (!BGM.isPlaying)
         {
             int ran = Random.Range(0, bgmClips.Length);
             PlayBGM(ran);
         }
         GetVolume();
         UpdateVolume();
+    }
+    private void FixedUpdate()
+    {
+        
     }
     public void GetVolume()
     {
@@ -67,6 +68,29 @@ public class SoundManager : MonoBehaviour
         else
         {
             mainMenuUIManager = FindFirstObjectByType<MainMenuUIManager>();
+        }
+        if (uiManager != null)
+        {
+            if (!uiManager.GetSetting())
+            {
+                if (!saved)
+                {
+                    saved = true;
+                    SaveSystem.Save();
+                }
+                uiManager.SetVomume(bgmVolume, sfxVolume);
+            }
+            else
+            {
+                (float bgm, float sfx) = uiManager.GetVolume();
+                saved = false;
+                bgmVolume = bgm;
+                sfxVolume = sfx;
+            }
+        }
+        else
+        {
+            uiManager = FindFirstObjectByType<UIManager>();
         }
     }
     public void UpdateVolume()

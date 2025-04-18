@@ -9,7 +9,10 @@ public class UIManager : MonoBehaviour
 	public static UIManager Instance { get; private set; }
 	[SerializeField] private TextMeshProUGUI ScoreText;
 	[SerializeField] private TextMeshProUGUI CoinCounter;
-	[SerializeField] private List<Button> buttons;
+    [SerializeField] private Transform setting;
+    [SerializeField] private Slider bgmVolumeSlider;
+    [SerializeField] private Slider sfxVolumeSlider;
+    [SerializeField] private List<Button> buttons;
 	
 	public GameObject DeadScene;
 	public GameObject PauseScene;
@@ -66,4 +69,17 @@ public class UIManager : MonoBehaviour
 			but.onClick.AddListener(() => SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.ButtonClick));
 		}
 	}
+    public bool GetSetting()
+    {
+        return setting.gameObject.activeSelf;
+    }
+    public void SetVomume(float bgmVolume, float sfxVolume)
+    {
+        bgmVolumeSlider.value = bgmVolume;
+        sfxVolumeSlider.value = sfxVolume;
+    }
+    public (float v1, float v2) GetVolume()
+    {
+        return (bgmVolumeSlider.value, sfxVolumeSlider.value);
+    }
 }

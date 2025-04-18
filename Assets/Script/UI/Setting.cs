@@ -20,4 +20,5 @@ public class Setting : MonoBehaviour
 		SaveSystem.DeleteSave();
 		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
+
 }
