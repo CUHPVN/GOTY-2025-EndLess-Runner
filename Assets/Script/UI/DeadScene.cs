@@ -4,21 +4,22 @@ using UnityEngine.SceneManagement;
 
 public class DeadScene : MonoBehaviour
 {
-	TextMeshProUGUI ScoreText;
+	public TextMeshProUGUI ScoreText;
+	public TextMeshProUGUI CoinText;
 	private void OnEnable()
 	{
 		SaveSystem.Save();
-		ScoreText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-		ScoreText.text = $"Score: {(int)UIManager.Instance.GetScore()}";
+		ScoreText.text = $"{(int)UIManager.Instance.GetScore()}";
+		CoinText.text = $"{CoinManager.Instance.GetCoin()}";
 	}
-    public void Restart()
-    {
-        TransitionManager.Instance.PlayAgainInGame();
-    }
-    public void ReturnMainMenu()
-    {
-        TransitionManager.Instance.PlayOutInGame();
-       
-    }
+	public void Restart()
+	{
+		TransitionManager.Instance.PlayAgainInGame();
+	}
+	public void ReturnMainMenu()
+	{
+		TransitionManager.Instance.PlayOutInGame();
+	   
+	}
    
 }
