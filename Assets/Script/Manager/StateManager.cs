@@ -5,6 +5,7 @@ public class StateManager : MonoBehaviour
 	public static StateManager Instance { get; private set; }
 	public enum States { JumpState, FlyState, ZiczacState, SpiderState, DeadState};
 	public States CurrentStates;
+	public States LateState;
 	
 	GameObject Player;
 	private void Awake()
@@ -14,6 +15,7 @@ public class StateManager : MonoBehaviour
 	private void Start()
 	{
 		CurrentStates = States.JumpState;
+		LateState = States.JumpState;
 		Player = GameObject.FindGameObjectWithTag("Player");
 		
 	}
@@ -22,9 +24,18 @@ public class StateManager : MonoBehaviour
 	{
 		return CurrentStates;
 	}
+	
+	public States GetLateState()
+	{
+		return LateState;
+	}
 
 	public void ChangeState(States NewState)
 	{
+		if(CurrentStates != NewState)
+		{
+			LateState = CurrentStates;
+		}
 		if(NewState != States.DeadState)
 		{
 			Player.transform.rotation = Quaternion.Euler(0, 0, 0);
