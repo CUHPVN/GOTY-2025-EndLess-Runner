@@ -9,6 +9,7 @@ TagManager:
   - MapManager
   - Trap
   - Coin
+  - Trans
   layers:
   - Default
   - TransparentFX

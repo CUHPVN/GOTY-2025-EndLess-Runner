@@ -17,29 +17,45 @@ public class TransitionManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
     private void Start()
     {
-        child = transform.GetChild(0);
+        child = GameObject.FindGameObjectWithTag("Trans").transform;
     }
     public void PlayIn()
     {
+        if (child == null)
+        {
+            child = GameObject.FindGameObjectWithTag("Trans").transform;
+        }
         child.DOMoveX(0f, 0f);
         child.DOMoveX(-50f,0.5f);
     }
     public void PlayOut()
     {
+        if (child == null)
+        {
+            child = GameObject.FindGameObjectWithTag("Trans").transform;
+        }
         child.DOMoveX(50f,0f);
         child.DOMoveX(0f,0.5f);
     }
     public void PlayAgainInGame()
     {
+        if (child == null)
+        {
+            child = GameObject.FindGameObjectWithTag("Trans").transform;
+        }
         child.DOMoveX(50f, 0f).SetUpdate(true);
         child.DOMoveX(0f, 0.5f).OnComplete(() => ChangeAgainScene()).SetUpdate(true);
     }
     public void PlayOutInGame()
     {
+        if (child == null)
+        {
+            child = GameObject.FindGameObjectWithTag("Trans").transform;
+        }
         child.DOMoveX(50f, 0f).SetUpdate(true);
         child.DOMoveX(0f, 0.5f).OnComplete(()=> ChangeOutScene()).SetUpdate(true);
     }
@@ -53,6 +69,9 @@ public class TransitionManager : MonoBehaviour
     }
     void Update()
     {
-        
+        if(child == null)
+        {
+            child = GameObject.FindGameObjectWithTag("Trans").transform;
+        }
     }
 }
