@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] float FlyGravityScale;
 	[SerializeField] float ZiczacForce;
 
+	public bool InTutorial;
 	Vector2 TpLocation;
 	[SerializeField] bool flipped = false;
 
@@ -122,7 +123,14 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Ziczac()
 	{
-		ZiczacForce = MapSpawner.Instance.GetBaseSpeed();
+		if(!InTutorial)
+		{
+			ZiczacForce = MapSpawner.Instance.GetBaseSpeed();
+		}
+		else
+		{
+			ZiczacForce = 7f;
+		}
 		rb.gravityScale = 0f;
 		float temp = -1f;
 		if (Input.GetButton("Jump") || Input.GetMouseButton(0))

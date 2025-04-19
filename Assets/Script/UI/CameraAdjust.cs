@@ -24,7 +24,8 @@ public class CameraAdjust : MonoBehaviour
         cam = GetComponent<Camera>();
         AdjustOrthoSize();
     }
-    private void AdjustOrthoSize() {
+    private void AdjustOrthoSize()
+    {
         var (center, size) = CalculateOrthoSize();
         cam.transform.position = center;
         cam.orthographicSize = size;
@@ -33,15 +34,15 @@ public class CameraAdjust : MonoBehaviour
     {
         var bounds = new Bounds();
 
-        foreach (var col in FindObjectsOfType<Collider2D>())
+        foreach (var col in FindObjectsByType<Collider2D>(FindObjectsSortMode.None))
             bounds.Encapsulate(col.bounds);
 
         bounds.Expand(buffer);
 
         var vertical = bounds.size.y;
-        var horizontal = bounds.size.x * (Screen.height-100) / Screen.width;
+        var horizontal = bounds.size.x * (Screen.height - 100) / Screen.width;
         var size = Mathf.Min(horizontal, vertical) * 0.5f;
-        var center = bounds.center + new Vector3(0,0,-10);
+        var center = bounds.center + new Vector3(0, 0, -10);
         return (center, size);
     }
 }
