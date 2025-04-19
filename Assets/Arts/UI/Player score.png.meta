@@ -121,7 +121,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -135,9 +135,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -159,7 +159,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -847,7 +847,36 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player score_0: 1055770086430516446
+      Player score_1: -6430876252225634836
+      Player score_10: 5241182857997124872
+      Player score_11: 9336850314783225
+      Player score_12: -7510120218402794361
+      Player score_13: 3813387732841324653
+      Player score_14: 1117781099310029146
+      Player score_15: -8356672588189850206
+      Player score_16: -3307850922171289424
+      Player score_17: -820017484551784848
+      Player score_18: -3077264019885194040
+      Player score_19: 2968877428355046353
+      Player score_2: 4180068391243275487
+      Player score_20: -196333580707082858
+      Player score_21: 2623292574261545549
+      Player score_22: -3905712040015042505
+      Player score_23: -150608530929445859
+      Player score_24: 1212759153962562147
+      Player score_25: 3425422353783202449
+      Player score_26: 4835194436433457774
+      Player score_27: 250583980467096144
+      Player score_28: 6923667926766113900
+      Player score_3: 665881789120467264
+      Player score_4: -7913741504459066001
+      Player score_5: -5727579828843736231
+      Player score_6: -8980435515126932980
+      Player score_7: -5912353455302730296
+      Player score_8: -3054993381713199235
+      Player score_9: -5338054544510261179
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
