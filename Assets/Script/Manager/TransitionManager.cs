@@ -25,7 +25,7 @@ public class TransitionManager : MonoBehaviour
     }
     public void PlayIn()
     {
-        child.transform.position = new(50, 0);
+        child.transform.position = new(0, 0);
         child.DOMoveX(-50f,1f);
     }
     public void PlayOut()
