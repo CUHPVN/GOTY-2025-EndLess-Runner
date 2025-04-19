@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      The Way Home_0: 2441725643432383877
+      The Way Home_1: -1228189339261478729
+      The Way Home_2: -2483625693451767368
+      The Way Home_3: -8459768550434731219
+      The Way Home_4: -2762882522937360843
+      The Way Home_5: 3164208220836760339
+      The Way Home_6: 1893839446454979546
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

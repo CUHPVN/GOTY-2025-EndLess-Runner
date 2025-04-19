@@ -422,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player revive_0: 8315338805758897805
+      Player revive_1: 6175660238611949818
+      Player revive_10: -3713310601884688383
+      Player revive_11: -1618158217321051071
+      Player revive_2: -191171060750798599
+      Player revive_3: 5585477573308448391
+      Player revive_4: -7185533504557012357
+      Player revive_5: -9014338224127942449
+      Player revive_6: -2367141062005799050
+      Player revive_7: 8057186364457106454
+      Player revive_8: -422506707267844205
+      Player revive_9: -7725930311204921767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
