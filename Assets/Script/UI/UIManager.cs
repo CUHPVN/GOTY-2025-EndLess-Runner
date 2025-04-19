@@ -9,12 +9,13 @@ public class UIManager : MonoBehaviour
 	public static UIManager Instance { get; private set; }
 	[SerializeField] private TextMeshProUGUI ScoreText;
 	[SerializeField] private TextMeshProUGUI CoinCounter;
-    [SerializeField] private Transform setting;
-    [SerializeField] private Slider bgmVolumeSlider;
-    [SerializeField] private Slider sfxVolumeSlider;
-    [SerializeField] private List<Button> buttons;
+	[SerializeField] private Transform setting;
+	[SerializeField] private Slider bgmVolumeSlider;
+	[SerializeField] private Slider sfxVolumeSlider;
+	[SerializeField] private List<Button> buttons;
 	
 	public GameObject DeadScene;
+	public GameObject ReviveScene;
 	public GameObject PauseScene;
 	public float Score = 0;
 	public int Multiplyer;
@@ -37,10 +38,10 @@ public class UIManager : MonoBehaviour
 		isPause = PauseScene.activeSelf;
 		ScoreText.text = $"{(int)Score}";
 		CoinCounter.text = $"{CoinManager.Instance.GetCoin()}";
-		if(StateManager.Instance.GetState() == StateManager.States.DeadState)
+		if(StateManager.Instance.GetState() == StateManager.States.DeadState && !ReviveScene.activeSelf && !DeadScene.activeSelf)
 		{
 			Time.timeScale = 0f;
-			DeadScene.SetActive(true);
+			ReviveScene.SetActive(true);
 		}
 		else if(Input.GetKeyDown(KeyCode.Escape) && !isPause)
 		{
@@ -69,17 +70,17 @@ public class UIManager : MonoBehaviour
 			but.onClick.AddListener(() => SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.ButtonClick));
 		}
 	}
-    public bool GetSetting()
-    {
-        return setting.gameObject.activeSelf;
-    }
-    public void SetVomume(float bgmVolume, float sfxVolume)
-    {
-        bgmVolumeSlider.value = bgmVolume;
-        sfxVolumeSlider.value = sfxVolume;
-    }
-    public (float v1, float v2) GetVolume()
-    {
-        return (bgmVolumeSlider.value, sfxVolumeSlider.value);
-    }
+	public bool GetSetting()
+	{
+		return setting.gameObject.activeSelf;
+	}
+	public void SetVomume(float bgmVolume, float sfxVolume)
+	{
+		bgmVolumeSlider.value = bgmVolume;
+		sfxVolumeSlider.value = sfxVolume;
+	}
+	public (float v1, float v2) GetVolume()
+	{
+		return (bgmVolumeSlider.value, sfxVolumeSlider.value);
+	}
 }
