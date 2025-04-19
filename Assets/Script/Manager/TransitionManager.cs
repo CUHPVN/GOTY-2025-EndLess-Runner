@@ -25,39 +25,24 @@ public class TransitionManager : MonoBehaviour
     }
     public void PlayIn()
     {
-        if (child == null)
-        {
-            child = GameObject.FindGameObjectWithTag("Trans").transform;
-        }
-        child.DOMoveX(0f, 0f);
-        child.DOMoveX(-50f,0.5f);
+        Debug.Log("IN");
+        child.transform.position = new(0, 0);
+        child.DOMoveX(-50f,1f);
     }
     public void PlayOut()
     {
-        if (child == null)
-        {
-            child = GameObject.FindGameObjectWithTag("Trans").transform;
-        }
-        child.DOMoveX(50f,0f);
-        child.DOMoveX(0f,0.5f);
+        child.transform.position = new(50, 0);
+        child.DOMoveX(0f,1f);
     }
     public void PlayAgainInGame()
     {
-        if (child == null)
-        {
-            child = GameObject.FindGameObjectWithTag("Trans").transform;
-        }
-        child.DOMoveX(50f, 0f).SetUpdate(true);
-        child.DOMoveX(0f, 0.5f).OnComplete(() => ChangeAgainScene()).SetUpdate(true);
+        child.transform.position = new(50,0);
+        child.DOMoveX(0f, 1f).OnComplete(() => ChangeAgainScene()).SetUpdate(true);
     }
     public void PlayOutInGame()
     {
-        if (child == null)
-        {
-            child = GameObject.FindGameObjectWithTag("Trans").transform;
-        }
-        child.DOMoveX(50f, 0f).SetUpdate(true);
-        child.DOMoveX(0f, 0.5f).OnComplete(()=> ChangeOutScene()).SetUpdate(true);
+        child.transform.position = new(50, 0);
+        child.DOMoveX(0f, 1f).OnComplete(()=> ChangeOutScene()).SetUpdate(true);
     }
     public void ChangeOutScene()
     {
