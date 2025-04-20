@@ -127,14 +127,15 @@ public class MapSpawner : MonoBehaviour
 	void CaculateSpeed()
 	{
 		float Score = UIManager.Instance.GetScore();
-		if (Score > 18333f)
+		if (Score > 10000f)
 		{
-			speed = 35f;
+			speed = 25f;
 		}
-		else if (Score >= 1833 && Score <= 18333f)
+		else if (Score >= 1000 && Score <= 10000f)
 		{
-			speed = Mathf.Sqrt((Score - 100) / 22);
-		}
+			speed = 0.00178f * Score + 7.22f;
+
+        }
 		else
 		{
 
