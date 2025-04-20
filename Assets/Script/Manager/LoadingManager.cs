@@ -10,11 +10,10 @@ public class LoadingManager : MonoBehaviour
     void Start()
     {
         Invoke(nameof(Out),loadTime-0.5f);
-        Invoke(nameof(Load), loadTime);
     }
     void Out()
     {
-        TransitionManager.Instance.PlayOut();
+        TransitionManager.Instance.PlayOutInLoading();
     }
     void Load()
     {
