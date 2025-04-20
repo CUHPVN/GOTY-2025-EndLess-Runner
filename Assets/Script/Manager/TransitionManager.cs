@@ -25,22 +25,27 @@ public class TransitionManager : MonoBehaviour
     }
     public void PlayIn()
     {
-        child.transform.position = new(0, 0);
-        child.DOMoveX(-50f,1f);
+        child.transform.position = new(0, 0,0f);
+        child.DOMoveX(-50f,1f).SetUpdate(true);
     }
     public void PlayOut()
     {
-        child.transform.position = new(50, 0);
-        child.DOMoveX(0f,1f);
+        child.transform.position = new(50, 0,0f);
+        child.DOMoveX(0f,1f).SetUpdate(true);
+    }
+    public void PlayOutInLoading()
+    {
+        child.transform.position = new(50, 0, 0);
+        child.DOMoveX(0,1f).OnComplete(()=> SceneManager.LoadScene("MainMenu")).SetUpdate(true);
     }
     public void PlayAgainInGame()
     {
-        child.transform.position = new(50,0);
+        child.transform.position = new(50,0,0f);
         child.DOMoveX(0f, 1f).OnComplete(() => ChangeAgainScene()).SetUpdate(true);
     }
     public void PlayOutInGame()
     {
-        child.transform.position = new(50, 0);
+        child.transform.position = new(50, 0, 0f);
         child.DOMoveX(0f, 1f).OnComplete(()=> ChangeOutScene()).SetUpdate(true);
     }
     public void ChangeOutScene()
