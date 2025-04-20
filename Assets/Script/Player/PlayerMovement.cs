@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] Transform GroundCheck;
 	[SerializeField] Transform SpiderTpCheck;
 	[SerializeField] LayerMask GroundLayer;
+	[SerializeField] LayerMask KGroundLayer;
 	[SerializeField] LayerMask Collectable;
 	StateManager StM;
 
@@ -38,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 	void Update()
 	{
 		transform.position = new Vector3(-9f, transform.position.y, transform.position.z);
-		GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, transform.rotation.eulerAngles.z, GroundLayer);
+		GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, transform.rotation.eulerAngles.z, KGroundLayer);
 		switch (StM.GetState())
 		{
 			case StateManager.States.JumpState:

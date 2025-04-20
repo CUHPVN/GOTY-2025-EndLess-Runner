@@ -10462,6 +10462,9 @@ MonoBehaviour:
   SpiderTpCheck: {fileID: 118263582}
   GroundLayer:
     serializedVersion: 2
+    m_Bits: 72
+  KGroundLayer:
+    serializedVersion: 2
     m_Bits: 8
   Collectable:
     serializedVersion: 2
@@ -15259,6 +15262,10 @@ PrefabInstance:
     - target: {fileID: 4515062575124413500, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515062575124413500, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5137601194967784132, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24454,6 +24461,10 @@ PrefabInstance:
     - target: {fileID: 4515062575124413500, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515062575124413500, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5137601194967784132, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39119,7 +39130,7 @@ GameObject:
   - component: {fileID: 1043354373}
   - component: {fileID: 1043354372}
   - component: {fileID: 1043354371}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48156,6 +48167,10 @@ PrefabInstance:
     - target: {fileID: 4515062575124413500, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515062575124413500, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5137601194967784132, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57706,6 +57721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 4515062575124413500, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5137601194967784132, guid: 08c4e45cd7a149f4bbd324cb5aa3d804, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.5
@@ -58184,7 +58203,7 @@ GameObject:
   - component: {fileID: 1197563092}
   - component: {fileID: 1197563091}
   - component: {fileID: 1197563090}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89464,7 +89483,7 @@ GameObject:
   - component: {fileID: 1802817931}
   - component: {fileID: 1802817930}
   - component: {fileID: 1802817929}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101232,7 +101251,7 @@ GameObject:
   - component: {fileID: 1969373767}
   - component: {fileID: 1969373766}
   - component: {fileID: 1969373765}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
