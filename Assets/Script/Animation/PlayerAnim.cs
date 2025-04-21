@@ -26,20 +26,17 @@ public class PlayerAnim : MonoBehaviour
 		switch (StM.GetState())
 		{
 			case StateManager.States.JumpState:
+				TPFalse();
 				anim.SetFloat("VelocityY", rb.linearVelocityY);
 				anim.SetBool("IsJump", !PM.IsGrounded);
 				break;
 			case StateManager.States.FlyState:
-				//Fly();
+				TPFalse();
 				break;
 			case StateManager.States.ZiczacState:
-				//Ziczac();
+				TPFalse();
 				break;
 			case StateManager.States.SpiderState:
-				if(LateState != StateManager.States.SpiderState)
-				{
-					TPFalse();
-				}
 				if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0))
 				{
 					anim.SetBool("TP", true);
