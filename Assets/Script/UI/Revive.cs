@@ -7,7 +7,7 @@ public class Revive : MonoBehaviour
 	public GameObject DeadScene;
     private void OnEnable()
     {
-        SaveSystem.Save();
+		SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.ShieldBreak);
         text.text = $"{(int)(UIManager.Instance.GetScore() / 10f)}";
     }
     public void Yes()

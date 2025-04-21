@@ -116,6 +116,9 @@ public class MainMenuUIManager : MonoBehaviour
     public void Start()
     {
         Invoke(nameof(PlayIn), 0f);
+        LearderBoard.Instance.Get();
+        if(LoginSystem.Instance!=null)
+        LearderBoard.Instance.GetHightScore(""+LoginSystem.Instance.GetPlayerID());
     }
     public void PlayIn()
     {

@@ -134,7 +134,6 @@ public class MapSpawner : MonoBehaviour
 		else if (Score >= 1000 && Score <= 10000f)
 		{
 			speed = 0.00178f * Score + 7.22f;
-
         }
 		else
 		{

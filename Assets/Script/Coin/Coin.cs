@@ -17,6 +17,7 @@ public class Coin : MonoBehaviour
 	}
 	public void EatCoin()
 	{
+		SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.CoinPickup);
         if (PowerUp.Instance.X2CoinActive)
 			{
 				CoinManager.Instance.AddCoin(2);

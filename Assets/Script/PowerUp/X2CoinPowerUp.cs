@@ -6,7 +6,7 @@ public class X2CoinPowerUp : MonoBehaviour
 	{
 		if(collision.gameObject.CompareTag("Player"))
         {
-            SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.CoinPickup);
+            SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.PUPickup);
             PowerUp.Instance.StartX2CoinPowerUp();
 			transform.gameObject.SetActive(false);
 		}

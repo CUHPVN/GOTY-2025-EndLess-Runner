@@ -8,6 +8,7 @@ public class DeadScene : MonoBehaviour
 	public TextMeshProUGUI CoinText;
 	private void OnEnable()
 	{
+		GameManager.Instance.AddScore((int)UIManager.Instance.GetScore());
 		SaveSystem.Save();
 		ScoreText.text = $"{(int)UIManager.Instance.GetScore()}";
 		CoinText.text = $"{CoinManager.Instance.GetCoin()}";

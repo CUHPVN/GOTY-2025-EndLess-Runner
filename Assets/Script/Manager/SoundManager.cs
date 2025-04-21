@@ -117,12 +117,22 @@ public class SoundManager : MonoBehaviour
             Debug.LogError("Invalid SFX index");
             return;
         }
-        SFX.PlayOneShot(sfxClips[index]);
+        if(index == (int)SoundType.CoinPickup)
+        {
+            SFX.pitch = Random.Range(0.75f, 1f);
+            SFX.PlayOneShot(sfxClips[index]);
+        }
+        else
+        {
+            SFX.pitch = 1;
+            SFX.PlayOneShot(sfxClips[index]);
+        }
     }
     public enum SoundType
     {
         ButtonClick,
         CoinPickup,
+        PUPickup,
         ShieldBreak,
     }
     public void Save(ref SoundSaveData data)

@@ -6,7 +6,7 @@ public class ShieldPowerUp : MonoBehaviour
 	{
 		if(collision.gameObject.CompareTag("Player"))
 		{
-            SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.CoinPickup);
+            SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.PUPickup);
             PowerUp.Instance.StartShieldPowerUp();
 			transform.gameObject.SetActive(false);
 		}
