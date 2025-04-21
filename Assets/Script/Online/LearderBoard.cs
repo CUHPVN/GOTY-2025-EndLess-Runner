@@ -28,7 +28,7 @@ public class LearderBoard : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Gửi điểm số thất bại.");
+                Debug.LogError("Gửi điểm số thất bại, hãy bật wifi và chơi ở loading scene!");
             }
         });
     }
