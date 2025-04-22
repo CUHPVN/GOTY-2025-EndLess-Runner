@@ -100,7 +100,9 @@ public class LoginSystem : MonoBehaviour
     }
     public string GetPlayerName()
     {
-        return player_name;
+        if (Application.internetReachability != NetworkReachability.NotReachable)
+            return player_name;
+        else return "OfflinePlayer";
     }
     //public void Create(ref LoginSaveData data)
     //{
