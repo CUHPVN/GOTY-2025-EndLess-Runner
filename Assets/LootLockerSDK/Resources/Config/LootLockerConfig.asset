@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: LootLockerConfig
   m_EditorClassIdentifier: 
   apiKey: dev_f73d939219c7450eac370f1a451c2dd1
-  token: 
-  adminToken: 19c97415c858a20757d7f81a95ca89c74c52e1ac
+  token: fa23a76eee20a4dae771d57b1473ddeba1cdf3cc
+  adminToken: 
   refreshToken: 
   domainKey: 62yhgt4b
   gameID: 0
   game_version: 1.0.0.0
   sdk_version: 4.0.0
-  deviceID: defaultPlayerId
-  playerULID: 
+  deviceID: 
+  playerULID: 01JSDMK99RMRMDKF8F034MY8M1
   url: https://api.lootlocker.com/v1
   adminUrl: https://62yhgt4b.api.lootlocker.com/admin
   playerUrl: https://62yhgt4b.api.lootlocker.com/player
@@ -29,7 +29,7 @@ MonoBehaviour:
   baseUrl: https://62yhgt4b.api.lootlocker.com
   clientSideRequestTimeOut: 180
   currentDebugLevel: 0
-  logLevel: 5
+  logLevel: 2
   logErrorsAsWarnings: 0
   logInBuilds: 0
   allowTokenRefresh: 1
