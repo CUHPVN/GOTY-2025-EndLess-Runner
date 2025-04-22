@@ -9,7 +9,8 @@ public class UIManager : MonoBehaviour
 	public static UIManager Instance { get; private set; }
 	[SerializeField] private TextMeshProUGUI ScoreText;
 	[SerializeField] private TextMeshProUGUI CoinCounter;
-	[SerializeField] private Transform setting;
+    [SerializeField] private Transform blacksetting;
+    [SerializeField] private Transform setting;
 	[SerializeField] private Slider bgmVolumeSlider;
 	[SerializeField] private Slider sfxVolumeSlider;
 	[SerializeField] private List<Button> buttons;
@@ -43,17 +44,17 @@ public class UIManager : MonoBehaviour
 			Time.timeScale = 0f;
 			ReviveScene.SetActive(true);
 		}
-		else if(Input.GetKeyDown(KeyCode.Escape) && !isPause)
-		{
-			PauseScene.SetActive(true);
-			isPause = true;
-		}
-		else if(Input.GetKeyDown(KeyCode.Escape) && isPause)
-		{
-			PauseScene.SetActive(false);
-			isPause = false;
-		}
-	}
+		else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPause = !isPause;
+			if (!isPause)
+			{
+				setting.gameObject.SetActive(false);
+				blacksetting.gameObject.SetActive(false);
+			}
+            PauseScene.SetActive(isPause); 
+        }
+    }
 	private void FixedUpdate()
 	{
 		Score += 1f * Multiplyer * 0.3f;

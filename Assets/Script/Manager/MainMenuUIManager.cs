@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class MainMenuUIManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private Transform shopParent;
     [SerializeField] private Transform setting;
     [SerializeField] private TMP_Text coinCount;
+    [SerializeField] private TMP_Text playerName;
     [SerializeField] private TMP_Text coinCount2;
     [SerializeField] private Slider bgmVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
@@ -101,6 +103,10 @@ public class MainMenuUIManager : MonoBehaviour
         coinCount.text = ""+CoinManager.Instance.GetCoin();
         coinCount2.text = "" + CoinManager.Instance.GetCoin();
     }
+    public void PlayerUpdate()
+    {
+        playerName.text = GameManager.Instance.GetName();
+    }
     public void Update()
     {
         if(priceUpgradeList.Count >0)
@@ -112,6 +118,7 @@ public class MainMenuUIManager : MonoBehaviour
             TitleUpdate();
         }
         CoinUpdate();
+        PlayerUpdate();
     }
     public void Start()
     {
@@ -127,11 +134,20 @@ public class MainMenuUIManager : MonoBehaviour
     public void StartGame()
     {
         TransitionManager.Instance.PlayOut();
+        if(GameManager.Instance.GetScore()!=0)
         Invoke(nameof(StartReal), 1f);
+        else
+        {
+            Invoke(nameof(StartTutorialReal), 1f);
+        }
     }
     public void StartReal()
     {
         SceneManager.LoadScene("MainScene");
+    }
+    public void StartTutorialReal()
+    {
+        SceneManager.LoadScene("Tutorial");
     }
     public void SaveGame()
     {

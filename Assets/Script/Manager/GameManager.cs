@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     [SerializeField] private int score=0;
+    [SerializeField] private string playerName;
     private void Awake()
     {
         if (Instance == null)
@@ -20,17 +21,55 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //SaveSystem.Load();
-
+        if(LoginSystem.Instance != null)
+        {
+            SetName(LoginSystem.Instance.GetPlayerName());
+        }
+        else
+        {
+            SetName("OfflinePlayer");
+        }
     }
     void FPS()
     {
         Application.targetFrameRate = -1; 
         QualitySettings.vSyncCount = 0;
     }
+    public int GetScore()
+    {
+        return score;
+    }
     public void AddScore(int score)
     {
         if(this.score < score) {
             this.score = score;
+        }
+    }
+    public string GetName()
+    {
+        return playerName;
+    }
+    public void SetName(string name)
+    {
+        playerName = name;
+    }
+    public void UpdateName()
+    {
+        playerName = LoginSystem.Instance.GetPlayerName();
+        if (LearderBoard.Instance != null)
+        {
+            LearderBoard.Instance.Get();
+        }
+    }
+    public void SendName(string name)
+    {
+        if(LearderBoard.Instance != null)
+        {
+            LearderBoard.Instance.SetName(name);
+        }
+        else
+        {
+            Debug.Log("Send Name không thành công!");
         }
     }
     public void Load(GameSaveData data)
@@ -44,6 +83,7 @@ public class GameManager : MonoBehaviour
     public void Save(ref GameSaveData data)
     {
         data.score = score;
+        if(LearderBoard.Instance != null) 
         LearderBoard.Instance.Send(score);
     }
 }

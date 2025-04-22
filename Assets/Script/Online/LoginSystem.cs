@@ -7,6 +7,8 @@ public class LoginSystem : MonoBehaviour
 {
     public static LoginSystem Instance {  get; private set; }
     private int player_id;
+    private string player_name;
+
     private void Awake()
     {
         Instance = this;
@@ -20,14 +22,19 @@ public class LoginSystem : MonoBehaviour
     {
         
     }
-    void Login()
+    public void Login()
     {
         LootLockerSDKManager.StartGuestSession((response) =>
         {
             if (response.success)
             {
                 player_id = response.player_id;
+                player_name = response.player_name;
                 Debug.Log("Đăng nhập thành công!");
+                if(GameManager.Instance != null)
+                {
+                    GameManager.Instance.UpdateName();
+                }
             }
             else
             {
@@ -57,6 +64,10 @@ public class LoginSystem : MonoBehaviour
     public int GetPlayerID()
     {
         return player_id;
+    }
+    public string GetPlayerName()
+    {
+        return player_name;
     }
     public void Create(ref LoginSaveData data)
     {

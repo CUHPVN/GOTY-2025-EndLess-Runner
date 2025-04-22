@@ -17,9 +17,18 @@ public class LeaderBoardUIManager : MonoBehaviour
     {
            
     }
+    public void Clear()
+    {
+        foreach (Transform t in playerScores)
+        {
+            Destroy(t.gameObject);
+        }
+        playerScores.Clear();
+    }
     public void AddPlayer(int rank,string name, int score)
     {
         Transform player = Instantiate(prefabs);
+        playerScores.Add(player);
         player.transform.SetParent(content);
         player.transform.localScale = new Vector3(1, 1, 1);
         PlayerScore playerScore = player.GetComponent<PlayerScore>();

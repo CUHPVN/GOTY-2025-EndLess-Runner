@@ -88,11 +88,11 @@ public class PlayerMovement : MonoBehaviour
 			rb.gravityScale = 1f;
 		}
 		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(1f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
-		if ((Input.GetButton("Jump")|| Input.GetMouseButton(0)) && IsGrounded)
+		if (InputManager.IsTouching() && IsGrounded)
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
 		}
-		else if(Input.GetButtonUp("Jump") || Input.GetMouseButtonUp(0))
+		else if(InputManager.TouchEnded())
 		{
 			if(rb.linearVelocityY > 0)
 			{
@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			rb.linearVelocityY = -15f;
 		}
-		if (Input.GetButton("Jump") || Input.GetMouseButton(0))
+		if (InputManager.IsTouching())
 		{
 			rb.gravityScale = -FlyGravityScale;
 		}
@@ -134,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 		rb.gravityScale = 0f;
 		float temp = -1f;
-		if (Input.GetButton("Jump") || Input.GetMouseButton(0))
+		if (InputManager.IsTouching())
 		{
 			temp = 1f;
 			transform.rotation = Quaternion.Euler(0, 0, 45f);
@@ -193,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
 			transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 		}
 		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(0.75f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
-		if ((Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0)) && IsGrounded && hit)
+		if (InputManager.TouchBegan() && IsGrounded && hit)
 		{
 			if(hitCollect != null)
 			{

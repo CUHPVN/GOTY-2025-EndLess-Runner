@@ -37,7 +37,10 @@ public class LearderBoard : MonoBehaviour
         LootLockerSDKManager.SetPlayerName(name, (response) =>
         {
             if (response.success)
+            {
                 Debug.Log("Tên người chơi đã được gán!");
+                LoginSystem.Instance.Login();
+            }
             else
                 Debug.LogError("Không thể gán tên.");
         });
@@ -70,6 +73,7 @@ public class LearderBoard : MonoBehaviour
         {
             if (response.success)
             {
+                LeaderBoardUIManager.Instance.Clear();
                 foreach (var entry in response.items)
                 {
                     if(entry.player.id == LoginSystem.Instance.GetPlayerID())

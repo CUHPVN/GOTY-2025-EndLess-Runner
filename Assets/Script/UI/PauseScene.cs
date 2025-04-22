@@ -6,7 +6,6 @@ public class PauseScene : MonoBehaviour
 	private void OnEnable()
 	{
 		Time.timeScale = 0f;
-        SaveSystem.Save();
     }
 	public void Resume()
 	{
