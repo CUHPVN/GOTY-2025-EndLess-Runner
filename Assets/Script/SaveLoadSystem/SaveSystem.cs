@@ -29,7 +29,7 @@ public class SaveSystem
 	public static void Save()
 	{
 		HandleSaveData();
-		Debug.Log("Save file: " + SaveFileName());
+		//Debug.Log("Save file: " + SaveFileName());
         string json = JsonUtility.ToJson(saveData, true);
         string encrypted = Encrypt(json);
         File.WriteAllText(SaveFileName(),encrypted);
@@ -73,7 +73,7 @@ public class SaveSystem
 			//Save();
 			CreateSave();
 		}
-		Debug.Log("Load file: " + SaveFileName());
+		//Debug.Log("Load file: " + SaveFileName());
         string encrypted = File.ReadAllText(SaveFileName());
         string decrypted = Decrypt(encrypted);
 		saveData = JsonUtility.FromJson<SaveData>(decrypted);

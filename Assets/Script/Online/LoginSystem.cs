@@ -21,7 +21,7 @@ public class LoginSystem : MonoBehaviour
     }
     void Start()
     {
-        Login();
+        //Login();
         StartCoroutine(CheckAndReconnectLoop());
     }
     void Update()
@@ -36,7 +36,7 @@ public class LoginSystem : MonoBehaviour
             {
                 player_id = response.player_id;
                 player_name = response.player_name;
-                Debug.Log("Đăng nhập thành công!");
+                //Debug.Log("Đăng nhập thành công!");
                 if(GameManager.Instance != null)
                 {
                     GameManager.Instance.UpdateName();
