@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
         if(LoginSystem.Instance != null)
         {
             SetName(LoginSystem.Instance.GetPlayerName());
+            if (playerName == "")
+            {
+                playerName = "Guest";
+            }
         }
         else
         {
