@@ -13,7 +13,7 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private Transform setting;
     [SerializeField] private TMP_Text coinCount;
     [SerializeField] private TMP_Text playerName;
-    [SerializeField] private TMP_Text coinCount2;
+    [SerializeField] private TMP_Text playerScore;
     [SerializeField] private Slider bgmVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private List<Transform> upgradeList = new();
@@ -101,11 +101,12 @@ public class MainMenuUIManager : MonoBehaviour
     public void CoinUpdate()
     {
         coinCount.text = ""+CoinManager.Instance.GetCoin();
-        coinCount2.text = "" + CoinManager.Instance.GetCoin();
     }
     public void PlayerUpdate()
     {
         playerName.text = GameManager.Instance.GetName();
+        playerScore.text = "" + GameManager.Instance.GetScore();
+
     }
     public void Update()
     {

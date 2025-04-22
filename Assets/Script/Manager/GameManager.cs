@@ -96,6 +96,10 @@ public class GameManager : MonoBehaviour
         if(LearderBoard.Instance != null) 
         LearderBoard.Instance.Send(score);
     }
+    private void OnApplicationQuit()
+    {
+        SaveSystem.Save();
+    }
 }
 [System.Serializable]
 public struct GameSaveData
