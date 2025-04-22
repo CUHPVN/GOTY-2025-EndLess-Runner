@@ -6,8 +6,6 @@ public class PlayerAnim : MonoBehaviour
 	StateManager StM;
 	Rigidbody2D rb;
 	PlayerMovement PM;
-	
-	StateManager.States LateState;
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
@@ -22,7 +20,6 @@ public class PlayerAnim : MonoBehaviour
 	void Update()
 	{
 
-		anim.SetInteger("States", (int)StM.GetState());
 		switch (StM.GetState())
 		{
 			case StateManager.States.JumpState:
@@ -48,7 +45,7 @@ public class PlayerAnim : MonoBehaviour
 			default:
 				break;
 		}
-		LateState = StM.GetState();
+		anim.SetInteger("States", (int)StM.GetState());
 	}
 
 	public void TPFalse()
