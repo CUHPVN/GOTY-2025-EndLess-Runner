@@ -97,9 +97,12 @@ public class GameManager : MonoBehaviour
     }
     public void Save(ref GameSaveData data)
     {
-        data.score = score;
-        if(LearderBoard.Instance != null) 
-        LearderBoard.Instance.Send(score);
+        if (data.score < score)
+        {
+            data.score = score;
+            if (LearderBoard.Instance != null)
+                LearderBoard.Instance.Send(score);
+        }
     }
     private void OnApplicationQuit()
     {
