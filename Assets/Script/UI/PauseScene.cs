@@ -13,7 +13,8 @@ public class PauseScene : MonoBehaviour
 	}
 	public void MainMenu()
 	{
-		TransitionManager.Instance.PlayOutInGame();
+        if (SceneManager.GetActiveScene().name == "Tutorial") GameManager.Instance.SetIsFirst();
+        TransitionManager.Instance.PlayOutInGame();
 	}
     public void Quit()
 	{

@@ -1,4 +1,5 @@
-﻿using LootLocker.Requests;
+﻿using System.Collections;
+using LootLocker.Requests;
 using UnityEngine;
 using static UpgradeManager;
 
@@ -8,6 +9,8 @@ public class LoginSystem : MonoBehaviour
     public static LoginSystem Instance {  get; private set; }
     private int player_id;
     private string player_name;
+    public float checkInterval = 10f;
+    private bool isLoggedIn = false;
 
     private void Awake()
     {
@@ -17,6 +20,7 @@ public class LoginSystem : MonoBehaviour
     void Start()
     {
         Login();
+        StartCoroutine(CheckAndReconnectLoop());
     }
     void Update()
     {
@@ -61,6 +65,35 @@ public class LoginSystem : MonoBehaviour
             }
         });
     }
+    IEnumerator CheckAndReconnectLoop()
+    {
+        while (true)
+        {
+            if (!isLoggedIn)
+            {
+                if (Application.internetReachability != NetworkReachability.NotReachable)
+                {
+                    LootLockerSDKManager.StartGuestSession(response =>
+                    {
+                        if (response.success)
+                        {
+                            Debug.Log("Đăng nhập lại LootLocker thành công!");
+                            Login();
+                            isLoggedIn = true;
+                        }
+                        else
+                        {
+                            Debug.LogWarning("LootLocker vẫn chưa đăng nhập được.");
+                            isLoggedIn = false;
+                        }
+                    });
+                }
+            }
+
+            yield return new WaitForSeconds(checkInterval);
+        }
+    }
+
     public int GetPlayerID()
     {
         return player_id;
@@ -69,18 +102,18 @@ public class LoginSystem : MonoBehaviour
     {
         return player_name;
     }
-    public void Create(ref LoginSaveData data)
-    {
-       data.player_id = player_id;
-    }
-    public void Save(ref LoginSaveData data)
-    {
-        data.player_id = player_id;
-    }
-    [System.Serializable]
-    public struct LoginSaveData
-    {
-        public int player_id;
-    }
+    //public void Create(ref LoginSaveData data)
+    //{
+    //   data.player_id = player_id;
+    //}
+    //public void Save(ref LoginSaveData data)
+    //{
+    //    data.player_id = player_id;
+    //}
+    //[System.Serializable]
+    //public struct LoginSaveData
+    //{
+    //    public int player_id;
+    //}
 
 }

@@ -134,7 +134,7 @@ public class MainMenuUIManager : MonoBehaviour
     public void StartGame()
     {
         TransitionManager.Instance.PlayOut();
-        if(GameManager.Instance.GetScore()!=0)
+        if(!GameManager.Instance.GetIsFirst())
         Invoke(nameof(StartReal), 1f);
         else
         {

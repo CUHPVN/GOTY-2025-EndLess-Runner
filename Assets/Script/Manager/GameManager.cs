@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     [SerializeField] private int score=0;
+    [SerializeField] private bool isFirst = true;
     [SerializeField] private string playerName;
     private void Awake()
     {
@@ -38,6 +39,15 @@ public class GameManager : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+    public bool GetIsFirst()
+    {
+        if(score != 0) isFirst = false; 
+        return isFirst;
+    }
+    public void SetIsFirst()
+    {
+        isFirst = false;
     }
     public void AddScore(int score)
     {

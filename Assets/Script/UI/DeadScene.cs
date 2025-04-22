@@ -19,6 +19,7 @@ public class DeadScene : MonoBehaviour
 	}
 	public void ReturnMainMenu()
 	{
+		if (SceneManager.GetActiveScene().name == "Tutorial") GameManager.Instance.SetIsFirst();
 		TransitionManager.Instance.PlayOutInGame();
 	   
 	}

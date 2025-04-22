@@ -6,6 +6,7 @@ public class Tutorial : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            GameManager.Instance.SetIsFirst();
         	TransitionManager.Instance.PlayOutInGame();
         }
     }
