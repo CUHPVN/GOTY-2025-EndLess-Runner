@@ -7882,6 +7882,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  isFirst: 1
+  playerName: 
 --- !u!4 &121983435
 Transform:
   m_ObjectHideFlags: 0
@@ -30134,37 +30136,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 804579894}
-    m_ColliderPaths:
-    - - X: 170000000
-        Y: 10625000
-      - X: 170000000
-        Y: 80000000
-      - X: 200000000
-        Y: 80000000
-      - X: 200000000
-        Y: 110000000
-      - X: -200000000
-        Y: 110000000
-      - X: -200000000
-        Y: 80000000
-      - X: -150000000
-        Y: 80000000
-      - X: -150000000
-        Y: 10625000
-      - X: -149375008
-        Y: 10000000
-      - X: 169375008
-        Y: 10000000
-    - - X: 200000000
-        Y: -80000000
-      - X: -200000000
-        Y: -80000000
-      - X: -200000000
-        Y: -110000000
-      - X: 200000000
-        Y: -110000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 17, y: 1.0625}
@@ -35373,7 +35345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 821497449}
   m_Layer: 5
-  m_Name: TopRight
+  m_Name: TopLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69406,7 +69378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1259604113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -69423,7 +69395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -25}
+  m_AnchoredPosition: {x: -300, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259604114
@@ -70476,57 +70448,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1310705225}
-    m_ColliderPaths:
-    - - X: 47500000
-        Y: 10000000
-      - X: 43125000
-        Y: 10000000
-      - X: 43125000
-        Y: 7500000
-      - X: 47500000
-        Y: 7500000
-    - - X: 147500000
-        Y: 10000000
-      - X: 143124992
-        Y: 10000000
-      - X: 143124992
-        Y: 7500000
-      - X: 147500000
-        Y: 7500000
-    - - X: -42500000
-        Y: 10000000
-      - X: -46875000
-        Y: 10000000
-      - X: -46875000
-        Y: 7500000
-      - X: -42500000
-        Y: 7500000
-    - - X: -93125000
-        Y: -77500000
-      - X: -97500000
-        Y: -77500000
-      - X: -97500000
-        Y: -80000000
-      - X: -93125000
-        Y: -80000000
-    - - X: 6875000
-        Y: -77500000
-      - X: 2500000
-        Y: -77500000
-      - X: 2500000
-        Y: -80000000
-      - X: 6875000
-        Y: -80000000
-    - - X: 96875000
-        Y: -77500000
-      - X: 92500000
-        Y: -77500000
-      - X: 92500000
-        Y: -80000000
-      - X: 96875000
-        Y: -80000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 4.75, y: 1}
@@ -91713,9 +91635,9 @@ MonoBehaviour:
   currentState: 0
   padApear: []
   jumpStatePrefabs:
-  - {fileID: 1950441487}
   - {fileID: 1497502512}
   - {fileID: 441444868}
+  - {fileID: 1950441487}
   - {fileID: 649052910}
   - {fileID: 310307058}
   - {fileID: 1775811688}
@@ -91731,8 +91653,6 @@ MonoBehaviour:
   - {fileID: 1497502512}
   - {fileID: 441444868}
   - {fileID: 43033026}
-  - {fileID: 43033026}
-  - {fileID: 43033026}
   - {fileID: 1997985045}
   - {fileID: 68801574}
   - {fileID: 317372382}
@@ -91740,7 +91660,6 @@ MonoBehaviour:
   - {fileID: 144125296}
   - {fileID: 1497502512}
   - {fileID: 1950441487}
-  - {fileID: 532671993}
   - {fileID: 532671993}
   - {fileID: 1514688081}
   - {fileID: 1728434409}
@@ -92950,7 +92869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1728434409
 Transform:
   m_ObjectHideFlags: 0
@@ -93469,7 +93388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759736168}
   m_Layer: 5
-  m_Name: TopLeft
+  m_Name: TopRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114882,7 +114801,7 @@ GameObject:
   - component: {fileID: 1997985047}
   - component: {fileID: 1997985046}
   m_Layer: 0
-  m_Name: PadZicZac_2
+  m_Name: PadZiczac_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

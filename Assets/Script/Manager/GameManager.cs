@@ -22,12 +22,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //SaveSystem.Load();
-        if(LoginSystem.Instance != null)
+        if (LoginSystem.Instance != null)
         {
             SetName(LoginSystem.Instance.GetPlayerName());
             if (playerName == "")
             {
                 playerName = "Guest";
+                LearderBoard.Instance.SetName(playerName);
             }
         }
         else
