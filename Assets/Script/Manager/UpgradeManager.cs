@@ -43,13 +43,50 @@ public class UpgradeManager : MonoBehaviour
 			duration = 5f,
 			price = 150
 		});
-		upgradedataList.Add(new UpgradeBaseData()
-		{
-			upgradeType = UpgradeType.X2Score,
-			duration = 5f,
-			price = 150
-		});
+		//upgradedataList.Add(new UpgradeBaseData()
+		//{
+		//	upgradeType = UpgradeType.X2Score,
+		//	duration = 5f,
+		//	price = 150
+		//});
 	}
+	private void Gen(UpgradeType upgradeType)
+	{
+		switch (upgradeType)
+		{
+            case UpgradeType.Shield:
+			{
+                upgradedataList.Add(new UpgradeBaseData()
+                {
+                    upgradeType = UpgradeType.Shield,
+                    duration = 5f,
+                    price = 100
+                });
+                break;
+			}
+			case UpgradeType.X2Coin:
+				{
+                    upgradedataList.Add(new UpgradeBaseData()
+                    {
+                        upgradeType = UpgradeType.X2Coin,
+                        duration = 5f,
+                        price = 150
+                    });
+					break;
+                }
+			case UpgradeType.X2Score:
+				{
+                    upgradedataList.Add(new UpgradeBaseData()
+                    {
+                        upgradeType = UpgradeType.X2Score,
+                        duration = 5f,
+                        price = 150
+                    });
+					break;
+                }
+		}
+		Debug.Log("Gen"+upgradeType);
+    }
 	public void Buy(int index)
 	{
 		if (index >= Enum.GetValues(typeof(UpgradeType)).Length) return;
@@ -64,7 +101,7 @@ public class UpgradeManager : MonoBehaviour
 			}
 			else
 			{
-				Debug.Log("Not enough coins");
+				//Debug.Log("Not enough coins");
 			}
 		}
 	}
@@ -80,7 +117,9 @@ public class UpgradeManager : MonoBehaviour
 		else
 		{
 			Debug.Log("Upgrade not found");
-			return 0f;
+			Gen(upgradeType);
+            SaveSystem.Save();
+            return 0f;
 		}
 	}
 	public int GetPrice(int index)
@@ -95,7 +134,8 @@ public class UpgradeManager : MonoBehaviour
 		else
 		{
 			Debug.Log("Upgrade not found");
-			SaveSystem.Save();
+            Gen(upgradeType);
+            SaveSystem.Save();
 			return 0;
 		}
 	}
