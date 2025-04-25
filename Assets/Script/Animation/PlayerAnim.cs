@@ -34,7 +34,7 @@ public class PlayerAnim : MonoBehaviour
 				TPFalse();
 				break;
 			case StateManager.States.SpiderState:
-				if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0))
+				if (InputManager.TouchBegan())
 				{
 					anim.SetBool("TP", true);
 				}

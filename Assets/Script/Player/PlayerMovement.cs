@@ -28,12 +28,15 @@ public class PlayerMovement : MonoBehaviour
 	public bool InTutorial;
 	Vector2 TpLocation;
 	[SerializeField] bool flipped = false;
+	public GameObject ParSys;
+	ParticleSystem PSys;
 
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		StM = GameObject.FindGameObjectWithTag("StateManager").GetComponent<StateManager>();
+		PSys = ParSys.GetComponent<ParticleSystem>();
 	}
 
 	void Update()
@@ -219,6 +222,8 @@ public class PlayerMovement : MonoBehaviour
 			}
 			flipped = !flipped;
 			transform.rotation = Quaternion.Euler(currentRotation.x + 180f, currentRotation.y, currentRotation.z);
+			PSys.Play();
+			
 		}
 	}
 	private void Dead()
