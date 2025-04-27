@@ -2,10 +2,18 @@ using UnityEngine;
 
 public class LevelMove : MonoBehaviour
 {
-	public float LevelMoveSpeed;
-    private void FixedUpdate()
+		[SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private Vector3 direction = Vector3.left;
+
+    private Rigidbody rb;
+
+    private void Awake()
     {
-		transform.Translate(Vector3.left * LevelMoveSpeed * Time.deltaTime,Space.World);
+        rb = GetComponent<Rigidbody>();
     }
 
+    private void FixedUpdate()
+    {
+        rb.linearVelocity = direction.normalized * moveSpeed;
+    }
 }
