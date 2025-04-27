@@ -54,7 +54,7 @@ public class TransitionManager : MonoBehaviour
     }
     public void ChangeAgainScene()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     void Update()
     {

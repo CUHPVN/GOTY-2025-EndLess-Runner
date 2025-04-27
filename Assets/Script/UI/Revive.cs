@@ -3,17 +3,22 @@ using UnityEngine;
 
 public class Revive : MonoBehaviour
 {
+	public bool InTutorial = false;
 	public TMP_Text text;
 	public GameObject DeadScene;
-    private void OnEnable()
-    {
+	private void OnEnable()
+	{
 		SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.ShieldBreak);
-        text.text = $"{(int)(UIManager.Instance.GetScore() / 10f)}";
-    }
-    public void Yes()
+		text.text = $"{(int)(UIManager.Instance.GetScore() / 10f)}";
+		if(InTutorial)
+		{
+			No();
+		}
+	}
+	public void Yes()
 	{
 		int req = (int)(UIManager.Instance.GetScore() / 10f);
-        if (CoinManager.Instance.GetCoin() < req) return;
+		if (CoinManager.Instance.GetCoin() < req) return;
 		CoinManager.Instance.RemoveCoin(req);
 		MapSpawner.Instance.SetBase();
 		PowerUp.Instance.BreakShieldPowerUp();
