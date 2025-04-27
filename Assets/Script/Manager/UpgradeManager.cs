@@ -43,12 +43,12 @@ public class UpgradeManager : MonoBehaviour
 			duration = 5f,
 			price = 150
 		});
-		//upgradedataList.Add(new UpgradeBaseData()
-		//{
-		//	upgradeType = UpgradeType.X2Score,
-		//	duration = 5f,
-		//	price = 150
-		//});
+		upgradedataList.Add(new UpgradeBaseData()
+		{
+			upgradeType = UpgradeType.X2Score,
+			duration = 5f,
+			price = 150
+		});
 	}
 	private void Gen(UpgradeType upgradeType)
 	{
