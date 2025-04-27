@@ -6835,10 +6835,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShieldDuration: 5
   X2CoinDuration: 5
+  X2ScoreDuration: 0
   CurrentShieldDuration: 0
   CurrentX2CoinDuration: 0
+  CurrentX2ScoreDuration: 0
   ShieldActive: 0
   X2CoinActive: 0
+  X2ScoreActive: 0
 --- !u!4 &654435882
 Transform:
   m_ObjectHideFlags: 0
