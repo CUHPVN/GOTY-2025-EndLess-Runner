@@ -1098,7 +1098,7 @@ MonoBehaviour:
   JumpForce: 16
   FlyGravityScale: 1.5
   ZiczacForce: 5
-  InTutorial: 0
+  InTutorial: 1
   flipped: 0
   ParSys: {fileID: 1280770801}
   ParSys2: {fileID: 869707111}
