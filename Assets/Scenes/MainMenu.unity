@@ -1269,7 +1269,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 7843416716369364892, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
+    m_PressedSprite: {fileID: 8160775752198118580, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1327,7 +1327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8160775752198118580, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
+  m_Sprite: {fileID: -9136572144232859775, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1413,7 +1413,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: -4532114073746202998, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
+    m_PressedSprite: {fileID: 1961247230, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8391660652416901024, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
+  m_Sprite: {fileID: -6595680761151332689, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6685,7 +6685,7 @@ GameObject:
   - component: {fileID: 627594625}
   - component: {fileID: 627594624}
   m_Layer: 5
-  m_Name: Save
+  m_Name: Tut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6740,7 +6740,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 7301787903208175943, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
+    m_PressedSprite: {fileID: -625328832, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -6753,19 +6753,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 627594625}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 57315169}
-        m_TargetAssemblyTypeName: MainMenuUIManager, Assembly-CSharp
-        m_MethodName: SaveGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &627594625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6786,7 +6774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8346291274449466048, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
+  m_Sprite: {fileID: 356727502, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9620,7 +9608,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: -891238144, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
+    m_PressedSprite: {fileID: 649474757, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -9666,7 +9654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 388057999756033245, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
+  m_Sprite: {fileID: 390076919, guid: cd4176e2e265c2444bb1e292baf4ae26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] bool flipped = false;
 	public GameObject ParSys;
 	ParticleSystem PSys;
+	public GameObject ParSys2;
+	ParticleSystem PSys2;
 
 
 	void Start()
@@ -37,12 +39,17 @@ public class PlayerMovement : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		StM = GameObject.FindGameObjectWithTag("StateManager").GetComponent<StateManager>();
 		PSys = ParSys.GetComponent<ParticleSystem>();
+		PSys2 = ParSys2.GetComponent<ParticleSystem>();
 	}
 
 	void Update()
 	{
 		transform.position = new Vector3(-9f, transform.position.y, transform.position.z);
 		GroundCollided = Physics2D.OverlapCapsule(GroundCollider.transform.position, new Vector2(0.12f, 0.32f), CapsuleDirection2D.Vertical, transform.rotation.eulerAngles.z, KGroundLayer);
+		if(StM.GetState() != StateManager.States.JumpState && PSys2.isEmitting)
+		{
+			PSys2.Stop();
+		}
 		switch (StM.GetState())
 		{
 			case StateManager.States.JumpState:
@@ -91,6 +98,14 @@ public class PlayerMovement : MonoBehaviour
 			rb.gravityScale = 1f;
 		}
 		IsGrounded = Physics2D.OverlapCapsule(GroundCheck.transform.position, new Vector2(1f, 0.2f), CapsuleDirection2D.Horizontal, 0, GroundLayer);
+		if(IsGrounded && !PSys2.isEmitting)
+		{
+			PSys2.Play();
+		}
+		else if(!IsGrounded && PSys2.isEmitting)
+		{
+			PSys2.Stop();
+		}
 		if (InputManager.IsTouching() && IsGrounded)
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, JumpForce);
