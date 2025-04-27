@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4002950364928610478}
   - component: {fileID: 3031358611460472785}
   - component: {fileID: 8902887863857480936}
-  - component: {fileID: 2166137100495887504}
+  - component: {fileID: -6669568961382038862}
   m_Layer: 8
   m_Name: X2ScorePowerUp
   m_TagString: Untagged
@@ -162,7 +162,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.06}
   m_Radius: 0.5
---- !u!114 &2166137100495887504
+--- !u!114 &-6669568961382038862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8663237454683548798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ea57fa2043d0d48a4638d564afa9b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d5f22dd118dbb64b8881ba502537e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
