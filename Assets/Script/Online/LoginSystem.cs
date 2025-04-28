@@ -9,6 +9,8 @@ public class LoginSystem : MonoBehaviour
     public static LoginSystem Instance {  get; private set; }
     private int player_id;
     private string player_name;
+    private string player_avar="0";
+    private string player_frame="0";
     public float checkInterval = 10f;
     private bool isLoggedIn = false;
 
@@ -45,6 +47,23 @@ public class LoginSystem : MonoBehaviour
             else
             {
                 Debug.LogError("Đăng nhập thất bại.");
+            }
+        });
+        LootLockerSDKManager.GetSingleKeyPersistentStorage("avar", (response) =>
+        {
+            if (response.success)
+            {
+                string avar = response.payload.value;
+                player_avar = avar;
+                //Debug.Log("Avar hiện tại: " + avar);
+                if (PlayerInfor.Instance != null)
+                {
+                    GameManager.Instance.DownAvatar();
+                }
+            }
+            else
+            {
+                Debug.LogError("Lấy avar thất bại: " + response.errorData.message);
             }
         });
     }
@@ -105,6 +124,12 @@ public class LoginSystem : MonoBehaviour
         if (Application.internetReachability != NetworkReachability.NotReachable)
             return player_name;
         else return "OfflinePlayer";
+    }
+    public string GetPlayerAvatar()
+    {
+        if (Application.internetReachability != NetworkReachability.NotReachable)
+            return player_avar;
+        else return "0";
     }
     //public void Create(ref LoginSaveData data)
     //{

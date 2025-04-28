@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,6 +7,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int score=0;
     [SerializeField] private bool isFirst = true;
     [SerializeField] private string playerName;
+    [SerializeField] private int avataInx = 0;
+    [SerializeField] private List<Sprite> spriteAvatarList;
+
     private void Awake()
     {
         if (Instance == null)
@@ -25,6 +29,7 @@ public class GameManager : MonoBehaviour
         if (LoginSystem.Instance != null)
         {
             SetName(LoginSystem.Instance.GetPlayerName());
+            DownAvatar();
             if (playerName == "")
             {
                 playerName = "Guest";
@@ -35,11 +40,20 @@ public class GameManager : MonoBehaviour
         {
             SetName("OfflinePlayer");
         }
+        
     }
     void FPS()
     {
         Application.targetFrameRate = -1; 
         QualitySettings.vSyncCount = 0;
+    }
+    public void DownAvatar()
+    {
+        avataInx = int.Parse(LoginSystem.Instance.GetPlayerAvatar());
+    }
+    public Sprite GetAvaSprite()
+    {
+        return spriteAvatarList[avataInx];
     }
     public int GetScore()
     {
@@ -76,6 +90,7 @@ public class GameManager : MonoBehaviour
             LearderBoard.Instance.Get();
         }
     }
+    
     public void SendName(string name)
     {
         if(LearderBoard.Instance != null)
@@ -85,6 +100,17 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("Send Name không thành công!");
+        }
+    }
+    public void SendAvar(int index)
+    {
+        if (LearderBoard.Instance != null)
+        {
+            LearderBoard.Instance.SetAvar(index);
+        }
+        else
+        {
+            Debug.Log("Send Avar không thành công!");
         }
     }
     public void Load(GameSaveData data)
