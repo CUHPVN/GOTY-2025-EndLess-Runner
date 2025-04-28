@@ -46,6 +46,22 @@ public class LearderBoard : MonoBehaviour
         });
 
     }
+    public void SetAvar(int index)
+    {
+        LootLockerSDKManager.UpdateOrCreateKeyValue("avar", index.ToString(), (response) =>
+        {
+        if (response.success)
+        {
+            Debug.Log("Avatar người chơi đã được gán!");
+            LoginSystem.Instance.Login();
+        }
+            else
+        {
+            Debug.LogError("Không thể gán avatar.");
+        }
+        }
+        );
+    }
     public int GetHightScore(string playerID)
     {
         string leaderboardKey = "your_leaderboard_key";

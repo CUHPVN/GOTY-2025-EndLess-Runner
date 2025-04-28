@@ -23,7 +23,7 @@ public class SaveSystem
     }
 	public static string SaveFileName()
 	{
-		string saveFile = Application.persistentDataPath + "/save" + ".data";//đổi tên file + tên đuôi nếu muốn
+		string saveFile = Application.persistentDataPath + "/save" + ".da";//đổi tên file + tên đuôi nếu muốn
 		return saveFile;
 	}
 	public static void Save()

@@ -13,6 +13,7 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private Transform setting;
     [SerializeField] private TMP_Text coinCount;
     [SerializeField] private TMP_Text playerName;
+    [SerializeField] private Image avatar;
     [SerializeField] private TMP_Text playerScore;
     [SerializeField] private Slider bgmVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
@@ -106,7 +107,7 @@ public class MainMenuUIManager : MonoBehaviour
     {
         playerName.text = GameManager.Instance.GetName();
         playerScore.text = "" + GameManager.Instance.GetScore();
-
+        avatar.sprite = GameManager.Instance.GetAvaSprite();
     }
     public void Update()
     {
@@ -141,6 +142,11 @@ public class MainMenuUIManager : MonoBehaviour
         {
             Invoke(nameof(StartTutorialReal), 1f);
         }
+    }
+    public void StartTut()
+    {
+        TransitionManager.Instance.PlayOut();
+        Invoke(nameof(StartTutorialReal), 1f);
     }
     public void StartReal()
     {
