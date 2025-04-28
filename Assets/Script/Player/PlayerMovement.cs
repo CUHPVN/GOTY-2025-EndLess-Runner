@@ -245,6 +245,8 @@ public class PlayerMovement : MonoBehaviour
 	{
 		PowerUp.Instance.CurrentX2CoinDuration = 0f;
 		PowerUp.Instance.CurrentShieldDuration = 0f;
+		PowerUp.Instance.CurrentX2ScoreDuration = 0f;
+		
 	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
