@@ -40,6 +40,10 @@ public class PowerUp : MonoBehaviour
 		{
 			StartX2CoinPowerUp();
 		}
+		else if (Input.GetKeyDown(KeyCode.Alpha3) && X2ScoreActive == false)
+		{
+			StartX2ScorePowerUp();
+		}
 
 
 		CurrentShieldDuration -= Time.deltaTime;
