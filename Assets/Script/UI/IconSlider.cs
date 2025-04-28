@@ -11,7 +11,7 @@ public class IconSlider : MonoBehaviour
         _slider = GetComponent<Slider>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if(_slider.value == 0)
         {
