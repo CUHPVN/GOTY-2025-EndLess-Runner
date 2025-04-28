@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -57,6 +58,11 @@ public class GameManager : MonoBehaviour
         if (avataInx >= spriteAvatarList.Count) return null;
         return spriteAvatarList[avataInx];
     }
+    public Sprite GetAvaSpriteByIndex(int index)
+    {
+        if (index >= spriteAvatarList.Count) return null;
+        return spriteAvatarList[index];
+    }
     public int GetScore()
     {
         return score;
@@ -89,7 +95,7 @@ public class GameManager : MonoBehaviour
         playerName = LoginSystem.Instance.GetPlayerName();
         if (LearderBoard.Instance != null)
         {
-            LearderBoard.Instance.Get();
+            LearderBoard.Instance.LoadLeaderBoard();
         }
     }
     

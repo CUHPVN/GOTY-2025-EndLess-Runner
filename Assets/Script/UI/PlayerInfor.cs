@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using TMPro;
@@ -57,8 +58,13 @@ public class PlayerInfor : MonoBehaviour
         if(value >= buttonAvatarList.Count) return;
         GameManager.Instance.SendAvar(value);
     }
-    public void SetName()
+    public void ApplyName()
+    {
+        StartCoroutine(SetName());
+    }
+    IEnumerator SetName()
     {
         GameManager.Instance.SendName(playerName.text);
+        yield return null;
     }
 }

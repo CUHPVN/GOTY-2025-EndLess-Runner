@@ -761,7 +761,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 470959857}
         m_TargetAssemblyTypeName: PlayerInfor, Assembly-CSharp
-        m_MethodName: SetName
+        m_MethodName: ApplyName
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22324,21 +22324,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3518117314547859676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6946184324996304946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c759b2f64edb684ba0e71b48ffa41c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rank: {fileID: 0}
-  Name: {fileID: 0}
-  Score: {fileID: 0}
 --- !u!212 &3626916397520122347
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22462,7 +22447,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3631663493473594279}
-  - component: {fileID: 3518117314547859676}
   m_Layer: 5
   m_Name: PlayerScore
   m_TagString: Untagged

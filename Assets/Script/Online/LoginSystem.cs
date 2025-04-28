@@ -26,6 +26,7 @@ public class LoginSystem : MonoBehaviour
     {
         //Login();
         StartCoroutine(CheckAndReconnectLoop());
+        StartCoroutine(CheckLeaderBoard());
     }
     void Update()
     {
@@ -133,8 +134,19 @@ public class LoginSystem : MonoBehaviour
                     });
                 }
             }
-
+            
             yield return new WaitForSeconds(checkInterval);
+        }
+    }
+    IEnumerator CheckLeaderBoard()
+    {
+        while (true)
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.UpdateName();
+            }
+            yield return new WaitForSeconds(30f);
         }
     }
 

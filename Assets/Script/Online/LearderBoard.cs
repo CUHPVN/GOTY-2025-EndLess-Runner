@@ -1,4 +1,5 @@
-﻿using LootLocker;
+﻿using System;
+using LootLocker;
 using LootLocker.Requests;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -48,7 +49,7 @@ public class LearderBoard : MonoBehaviour
     }
     public void SetAvar(int index)
     {
-        LootLockerSDKManager.UpdateOrCreateKeyValue("avar", index.ToString(), (response) =>
+        LootLockerSDKManager.UpdateOrCreateKeyValue("avar", index.ToString(), true, (response) =>
         {
         if (response.success)
         {
@@ -80,10 +81,14 @@ public class LearderBoard : MonoBehaviour
         });
         return score;
     }
+    public void LoadLeaderBoard()
+    {
+        Get();
+    }
     public void Get()
     {
-        int count = 10; 
-        int after = 0; 
+        int count = 10;
+        int after = 0;
 
         LootLockerSDKManager.GetScoreList("your_leaderboard_key", count, after, (response) =>
         {
@@ -92,20 +97,47 @@ public class LearderBoard : MonoBehaviour
                 LeaderBoardUIManager.Instance.Clear();
                 foreach (var entry in response.items)
                 {
-                    if(entry.player.id == LoginSystem.Instance.GetPlayerID())
-                    {
-                        LeaderBoardUIManager.Instance.AddPlayer(entry.rank,entry.player.name+" (YOU)", entry.score);
+                    int playerId = entry.player.id;
+                    string playerName = entry.player.name;
+                    int rank = entry.rank;
+                    int score = entry.score;
 
-                    }else
-                        LeaderBoardUIManager.Instance.AddPlayer(entry.rank,entry.player.name, entry.score);
-                    //Debug.Log($"Player: {entry.player.name}, Score: {entry.score}");
+                    if (playerId == LoginSystem.Instance.GetPlayerID())
+                        LeaderBoardUIManager.Instance.AddPlayer(rank, playerName + " (YOU)", score, playerId);
+                    else
+                        LeaderBoardUIManager.Instance.AddPlayer(rank, playerName, score, playerId);
                 }
             }
             else
             {
-                //Debug.LogError("Lấy danh sách bảng xếp hạng thất bại.");
+                Debug.LogError("Lấy danh sách bảng xếp hạng thất bại.");
             }
         });
-
+    }
+    public void GetAvarOfPlayer(int playerId, Action<string> onAvarReceived)
+    {
+        LootLockerSDKManager.GetOtherPlayersPublicKeyValuePairs(playerId.ToString(), (response) =>
+        {
+            if (response.success && response.payload != null)
+            {
+                string avar = "0";
+                foreach (var item in response.payload)
+                {
+                    if (item.key == "avar")
+                    {
+                        avar = item.value;
+                        break;
+                    }
+                }
+                onAvarReceived?.Invoke(avar);
+            }
+            else
+            {
+                Debug.LogWarning($"Không thể lấy avar cho playerId: {playerId}");
+                onAvarReceived?.Invoke(null);
+            }
+            
+        });
+       
     }
 }

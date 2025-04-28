@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -25,7 +25,7 @@ public class LeaderBoardUIManager : MonoBehaviour
         }
         playerScores.Clear();
     }
-    public void AddPlayer(int rank,string name, int score)
+    public void AddPlayer(int rank,string name, int score, int id)
     {
         Transform player = Instantiate(prefabs);
         playerScores.Add(player);
@@ -35,5 +35,22 @@ public class LeaderBoardUIManager : MonoBehaviour
         playerScore.SetRank(rank);
         playerScore.SetName(name);
         playerScore.SetScore(score);
+        int index = 0;
+        if(LearderBoard.Instance != null)
+        {
+            LearderBoard.Instance.GetAvarOfPlayer(id, (avar) =>
+            {
+                if (!string.IsNullOrEmpty(avar))
+                {
+                    index = int.Parse(avar);
+                    playerScore.SetAvatar(index);
+                }
+                else
+                {
+                    Debug.Log("Không tìm thấy avar hoặc lỗi khi lấy avar.");
+                }
+            });
+        }
+        //playerScore.SetAvatar(index);
     }
 }
