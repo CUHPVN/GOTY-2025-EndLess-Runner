@@ -58179,6 +58179,8 @@ MonoBehaviour:
   score: 0
   isFirst: 1
   playerName: 
+  avataInx: 0
+  spriteAvatarList: []
 --- !u!4 &1537335107
 Transform:
   m_ObjectHideFlags: 0
@@ -58388,7 +58390,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1538658956}
   serializedVersion: 8
   lengthInSec: 0.2
-  simulationSpeed: 1
+  simulationSpeed: 2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -58396,7 +58398,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
