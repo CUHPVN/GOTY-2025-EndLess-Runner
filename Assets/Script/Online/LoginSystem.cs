@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using LootLocker.Requests;
 using UnityEngine;
 using static UpgradeManager;
@@ -53,12 +54,34 @@ public class LoginSystem : MonoBehaviour
         {
             if (response.success)
             {
-                string avar = response.payload.value;
-                player_avar = avar;
-                //Debug.Log("Avar hiện tại: " + avar);
-                if (PlayerInfor.Instance != null)
+                if (response.payload != null&&!string.IsNullOrEmpty(response.payload.value))
                 {
-                    GameManager.Instance.DownAvatar();
+                    string avar = response.payload.value;
+                    player_avar = avar;
+                    Debug.Log("Avar hiện tại: " + avar);
+
+                    if (PlayerInfor.Instance != null)
+                    {
+                        GameManager.Instance.DownAvatar();
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("Key 'avar' tồn tại nhưng chưa có giá trị.");
+                    LootLockerSDKManager.UpdateOrCreateKeyValue("avar","0", (response) =>
+                    {
+                        if (response.success)
+                        {
+                            Debug.Log("Avatar người chơi đã được gán!");
+                            LoginSystem.Instance.Login();
+                        }
+                        else
+                        {
+                            Debug.LogError("Không thể gán avatar.");
+                        }
+                    }
+        );
+                    // Có thể cho phép người chơi chọn avatar mặc định
                 }
             }
             else

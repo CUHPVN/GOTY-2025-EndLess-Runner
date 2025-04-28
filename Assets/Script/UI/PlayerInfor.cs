@@ -56,7 +56,6 @@ public class PlayerInfor : MonoBehaviour
     {
         if(value >= buttonAvatarList.Count) return;
         GameManager.Instance.SendAvar(value);
-        
     }
     public void SetName()
     {
