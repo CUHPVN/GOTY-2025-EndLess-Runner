@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private Slider bgmVolumeSlider;
 	[SerializeField] private Slider sfxVolumeSlider;
 	[SerializeField] private List<Button> buttons;
-	
+
 	public GameObject DeadScene;
 	public GameObject ReviveScene;
 	public GameObject PauseScene;
@@ -37,9 +37,17 @@ public class UIManager : MonoBehaviour
 	void Update()
 	{
 		isPause = PauseScene.activeSelf;
+		if (PowerUp.Instance.X2ScoreActive)
+		{
+			ScoreText.color = new Color32(58, 243, 91, 255);
+		}
+		else
+		{
+			ScoreText.color = Color.white;
+		}
 		ScoreText.text = $"{(int)Score}";
 		CoinCounter.text = $"{CoinManager.Instance.GetCoin()}";
-		if(StateManager.Instance.GetState() == StateManager.States.DeadState && !ReviveScene.activeSelf && !DeadScene.activeSelf)
+		if (StateManager.Instance.GetState() == StateManager.States.DeadState && !ReviveScene.activeSelf && !DeadScene.activeSelf)
 		{
 			Time.timeScale = 0f;
 			ReviveScene.SetActive(true);
@@ -52,18 +60,18 @@ public class UIManager : MonoBehaviour
 				setting.gameObject.SetActive(false);
 				blacksetting.gameObject.SetActive(false);
 			}
-			PauseScene.SetActive(isPause); 
+			PauseScene.SetActive(isPause);
 		}
 	}
 	private void FixedUpdate()
 	{
-		if(PowerUp.Instance.X2ScoreActive)
+		if (PowerUp.Instance.X2ScoreActive)
 		{
 			Score += 1f * Multiplyer * 0.3f * 2;
 		}
 		else
 		{
-			
+
 			Score += 1f * Multiplyer * 0.3f;
 		}
 	}
@@ -74,7 +82,7 @@ public class UIManager : MonoBehaviour
 	}
 	private void AddEvent()
 	{
-		foreach(Button but in buttons)
+		foreach (Button but in buttons)
 		{
 			but.onClick.AddListener(() => SoundManager.Instance.PlaySFX((int)SoundManager.SoundType.ButtonClick));
 		}
