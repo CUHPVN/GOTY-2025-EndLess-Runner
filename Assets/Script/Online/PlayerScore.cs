@@ -42,6 +42,7 @@ public class PlayerScore : MonoBehaviour
     {
         if (Avatar == null)
             Avatar = transform.GetChild(3).GetChild(0).GetComponent<Image>();
+        if (Avatar == null) return;
         Avatar.sprite = GameManager.Instance.GetAvaSpriteByIndex(ava);
     }
 }

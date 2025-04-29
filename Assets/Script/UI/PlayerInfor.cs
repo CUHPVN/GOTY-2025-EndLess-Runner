@@ -19,7 +19,7 @@ public class PlayerInfor : MonoBehaviour
     [SerializeField] private List<Sprite> spriteAvatarList;
     [SerializeField] private List<Sprite> spriteFrameList;
     
-    [SerializeField] private int frameInx = 0;
+    //[SerializeField] private int frameInx = 0;
     private void Awake()
     {
         Instance = this;

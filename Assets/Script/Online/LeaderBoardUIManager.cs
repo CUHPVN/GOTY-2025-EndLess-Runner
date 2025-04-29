@@ -44,7 +44,7 @@ public class LeaderBoardUIManager : MonoBehaviour
                 {
                     index = int.Parse(avar);
                     playerScore.SetAvatar(index);
-                }
+                }   
                 else
                 {
                     Debug.Log("Không tìm thấy avar hoặc lỗi khi lấy avar.");
