@@ -53,7 +53,7 @@ public class LearderBoard : MonoBehaviour
         {
         if (response.success)
         {
-            Debug.Log("Avatar người chơi đã được gán!");
+            //Debug.Log("Avatar người chơi đã được gán!");
             LoginSystem.Instance.Login();
         }
             else

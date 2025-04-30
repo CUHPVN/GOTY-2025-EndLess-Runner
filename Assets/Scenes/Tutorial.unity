@@ -6432,6 +6432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0f2302384cb4f4aac156e5fab9e2c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text1: {fileID: 317068967}
+  text2: {fileID: 178912726}
+  text3: {fileID: 478270167}
+  text4: {fileID: 502528667}
 --- !u!61 &219100829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6821,7 +6825,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Space/Up Arrow to Jump  Hold it to Jump higher
+  m_text: "Press Space/Up Arrow to Jump  \tHold it to Jump higher"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
   m_sharedMaterial: {fileID: 8903832021990723192, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}

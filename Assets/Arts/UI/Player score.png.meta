@@ -843,7 +843,7 @@ TextureImporter:
         width: 20
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -852,6 +852,28 @@ TextureImporter:
       bones: []
       spriteID: 1bd9b4313eb5cd04e82914ec2418d61b
       internalID: 1914895530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player score_31
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 20
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ed6d9e4a2a52b43b94cd99df4ff395
+      internalID: -373454184
       vertices: []
       indices: 
       edges: []
@@ -894,6 +916,8 @@ TextureImporter:
       Player score_28: 6923667926766113900
       Player score_29: 1914895530
       Player score_3: 665881789120467264
+      Player score_30: 1127214848
+      Player score_31: -373454184
       Player score_4: -7913741504459066001
       Player score_5: -5727579828843736231
       Player score_6: -8980435515126932980

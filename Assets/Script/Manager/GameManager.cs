@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
     }
     public void Create(ref GameSaveData data)
     {
+        score = 0;
         data.score = score;
     }
     public void Save(ref GameSaveData data)

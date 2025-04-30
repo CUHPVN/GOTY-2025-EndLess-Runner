@@ -43,6 +43,7 @@ public class LeaderBoardUIManager : MonoBehaviour
                 if (!string.IsNullOrEmpty(avar))
                 {
                     index = int.Parse(avar);
+                    if (playerScore!= null)
                     playerScore.SetAvatar(index);
                 }   
                 else

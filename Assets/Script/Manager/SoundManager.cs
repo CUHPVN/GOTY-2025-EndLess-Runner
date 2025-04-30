@@ -33,17 +33,22 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
-        if (!BGM.isPlaying)
-        {
-            int ran = Random.Range(0, bgmClips.Length);
-            PlayBGM(ran);
-        }
+        CheckMusic();
         GetVolume();
         UpdateVolume();
     }
     private void FixedUpdate()
     {
         
+    }
+    private void CheckMusic()
+    {
+        if (!Application.isFocused) return;
+        if (!BGM.isPlaying)
+        {
+            int ran = Random.Range(0, bgmClips.Length);
+            PlayBGM(ran);
+        }
     }
     public void GetVolume()
     {

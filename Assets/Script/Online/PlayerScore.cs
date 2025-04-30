@@ -40,8 +40,11 @@ public class PlayerScore : MonoBehaviour
     }
     public void SetAvatar(int ava)
     {
-        if (Avatar == null&&transform!=null)
+        if (Avatar == null && this != null)
+        {
+            if (this == null) return;
             Avatar = transform.GetChild(3).GetChild(0).GetComponent<Image>();
+        }
         if (Avatar == null) return;
         Avatar.sprite = GameManager.Instance.GetAvaSpriteByIndex(ava);
     }

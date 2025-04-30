@@ -11,6 +11,7 @@ public class PlayerInfor : MonoBehaviour
     public static PlayerInfor Instance {  get; private set; }
     [SerializeField] private TMP_InputField playerName;
     [SerializeField] private Transform avatarParent;
+    [SerializeField] private Transform ignoreTarget;
     [SerializeField] private GameObject frameParent;
     [SerializeField] private List<Image> avatarList;
     [SerializeField] private List<Image> frameList;
@@ -31,6 +32,7 @@ public class PlayerInfor : MonoBehaviour
     private void OnEnable()
     {
         playerName.text = GameManager.Instance.GetName();
+        ignoreTarget.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -51,7 +53,13 @@ public class PlayerInfor : MonoBehaviour
         {
             int ind = i;
             buttonAvatarList[i].onClick.AddListener(()=>SetAva(ind));
+            buttonAvatarList[i].onClick.AddListener(() => ClosePanel());
         }
+    }
+    public void ClosePanel()
+    {
+        ignoreTarget.gameObject.SetActive(true);
+        GetComponent<PopOnEnable>().DisableThis();
     }
     private void SetAva(int value)
     {
@@ -60,6 +68,7 @@ public class PlayerInfor : MonoBehaviour
     }
     public void ApplyName()
     {
+        ClosePanel();
         StartCoroutine(SetName());
     }
     IEnumerator SetName()

@@ -19,6 +19,7 @@ public class LoginSystem : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
