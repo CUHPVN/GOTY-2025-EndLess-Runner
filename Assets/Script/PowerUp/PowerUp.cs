@@ -44,6 +44,13 @@ public class PowerUp : MonoBehaviour
 		{
 			StartX2ScorePowerUp();
 		}
+		else if (Input.GetKeyDown(KeyCode.Alpha4))
+		{
+			BreakShieldPowerUp();
+			MapSpawner.Instance.MSetBase();
+			StartX2CoinPowerUp();
+			StartX2ScorePowerUp();
+		}
 
 
 		CurrentShieldDuration -= Time.deltaTime;
