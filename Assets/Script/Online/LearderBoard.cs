@@ -101,7 +101,7 @@ public class LearderBoard : MonoBehaviour
                     string playerName = entry.player.name;
                     int rank = entry.rank;
                     int score = entry.score;
-
+                    //Debug.Log(rank+ playerName+ score+playerId);
                     if (playerId == LoginSystem.Instance.GetPlayerID())
                         LeaderBoardUIManager.Instance.AddPlayer(rank, playerName + " (YOU)", score, playerId);
                     else
