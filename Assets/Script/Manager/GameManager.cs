@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     }
     public Sprite GetAvaSpriteByIndex(int index)
     {
-        if (index >= spriteAvatarList.Count) return null;
+        if (index >= spriteAvatarList.Count) return spriteAvatarList[0];
         return spriteAvatarList[index];
     }
     public int GetScore()
@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
         playerName = LoginSystem.Instance.GetPlayerName();
         if (LearderBoard.Instance != null)
         {
+            Debug.Log("ko null!");
             LearderBoard.Instance.LoadLeaderBoard();
         }
     }
