@@ -169,7 +169,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 
 		Vector3 currentRotation = transform.rotation.eulerAngles;
-		RaycastHit2D hit = Physics2D.BoxCast(SpiderTpCheck.transform.position, new Vector2(1f, 0.9f), 0f, SpiderTpCheck.transform.up, Mathf.Infinity, GroundLayer);
+		RaycastHit2D hit = Physics2D.BoxCast(SpiderTpCheck.transform.position, new Vector2(1f, 0.9f), 0f, SpiderTpCheck.transform.up, Mathf.Infinity, KGroundLayer);
 		RaycastHit2D[] hitCollect = Physics2D.BoxCastAll(SpiderTpCheck.transform.position, new Vector2(1f, 0.9f), 0f, SpiderTpCheck.transform.up, 56.25f, Collectable);
 		if (hit)
 		{
