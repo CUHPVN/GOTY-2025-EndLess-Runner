@@ -177,7 +177,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 		else
 		{
-			TpLocation = transform.position;
+			TpLocation = transform.position;		
 		}
 		if (rb.linearVelocity.y < 0f)
 		{
@@ -227,11 +227,11 @@ public class PlayerMovement : MonoBehaviour
 					}
 				}
 			}
-			if(TpLocation.y >= 0)
+			if(!flipped)
 			{
 				transform.position = new Vector3(transform.position.x, TpLocation.y - 0.5f, transform.position.z);
 			}
-			else if(TpLocation.y <= 0)
+			else if(flipped)
 			{
 				transform.position = new Vector3(transform.position.x, TpLocation.y + 0.5f, transform.position.z);
 			}

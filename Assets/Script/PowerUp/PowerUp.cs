@@ -31,26 +31,26 @@ public class PowerUp : MonoBehaviour
 
 	private void Update()
 	{
-		//Debug
-		if (Input.GetKeyDown(KeyCode.Alpha1) && ShieldActive == false)
-		{
-			StartShieldPowerUp();
-		}
-		else if (Input.GetKeyDown(KeyCode.Alpha2) && X2CoinActive == false)
-		{
-			StartX2CoinPowerUp();
-		}
-		else if (Input.GetKeyDown(KeyCode.Alpha3) && X2ScoreActive == false)
-		{
-			StartX2ScorePowerUp();
-		}
-		else if (Input.GetKeyDown(KeyCode.Alpha4))
-		{
-			BreakShieldPowerUp();
-			MapSpawner.Instance.MSetBase();
-			StartX2CoinPowerUp();
-			StartX2ScorePowerUp();
-		}
+		// //Debug
+		// if (Input.GetKeyDown(KeyCode.Alpha1) && ShieldActive == false)
+		// {
+		// 	StartShieldPowerUp();
+		// }
+		// else if (Input.GetKeyDown(KeyCode.Alpha2) && X2CoinActive == false)
+		// {
+		// 	StartX2CoinPowerUp();
+		// }
+		// else if (Input.GetKeyDown(KeyCode.Alpha3) && X2ScoreActive == false)
+		// {
+		// 	StartX2ScorePowerUp();
+		// }
+		// else if (Input.GetKeyDown(KeyCode.Alpha4))
+		// {
+		// 	BreakShieldPowerUp();
+		// 	MapSpawner.Instance.MSetBase();
+		// 	StartX2CoinPowerUp();
+		// 	StartX2ScorePowerUp();
+		// }
 
 
 		CurrentShieldDuration -= Time.deltaTime;
