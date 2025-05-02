@@ -9,6 +9,10 @@ public class LeaderBoardUIManager : MonoBehaviour
     [SerializeField] private Transform prefabs;
     [SerializeField] private List<Transform> playerScores = new();
 
+    private void OnEnable()
+    {
+        LearderBoard.Instance.LoadLeaderBoard();
+    }
     private void Awake()
     {
         Instance = this;
