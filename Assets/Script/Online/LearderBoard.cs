@@ -94,18 +94,21 @@ public class LearderBoard : MonoBehaviour
         {
             if (response.success)
             {
-                LeaderBoardUIManager.Instance.Clear();
-                foreach (var entry in response.items)
+                if (LeaderBoardUIManager.Instance != null)
                 {
-                    int playerId = entry.player.id;
-                    string playerName = entry.player.name;
-                    int rank = entry.rank;
-                    int score = entry.score;
-                    //Debug.Log(rank+ playerName+ score+playerId);
-                    if (playerId == LoginSystem.Instance.GetPlayerID())
-                        LeaderBoardUIManager.Instance.AddPlayer(rank, playerName + " (YOU)", score, playerId);
-                    else
-                        LeaderBoardUIManager.Instance.AddPlayer(rank, playerName, score, playerId);
+                    LeaderBoardUIManager.Instance.Clear();
+                    foreach (var entry in response.items)
+                    {
+                        int playerId = entry.player.id;
+                        string playerName = entry.player.name;
+                        int rank = entry.rank;
+                        int score = entry.score;
+                        //Debug.Log(rank+ playerName+ score+playerId);
+                        if (playerId == LoginSystem.Instance.GetPlayerID())
+                            LeaderBoardUIManager.Instance.AddPlayer(rank, playerName + " (YOU)", score, playerId);
+                        else
+                            LeaderBoardUIManager.Instance.AddPlayer(rank, playerName, score, playerId);
+                    }
                 }
             }
             else

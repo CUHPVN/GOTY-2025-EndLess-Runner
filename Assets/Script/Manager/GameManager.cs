@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
         playerName = LoginSystem.Instance.GetPlayerName();
         if (LearderBoard.Instance != null)
         {
-            Debug.Log("ko null!");
+            //Debug.Log("ko null!");
             LearderBoard.Instance.LoadLeaderBoard();
         }
     }
