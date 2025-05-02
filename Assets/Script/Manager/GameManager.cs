@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
     public void Load(GameSaveData data)
     {
         score= data.score;
+        FirstLoadScore();
     }
     public void Create(ref GameSaveData data)
     {
@@ -139,6 +140,11 @@ public class GameManager : MonoBehaviour
             if (LearderBoard.Instance != null)
                 LearderBoard.Instance.Send(score);
         }
+    }
+    public void FirstLoadScore()
+    {
+        if (LearderBoard.Instance != null)
+            LearderBoard.Instance.Send(score);
     }
     private void OnApplicationQuit()
     {

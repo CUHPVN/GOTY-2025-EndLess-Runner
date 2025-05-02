@@ -25,7 +25,7 @@ public class LearderBoard : MonoBehaviour
         {
             if (response.success)
             {
-                Debug.Log("Gửi điểm số thành công!");
+                //Debug.Log("Gửi điểm số thành công!");
             }
             else
             {

@@ -41,7 +41,7 @@ public class LoginSystem : MonoBehaviour
             {
                 player_id = response.player_id;
                 player_name = response.player_name;
-                Debug.Log("Đăng nhập thành công!");
+                //Debug.Log("Đăng nhập thành công!");
                 if(GameManager.Instance != null)
                 {
                     GameManager.Instance.UpdateName();
@@ -123,7 +123,7 @@ public class LoginSystem : MonoBehaviour
                     {
                         if (response.success)
                         {
-                            Debug.Log("Đăng nhập lại LootLocker thành công!");
+                            //Debug.Log("Đăng nhập lại LootLocker thành công!");
                             Login();
                             isLoggedIn = true;
                         }
