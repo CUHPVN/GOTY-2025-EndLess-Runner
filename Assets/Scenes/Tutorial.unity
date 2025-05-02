@@ -1399,8 +1399,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The button does something different for each form
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
-  m_sharedMaterial: {fileID: 8903832021990723192, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
+  m_sharedMaterial: {fileID: 5763132992561517590, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6827,8 +6827,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Press Space/Up Arrow to Jump  \tHold it to Jump higher"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
-  m_sharedMaterial: {fileID: 8903832021990723192, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
+  m_sharedMaterial: {fileID: 5763132992561517590, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7323,8 +7323,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Try it
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
-  m_sharedMaterial: {fileID: 8903832021990723192, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
+  m_sharedMaterial: {fileID: 5763132992561517590, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7572,8 +7572,8 @@ MonoBehaviour:
 
     have fun playing the game!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
-  m_sharedMaterial: {fileID: 8903832021990723192, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
+  m_sharedMaterial: {fileID: 5763132992561517590, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13710,7 +13710,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: PAUSE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
   m_sharedMaterial: {fileID: 8903832021990723192, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -13776,7 +13776,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &670291535
@@ -20300,7 +20300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 225, y: -10}
+  m_AnchoredPosition: {x: 202.2, y: -7}
   m_SizeDelta: {x: 175, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &904988046
@@ -20325,8 +20325,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 8147
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
-  m_sharedMaterial: {fileID: 8903832021990723192, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
+  m_sharedMaterial: {fileID: 5763132992561517590, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20775,7 +20775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: -10}
+  m_AnchoredPosition: {x: 134.1, y: -7}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &940235393
@@ -20800,8 +20800,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 8767
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
-  m_sharedMaterial: {fileID: 8903832021990723192, guid: 5abbae4b8a040f9428a07013ac5f7271, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
+  m_sharedMaterial: {fileID: 5763132992561517590, guid: 4795222fe8db31e46b177d62e3910ad3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -51255,6 +51255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InTutorial: 1
+  deathCount: 0
   text: {fileID: 1723415712}
   DeadScene: {fileID: 719627156}
 --- !u!114 &1118020337
