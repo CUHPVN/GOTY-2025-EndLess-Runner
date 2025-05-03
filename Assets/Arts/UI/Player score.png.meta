@@ -464,12 +464,12 @@ TextureImporter:
       name: Player score_12
       rect:
         serializedVersion: 2
-        x: 177
-        y: 92
-        width: 8
-        height: 9
+        x: 259
+        y: 112
+        width: 20
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -865,7 +865,7 @@ TextureImporter:
         width: 20
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
